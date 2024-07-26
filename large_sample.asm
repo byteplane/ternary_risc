@@ -1,0 +1,5492 @@
+set_dmem_i(int*, int, int, unsigned int) [clone .part.0]:
+        beq     a3,zero,.L1
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a1,a5
+        srai    a3,a1,31
+        sub     a4,a5,a3
+        slli    a6,a4,1
+        slli    a5,a4,2
+        add     a4,a6,a4
+        sub     a4,a1,a4
+        add     a1,a0,a5
+        beq     a4,zero,.L9
+        addi    a5,a5,4
+        li      a3,1
+        lw      a7,0(a1)
+        add     a0,a0,a5
+        bne     a4,a3,.L10
+        li      a5,1059291136
+        addi    a5,a5,-1481
+        mulh    a5,a2,a5
+        li      a4,1508245504
+        addi    a4,a4,899
+        srai    t4,a2,31
+        li      a6,532480
+        addi    a6,a6,-1039
+        srai    t3,a7,31
+        li      t1,729
+        mulh    a3,a7,a4
+        srai    a5,a5,17
+        sub     a5,a5,t4
+        mul     a6,a5,a6
+        srai    a3,a3,8
+        sub     a3,a3,t3
+        mul     a3,a3,t1
+        sub     a2,a2,a6
+        mul     a2,a2,t1
+        sub     a7,a7,a3
+        add     a2,a2,a7
+        sw      a2,0(a1)
+        lw      a3,0(a0)
+        mulh    a4,a3,a4
+        srai    a3,a3,31
+        srai    a4,a4,8
+        sub     a4,a4,a3
+        mul     a4,a4,t1
+        add     a5,a5,a4
+        sw      a5,0(a0)
+.L1:
+        ret
+.L9:
+        sw      a2,0(a1)
+        ret
+.L10:
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulh    a5,a2,a5
+        li      a4,1059291136
+        addi    a4,a4,-1481
+        srai    t4,a2,31
+        li      a3,729
+        srai    t3,a7,31
+        li      t1,532480
+        addi    t1,t1,-1039
+        mulh    a6,a7,a4
+        srai    a5,a5,8
+        sub     a5,a5,t4
+        mul     a3,a5,a3
+        srai    a6,a6,17
+        sub     a6,a6,t3
+        mul     a6,a6,t1
+        sub     a3,a2,a3
+        mul     a3,a3,t1
+        sub     a6,a7,a6
+        add     a3,a3,a6
+        sw      a3,0(a1)
+        lw      a3,0(a0)
+        mulh    a4,a3,a4
+        srai    a3,a3,31
+        srai    a4,a4,17
+        sub     a4,a4,a3
+        mul     a4,a4,t1
+        add     a5,a5,a4
+        sw      a5,0(a0)
+        ret
+power(int, int) [clone .part.0]:
+        srli    a5,a1,31
+        add     a5,a5,a1
+        srai    a5,a5,1
+        mv      a3,a1
+        mv      a6,a0
+        li      a4,1
+        bne     a5,zero,.L45
+.L30:
+        andi    a3,a3,1
+        bne     a3,zero,.L41
+        mul     a0,a4,a4
+        ret
+.L41:
+        mul     a6,a6,a4
+        mul     a0,a6,a4
+        ret
+.L45:
+        srai    a7,a1,31
+        andi    a2,a7,3
+        add     a2,a2,a1
+        srai    a2,a2,2
+        mv      a1,a4
+        beq     a2,zero,.L31
+        andi    t1,a7,7
+        add     t1,t1,a3
+        srai    t1,t1,3
+        bne     t1,zero,.L46
+.L32:
+        andi    a2,a2,1
+        bne     a2,zero,.L37
+        mul     a1,a1,a1
+.L31:
+        andi    a5,a5,1
+        bne     a5,zero,.L39
+        mul     a4,a1,a1
+        j       .L30
+.L39:
+        mul     a4,a6,a1
+        mul     a4,a4,a1
+        j       .L30
+.L46:
+        andi    a1,a7,15
+        add     a1,a1,a3
+        srai    a1,a1,4
+        beq     a1,zero,.L33
+        addi    sp,sp,-48
+        sw      a3,28(sp)
+        sw      t1,20(sp)
+        sw      a2,16(sp)
+        sw      a5,12(sp)
+        sw      ra,44(sp)
+        sw      a0,24(sp)
+        call    power(int, int) [clone .part.0]
+        lw      t1,20(sp)
+        lw      a3,28(sp)
+        lw      a6,24(sp)
+        andi    t1,t1,1
+        lw      a2,16(sp)
+        lw      a5,12(sp)
+        beq     t1,zero,.L47
+        mul     a1,a6,a0
+        mul     a1,a1,a0
+.L14:
+        andi    a2,a2,1
+        bne     a2,zero,.L17
+        mul     a1,a1,a1
+.L13:
+        andi    a5,a5,1
+        bne     a5,zero,.L18
+        mul     a4,a1,a1
+.L12:
+        andi    a3,a3,1
+        bne     a3,zero,.L19
+        lw      ra,44(sp)
+        addi    sp,sp,48
+        mul     a0,a4,a4
+        jr      ra
+.L37:
+        mul     a4,a6,a1
+        mul     a1,a4,a1
+        j       .L31
+.L33:
+        andi    t1,t1,1
+        bne     t1,zero,.L35
+        mul     a1,a4,a4
+        j       .L32
+.L35:
+        mul     a1,a0,a4
+        mul     a1,a1,a4
+        j       .L32
+.L47:
+        mul     a1,a0,a0
+        j       .L14
+.L19:
+        mul     a6,a6,a4
+        lw      ra,44(sp)
+        addi    sp,sp,48
+        mul     a0,a6,a4
+        jr      ra
+.L18:
+        mul     a4,a6,a1
+        mul     a4,a4,a1
+        j       .L12
+.L17:
+        mul     a4,a6,a1
+        mul     a1,a4,a1
+        j       .L13
+power(int, int):
+        bne     a1,zero,.L76
+        li      a0,1
+        ret
+.L76:
+        srli    a3,a1,31
+        add     a3,a3,a1
+        srai    a3,a3,1
+        mv      a2,a0
+        mv      a5,a1
+        li      a4,1
+        beq     a3,zero,.L64
+        srai    a1,a1,31
+        andi    a6,a1,3
+        add     a6,a6,a5
+        srai    a6,a6,2
+        mv      a7,a4
+        bne     a6,zero,.L77
+.L65:
+        andi    a3,a3,1
+        bne     a3,zero,.L70
+        mul     a4,a7,a7
+.L64:
+        andi    a5,a5,1
+        bne     a5,zero,.L72
+        mul     a0,a4,a4
+        ret
+.L72:
+        mul     a5,a2,a4
+        mul     a0,a5,a4
+        ret
+.L77:
+        andi    a1,a1,7
+        add     a1,a1,a5
+        srai    a1,a1,3
+        beq     a1,zero,.L66
+        addi    sp,sp,-32
+        sw      a5,8(sp)
+        sw      a6,4(sp)
+        sw      a3,0(sp)
+        sw      ra,28(sp)
+        sw      a0,12(sp)
+        call    power(int, int) [clone .part.0]
+        lw      a6,4(sp)
+        lw      a2,12(sp)
+        lw      a5,8(sp)
+        andi    a6,a6,1
+        lw      a3,0(sp)
+        beq     a6,zero,.L78
+        mul     a7,a2,a0
+        mul     a7,a7,a0
+.L51:
+        andi    a3,a3,1
+        bne     a3,zero,.L54
+        mul     a4,a7,a7
+.L50:
+        andi    a5,a5,1
+        bne     a5,zero,.L55
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        mul     a0,a4,a4
+        jr      ra
+.L70:
+        mul     a4,a2,a7
+        mul     a4,a4,a7
+        j       .L64
+.L66:
+        andi    a6,a6,1
+        bne     a6,zero,.L68
+        mul     a7,a4,a4
+        j       .L65
+.L68:
+        mul     a7,a0,a4
+        mul     a7,a7,a4
+        j       .L65
+.L78:
+        mul     a7,a0,a0
+        j       .L51
+.L55:
+        mul     a5,a2,a4
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        mul     a0,a5,a4
+        jr      ra
+.L54:
+        mul     a4,a2,a7
+        mul     a4,a4,a7
+        j       .L50
+extract_opcode(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        sub     a4,a0,a5
+        srli    a4,a4,1
+        add     a5,a5,a4
+        srli    a5,a5,4
+        slli    a4,a5,3
+        sub     a4,a4,a5
+        slli    a4,a4,2
+        sub     a5,a4,a5
+        sub     a0,a0,a5
+        ret
+extract_rd(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        li      a4,1272582144
+        addi    a4,a4,759
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a5,a5,a0
+        srli    a5,a5,4
+        mulh    a4,a5,a4
+        srli    a4,a4,3
+        slli    a0,a4,3
+        sub     a0,a0,a4
+        slli    a0,a0,2
+        sub     a0,a0,a4
+        sub     a0,a5,a0
+        ret
+extract_rs1(unsigned int):
+        li      a5,-1613639680
+        addi    a5,a5,-677
+        mulhu   a0,a0,a5
+        li      a5,1272582144
+        addi    a5,a5,759
+        srli    a0,a0,12
+        mulh    a5,a0,a5
+        srli    a5,a5,3
+        slli    a4,a5,3
+        sub     a4,a4,a5
+        slli    a4,a4,2
+        sub     a5,a4,a5
+        sub     a0,a0,a5
+        ret
+extract_rs2(unsigned int):
+        li      a5,-1117097984
+        addi    a5,a5,-347
+        mulhu   a0,a0,a5
+        li      a5,1272582144
+        addi    a5,a5,759
+        srli    a0,a0,17
+        mulh    a5,a0,a5
+        srli    a5,a5,3
+        slli    a4,a5,3
+        sub     a4,a4,a5
+        slli    a4,a4,2
+        sub     a5,a4,a5
+        sub     a0,a0,a5
+        ret
+extract_r_func(unsigned int):
+        li      a5,-528605184
+        addi    a5,a5,1105
+        mulhu   a5,a0,a5
+        li      a4,1508245504
+        addi    a4,a4,899
+        li      a3,954437632
+        addi    a3,a3,-455
+        mulhu   a0,a0,a4
+        srli    a5,a5,22
+        mulhu   a2,a5,a3
+        srli    a4,a0,8
+        mulhu   a3,a4,a3
+        srli    a2,a2,1
+        slli    a1,a2,3
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        slli    a0,a5,3
+        add     a0,a0,a5
+        srli    a3,a3,1
+        slli    a5,a3,3
+        add     a5,a5,a3
+        sub     a4,a4,a5
+        add     a0,a0,a4
+        ret
+extract_regsize(unsigned int):
+        li      a5,168869888
+        addi    a5,a5,703
+        mulhu   a5,a0,a5
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a0,a5,a0
+        srli    a0,a0,26
+        ret
+extract_r_flagbank(unsigned int):
+        li      a5,-1894178816
+        addi    a5,a5,1055
+        mulhu   a5,a0,a5
+        li      a4,-1431654400
+        addi    a4,a4,-1365
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a5,a5,a0
+        srli    a5,a5,25
+        mulhu   a4,a5,a4
+        srli    a4,a4,1
+        slli    a0,a4,1
+        add     a0,a0,a4
+        sub     a0,a5,a0
+        ret
+extract_t_func(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a4,a0,a5
+        li      a5,954437632
+        addi    a5,a5,-455
+        srli    a4,a4,8
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,3
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_mov_src_reg_type(unsigned int):
+        li      a5,1059291136
+        addi    a5,a5,-1481
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,17
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_mov_dst_reg_type(unsigned int):
+        li      a5,-1117097984
+        addi    a5,a5,-347
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,17
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_shift_amount(unsigned int):
+        li      a5,-1117097984
+        addi    a5,a5,-347
+        mulhu   a0,a0,a5
+        li      a5,-2032599040
+        addi    a5,a5,1349
+        li      a4,243
+        srli    a0,a0,17
+        mulhu   a5,a0,a5
+        srli    a5,a5,7
+        mul     a5,a5,a4
+        sub     a0,a0,a5
+        addi    a0,a0,-121
+        ret
+extract_shift_value(unsigned int):
+        li      a5,-1894178816
+        addi    a5,a5,1055
+        mulhu   a5,a0,a5
+        li      a4,-1431654400
+        addi    a4,a4,-1365
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a5,a5,a0
+        srli    a5,a5,25
+        mulhu   a4,a5,a4
+        srli    a4,a4,1
+        slli    a0,a4,1
+        add     a0,a0,a4
+        sub     a0,a5,a0
+        ret
+extract_i_func(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a5,a0,a5
+        li      a4,-1431654400
+        addi    a4,a4,-1365
+        srli    a5,a5,8
+        mulhu   a3,a5,a4
+        mulhu   a4,a0,a4
+        srli    a3,a3,1
+        slli    a2,a3,1
+        add     a3,a2,a3
+        sub     a5,a5,a3
+        slli    a3,a5,1
+        add     a3,a3,a5
+        srli    a5,a4,1
+        slli    a4,a5,1
+        add     a5,a4,a5
+        sub     a0,a0,a5
+        add     a0,a3,a0
+        ret
+extract_i_imm(unsigned int):
+        li      a5,-1117097984
+        addi    a5,a5,-347
+        mulhu   a5,a0,a5
+        li      a2,502747136
+        addi    a2,a2,1665
+        li      a4,-2032599040
+        addi    a4,a4,1349
+        li      a3,-1431654400
+        addi    a3,a3,-1365
+        li      a1,243
+        mulhu   a0,a0,a2
+        srli    a5,a5,17
+        mulhu   a4,a5,a4
+        srli    a0,a0,8
+        mulhu   a3,a0,a3
+        srli    a4,a4,7
+        mul     a4,a4,a1
+        srli    a3,a3,1
+        slli    a2,a3,1
+        add     a3,a2,a3
+        sub     a0,a0,a3
+        addi    a0,a0,-364
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a5,a4,a5
+        add     a0,a5,a0
+        ret
+extract_load_func(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,8
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_s_func(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,8
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_s_imm(unsigned int):
+        li      a4,795365376
+        li      a5,-528605184
+        addi    a4,a4,-1061
+        mulhu   a4,a0,a4
+        addi    a5,a5,1105
+        li      a3,502747136
+        addi    a3,a3,1665
+        li      a6,954437632
+        addi    a6,a6,-455
+        li      a2,1272582144
+        addi    a2,a2,759
+        li      a1,-1431654400
+        addi    a1,a1,-1365
+        mulhu   a5,a0,a5
+        li      a7,243
+        mulhu   a3,a0,a3
+        sub     a0,a0,a4
+        srli    a5,a5,22
+        srli    a0,a0,1
+        add     a4,a4,a0
+        srli    a4,a4,4
+        mulhu   a0,a5,a6
+        srli    a3,a3,8
+        mulh    a2,a4,a2
+        srli    a0,a0,1
+        slli    a6,a0,3
+        add     a0,a6,a0
+        sub     a5,a5,a0
+        mulhu   a1,a3,a1
+        srli    a2,a2,3
+        slli    a0,a2,3
+        sub     a0,a0,a2
+        slli    a0,a0,2
+        sub     a2,a0,a2
+        sub     a4,a4,a2
+        slli    a0,a4,1
+        add     a0,a0,a4
+        mul     a5,a5,a7
+        srli    a4,a1,1
+        slli    a2,a4,1
+        add     a4,a2,a4
+        sub     a3,a3,a4
+        addi    a3,a3,-364
+        add     a5,a5,a3
+        add     a0,a5,a0
+        ret
+extract_u_imm(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a0,a0,a5
+        li      a4,729
+        li      a5,-193708032
+        addi    a5,a5,-1848
+        srli    a0,a0,8
+        mul     a0,a0,a4
+        add     a0,a0,a5
+        ret
+extract_j_imm(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        li      a4,502747136
+        addi    a4,a4,1665
+        li      a2,-901414912
+        addi    a2,a2,2023
+        li      a3,-1117097984
+        addi    a3,a3,-347
+        li      a6,176128
+        addi    a6,a6,1019
+        li      a7,-21524480
+        mulhu   a4,a0,a4
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a5,a5,a0
+        srli    a5,a5,4
+        addi    a7,a7,1120
+        mulhu   a2,a5,a2
+        srli    a4,a4,8
+        mulhu   a3,a4,a3
+        srli    a2,a2,6
+        slli    a1,a2,2
+        add     a1,a1,a2
+        slli    a1,a1,4
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        srli    a3,a3,17
+        mul     a3,a3,a6
+        mul     a5,a5,a6
+        sub     a4,a4,a3
+        add     a5,a5,a4
+        slli    a0,a5,1
+        add     a0,a0,a5
+        add     a0,a0,a7
+        ret
+extract_l_imm(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        li      a4,-1117097984
+        addi    a4,a4,-347
+        li      a2,-2032599040
+        addi    a2,a2,1349
+        li      a3,502747136
+        addi    a3,a3,1665
+        li      a7,243
+        li      a6,4096
+        addi    a6,a6,-1909
+        sub     a1,a0,a5
+        mulhu   a4,a0,a4
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,4
+        li      a1,8192
+        addi    a1,a1,-1631
+        li      a0,-798720
+        addi    a0,a0,1560
+        mulhu   a2,a5,a2
+        srli    a4,a4,17
+        mulhu   a3,a4,a3
+        srli    a2,a2,7
+        mul     a2,a2,a7
+        srli    a3,a3,8
+        mul     a3,a3,a6
+        sub     a5,a5,a2
+        mul     a5,a5,a1
+        sub     a4,a4,a3
+        slli    a3,a4,1
+        add     a4,a3,a4
+        add     a5,a4,a5
+        add     a0,a5,a0
+        ret
+extract_inc(unsigned int):
+        li      a5,-1894178816
+        addi    a5,a5,1055
+        mulhu   a5,a0,a5
+        li      a4,-1431654400
+        addi    a4,a4,-1365
+        sub     a0,a0,a5
+        srli    a0,a0,1
+        add     a5,a5,a0
+        srli    a5,a5,25
+        mulhu   a4,a5,a4
+        srli    a4,a4,1
+        slli    a0,a4,1
+        add     a0,a0,a4
+        sub     a0,a5,a0
+        ret
+extract_syscalli_imm(unsigned int):
+        li      a5,502747136
+        addi    a5,a5,1665
+        mulhu   a0,a0,a5
+        li      a5,-719863808
+        addi    a5,a5,-903
+        li      a4,20480
+        addi    a4,a4,-797
+        srli    a0,a0,8
+        mulhu   a5,a0,a5
+        srli    a5,a5,14
+        mul     a5,a5,a4
+        sub     a0,a0,a5
+        slli    a5,a0,1
+        add     a0,a5,a0
+        ret
+extract_syscalli_val(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        li      a4,-1894178816
+        addi    a4,a4,1055
+        li      a3,-901414912
+        addi    a3,a3,2023
+        li      a2,954437632
+        addi    a2,a2,-455
+        mulhu   a4,a0,a4
+        sub     a1,a0,a5
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,4
+        mulhu   a3,a5,a3
+        sub     a0,a0,a4
+        srli    a0,a0,1
+        add     a4,a4,a0
+        srli    a4,a4,25
+        mulhu   a2,a4,a2
+        srli    a3,a3,6
+        slli    a1,a3,2
+        add     a1,a1,a3
+        slli    a1,a1,4
+        add     a3,a1,a3
+        sub     a5,a5,a3
+        slli    a0,a5,3
+        add     a0,a0,a5
+        srli    a5,a2,1
+        slli    a3,a5,3
+        add     a5,a3,a5
+        sub     a4,a4,a5
+        add     a0,a0,a4
+        ret
+extract_l_func(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,8
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_b_imm(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a0,a5
+        li      a3,-1431654400
+        addi    a3,a3,-1365
+        li      a4,502747136
+        addi    a4,a4,1665
+        li      a1,532480
+        addi    a1,a1,-1039
+        li      a2,-798720
+        addi    a2,a2,1557
+        sub     a6,a0,a5
+        srli    a6,a6,1
+        add     a5,a5,a6
+        srli    a5,a5,4
+        mulhu   a3,a5,a3
+        srli    a3,a3,1
+        mulhu   a4,a0,a4
+        slli    a0,a3,1
+        add     a3,a0,a3
+        sub     a5,a5,a3
+        mul     a5,a5,a1
+        srli    a4,a4,8
+        slli    a3,a4,1
+        add     a4,a3,a4
+        add     a5,a5,a4
+        add     a0,a5,a2
+        ret
+extract_b_flag(unsigned int):
+        li      a5,-901414912
+        addi    a5,a5,2023
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,6
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_b_flagbank(unsigned int):
+        li      a5,-2032599040
+        addi    a5,a5,1349
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,7
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+extract_b_state(unsigned int):
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulhu   a4,a0,a5
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        srli    a4,a4,8
+        mulhu   a5,a4,a5
+        srli    a5,a5,1
+        slli    a0,a5,1
+        add     a0,a0,a5
+        sub     a0,a4,a0
+        ret
+get_dmem_i(int*, int, unsigned int):
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a1,a5
+        srai    a3,a1,31
+        li      a4,532480
+        addi    a4,a4,-1039
+        mv      a6,a0
+        sub     a5,a5,a3
+        bgtu    a5,a4,.L114
+        slli    a3,a5,1
+        add     a3,a3,a5
+        sub     a1,a1,a3
+        bne     a2,zero,.L109
+        beq     a1,zero,.L117
+        li      a4,1
+        beq     a1,a4,.L118
+        li      a4,2
+        li      a0,0
+        beq     a1,a4,.L119
+.L107:
+        ret
+.L109:
+        beq     a1,zero,.L120
+        li      a3,1
+        beq     a1,a3,.L121
+        li      a3,2
+        li      a0,0
+        bne     a1,a3,.L107
+        slli    a5,a5,2
+        add     a6,a6,a5
+        lw      a5,4(a6)
+        li      a1,1059291136
+        addi    a1,a1,-1481
+        mulh    a2,a5,a1
+        srai    a0,a5,31
+        lw      a3,0(a6)
+        li      a7,729
+        srai    a6,a3,31
+        srai    a2,a2,17
+        sub     a2,a2,a0
+        mul     a4,a2,a4
+        mulh    a3,a3,a1
+        sub     a0,a5,a4
+        mul     a0,a0,a7
+        srai    a5,a3,17
+        sub     a5,a5,a6
+        add     a0,a0,a5
+        ret
+.L114:
+        li      a0,0
+        ret
+.L120:
+        slli    a5,a5,2
+        add     a6,a0,a5
+        lw      a0,0(a6)
+        ret
+.L117:
+        slli    a5,a5,2
+        add     a6,a0,a5
+        lw      a5,0(a6)
+        li      a0,1508245504
+        addi    a0,a0,899
+        mulh    a0,a5,a0
+        srai    a3,a5,31
+        li      a4,729
+        srai    a0,a0,8
+        sub     a0,a0,a3
+        mul     a0,a0,a4
+        sub     a0,a5,a0
+        ret
+.L121:
+        slli    a5,a5,2
+        add     a6,a0,a5
+        lw      a5,4(a6)
+        li      a1,1508245504
+        addi    a1,a1,899
+        mulh    a2,a5,a1
+        srai    a7,a5,31
+        li      a0,729
+        lw      a3,0(a6)
+        srai    a6,a3,31
+        srai    a2,a2,8
+        sub     a2,a2,a7
+        mul     a2,a2,a0
+        mulh    a3,a3,a1
+        sub     a0,a5,a2
+        mul     a0,a0,a4
+        srai    a3,a3,8
+        sub     a3,a3,a6
+        add     a0,a0,a3
+        ret
+.L118:
+        slli    a5,a5,2
+        add     a6,a0,a5
+        lw      a3,0(a6)
+        li      a5,1508245504
+        addi    a5,a5,899
+        mulh    a4,a3,a5
+        srai    a3,a3,31
+        li      a2,729
+        srai    a4,a4,8
+        sub     a4,a4,a3
+        mulh    a0,a4,a5
+        srai    a5,a4,31
+        srai    a0,a0,8
+        sub     a0,a0,a5
+        mul     a0,a0,a2
+        sub     a0,a4,a0
+        ret
+.L119:
+        slli    a5,a5,2
+        add     a6,a6,a5
+        lw      a5,0(a6)
+        li      a0,1059291136
+        addi    a0,a0,-1481
+        mulh    a0,a5,a0
+        srai    a5,a5,31
+        srai    a0,a0,17
+        sub     a0,a0,a5
+        ret
+get_dmem_f(int*, int):
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a1,a5
+        srai    a4,a1,31
+        fmv.s.x fa0,zero
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a1,a4,.L122
+        li      a4,532480
+        addi    a4,a4,-1039
+        bgtu    a5,a4,.L122
+        slli    a5,a5,2
+        add     a0,a0,a5
+        flw     fa0,0(a0)
+.L122:
+        ret
+set_dmem_i(int*, int, int, unsigned int):
+        li      a5,532480
+        addi    a5,a5,-1039
+        bgtu    a1,a5,.L126
+        beq     a3,zero,.L126
+        li      a4,1431654400
+        addi    a4,a4,1366
+        mulh    a4,a1,a4
+        srai    a6,a1,31
+        sub     a3,a4,a6
+        slli    a7,a3,1
+        slli    a4,a3,2
+        add     a3,a7,a3
+        sub     a3,a1,a3
+        add     a6,a0,a4
+        beq     a3,zero,.L133
+        addi    a4,a4,4
+        li      a1,1
+        lw      a7,0(a6)
+        add     a0,a0,a4
+        bne     a3,a1,.L134
+        li      a4,1059291136
+        addi    a4,a4,-1481
+        mulh    a4,a2,a4
+        li      a3,1508245504
+        addi    a3,a3,899
+        srai    t4,a2,31
+        srai    t3,a7,31
+        li      t1,729
+        mulh    a1,a7,a3
+        srai    a4,a4,17
+        sub     a4,a4,t4
+        mul     a5,a4,a5
+        srai    a1,a1,8
+        sub     a1,a1,t3
+        sub     a2,a2,a5
+        mul     a1,a1,t1
+        mul     a2,a2,t1
+        sub     a7,a7,a1
+        add     a2,a2,a7
+        sw      a2,0(a6)
+        lw      a2,0(a0)
+        mulh    a5,a2,a3
+        srai    a2,a2,31
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,t1
+        add     a4,a4,a5
+        sw      a4,0(a0)
+.L126:
+        ret
+.L133:
+        sw      a2,0(a6)
+        ret
+.L134:
+        li      a4,1508245504
+        addi    a4,a4,899
+        mulh    a4,a2,a4
+        li      a3,1059291136
+        addi    a3,a3,-1481
+        srai    t4,a2,31
+        li      a1,729
+        srai    t3,a7,31
+        mulh    t1,a7,a3
+        srai    a4,a4,8
+        sub     a4,a4,t4
+        mul     a1,a4,a1
+        srai    t1,t1,17
+        sub     t1,t1,t3
+        mul     t1,t1,a5
+        sub     a1,a2,a1
+        mul     a1,a1,a5
+        sub     t1,a7,t1
+        add     a1,a1,t1
+        sw      a1,0(a6)
+        lw      a2,0(a0)
+        mulh    a3,a2,a3
+        srai    a2,a2,31
+        srai    a3,a3,17
+        sub     a3,a3,a2
+        mul     a5,a3,a5
+        add     a4,a4,a5
+        sw      a4,0(a0)
+        ret
+set_dmem_f(int*, int, float):
+        li      a5,532480
+        addi    a5,a5,-1039
+        bgtu    a1,a5,.L135
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a1,a5
+        srai    a4,a1,31
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a1,a4,.L135
+        slli    a5,a5,2
+        add     a0,a0,a5
+        fsw     fa0,0(a0)
+.L135:
+        ret
+ip_from_pc(int, unsigned int*):
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a0,a5
+        srai    a0,a0,31
+        sub     a5,a5,a0
+        slli    a5,a5,2
+        add     a0,a1,a5
+        ret
+dip_from_pc(int, union_instruction*):
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a0,a5
+        srai    a0,a0,31
+        sub     a5,a5,a0
+        slli    a4,a5,1
+        add     a5,a4,a5
+        slli    a5,a5,2
+        add     a0,a1,a5
+        ret
+pc_from_ip(unsigned int*, unsigned int*):
+        sub     a0,a0,a1
+        srli    a0,a0,2
+        slli    a5,a0,1
+        add     a0,a5,a0
+        ret
+pc_from_dip(union_instruction*, union_instruction*):
+        li      a5,-1431654400
+        sub     a0,a0,a1
+        addi    a5,a5,-1365
+        mulhu   a0,a0,a5
+        srli    a0,a0,3
+        slli    a5,a0,1
+        add     a0,a5,a0
+        ret
+set_reg_f18(float*, unsigned int, float):
+        slli    a1,a1,2
+        add     a0,a0,a1
+        fsw     fa0,0(a0)
+        ret
+get_reg_f18(float*, unsigned int):
+        slli    a1,a1,2
+        add     a0,a0,a1
+        flw     fa0,0(a0)
+        ret
+set_reg_i(int*, unsigned int, int, unsigned int):
+        beq     a1,zero,.L143
+        bne     a3,zero,.L145
+        blt     a2,zero,.L146
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a2,a5
+        srai    a3,a2,31
+        li      a4,364
+        add     a5,a5,a2
+        srai    a5,a5,8
+        sub     a5,a5,a3
+        mul     a5,a5,a4
+        sub     a2,a2,a5
+.L146:
+        li      a5,-1274331136
+        neg     a2,a2
+        addi    a5,a5,181
+        mulh    a5,a2,a5
+        srai    a3,a2,31
+        li      a4,364
+        add     a5,a5,a2
+        srai    a5,a5,8
+        sub     a5,a5,a3
+        mul     a5,a5,a4
+        sub     a2,a5,a2
+.L145:
+        slli    a1,a1,2
+        add     a0,a0,a1
+        sw      a2,0(a0)
+.L143:
+        ret
+get_reg_i(int*, unsigned int, unsigned int):
+        slli    a1,a1,2
+        add     a0,a0,a1
+        lw      a0,0(a0)
+        bne     a2,zero,.L150
+        blt     a0,zero,.L152
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a0,a5
+        srai    a3,a0,31
+        li      a4,364
+        add     a5,a5,a0
+        srai    a5,a5,8
+        sub     a5,a5,a3
+        mul     a5,a5,a4
+        sub     a0,a0,a5
+        ret
+.L152:
+        neg     a0,a0
+        li      a4,1510318080
+        srli    a5,a0,2
+        addi    a4,a4,91
+        mulhu   a5,a5,a4
+        li      a4,364
+        srli    a5,a5,5
+        mul     a5,a5,a4
+        sub     a0,a5,a0
+.L150:
+        ret
+get_cpu_flag(unsigned int, unsigned int, unsigned int*):
+        slli    a5,a1,1
+        add     a5,a5,a1
+        add     a5,a5,a0
+        slli    a5,a5,2
+        add     a2,a2,a5
+        lw      a0,0(a2)
+        ret
+set_cpu_flag(unsigned int, unsigned int, unsigned int*, unsigned int):
+        slli    a5,a1,1
+        add     a5,a5,a1
+        add     a5,a5,a0
+        slli    a5,a5,2
+        add     a2,a2,a5
+        sw      a3,0(a2)
+        ret
+ternary_and_18(int, int):
+        li      a2,1431654400
+        addi    a2,a2,1366
+        li      a7,18
+        li      a6,1
+.L157:
+        mulh    a3,a0,a2
+        srai    t3,a0,31
+        srai    t1,a1,31
+        slli    t5,a6,1
+        addi    a7,a7,-1
+        mulh    a4,a1,a2
+        sub     a3,a3,t3
+        slli    a5,a3,1
+        add     a5,a5,a3
+        sub     a5,a0,a5
+        sub     a4,a4,t1
+        slli    a3,a4,1
+        add     a4,a3,a4
+        sub     a4,a1,a4
+        mulh    a0,a0,a2
+        ble     a5,a4,.L156
+        mv      a5,a4
+.L156:
+        sub     a0,a0,t3
+        mul     a5,a5,a6
+        add     a6,t5,a6
+        mulh    a1,a1,a2
+        add     t4,t4,a5
+        sub     a1,a1,t1
+        bne     a7,zero,.L157
+        mv      a0,t4
+        ret
+ternary_or_18(int, int):
+        li      a2,1431654400
+        addi    a2,a2,1366
+        li      a7,18
+        li      a6,1
+.L161:
+        mulh    a3,a0,a2
+        srai    t3,a0,31
+        srai    t1,a1,31
+        slli    t5,a6,1
+        addi    a7,a7,-1
+        mulh    a4,a1,a2
+        sub     a3,a3,t3
+        slli    a5,a3,1
+        add     a5,a5,a3
+        sub     a5,a0,a5
+        sub     a4,a4,t1
+        slli    a3,a4,1
+        add     a4,a3,a4
+        sub     a4,a1,a4
+        mulh    a0,a0,a2
+        bge     a5,a4,.L160
+        mv      a5,a4
+.L160:
+        sub     a0,a0,t3
+        mul     a5,a5,a6
+        add     a6,t5,a6
+        mulh    a1,a1,a2
+        add     t4,t4,a5
+        sub     a1,a1,t1
+        bne     a7,zero,.L161
+        mv      a0,t4
+        ret
+ternary_xor_18(int, int):
+        li      a2,1431654400
+        addi    a2,a2,1366
+        li      a6,18
+        li      a3,1
+        li      t6,2
+.L166:
+        mulh    a4,a0,a2
+        srai    t1,a0,31
+        srai    a7,a1,31
+        mv      t3,a3
+        mulh    a5,a1,a2
+        sub     a4,a4,t1
+        slli    t5,a4,1
+        add     a4,t5,a4
+        sub     a4,a0,a4
+        sub     a5,a5,a7
+        slli    t5,a5,1
+        add     a5,t5,a5
+        sub     a5,a1,a5
+        beq     a4,t6,.L164
+        sub     a5,t6,a5
+        bne     a4,zero,.L165
+.L164:
+        mul     t3,a3,a5
+.L165:
+        slli    a5,a3,1
+        addi    a6,a6,-1
+        add     a3,a5,a3
+        add     t4,t4,t3
+        mulh    a0,a0,a2
+        mulh    a1,a1,a2
+        sub     a0,a0,t1
+        sub     a1,a1,a7
+        bne     a6,zero,.L166
+        mv      a0,t4
+        ret
+ternary_shift_18(int, int):
+        addi    sp,sp,-32
+        sw      ra,28(sp)
+        mv      a5,a1
+        mv      a4,a0
+        bgt     a1,zero,.L206
+        bne     a1,zero,.L207
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        jr      ra
+.L206:
+        srai    a2,a1,1
+        li      a0,3
+        beq     a2,zero,.L176
+        srai    a6,a1,2
+        li      a3,1
+        bne     a6,zero,.L208
+.L172:
+        andi    a2,a2,1
+        bne     a2,zero,.L209
+        andi    a5,a5,1
+        mul     a0,a3,a3
+        bne     a5,zero,.L210
+.L176:
+        mul     a0,a4,a0
+.L212:
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        jr      ra
+.L207:
+        srli    a3,a1,31
+        add     a3,a3,a1
+        srai    a3,a3,1
+        li      a0,1
+        beq     a3,zero,.L178
+        srai    a1,a1,31
+        andi    a1,a1,3
+        add     a1,a1,a5
+        srai    a1,a1,2
+        bne     a1,zero,.L211
+.L179:
+        andi    a3,a3,1
+        bne     a3,zero,.L180
+.L205:
+        mul     a0,a0,a0
+.L178:
+        andi    a5,a5,1
+        beq     a5,zero,.L181
+        slli    a5,a0,1
+        add     a0,a5,a0
+.L181:
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        div     a0,a4,a0
+        jr      ra
+.L209:
+        slli    a2,a3,1
+        add     a3,a2,a3
+        andi    a5,a5,1
+        mul     a0,a3,a3
+        beq     a5,zero,.L176
+        j       .L210
+.L208:
+        srai    a1,a1,3
+        beq     a1,zero,.L173
+        sw      a5,12(sp)
+        sw      a4,8(sp)
+        sw      a2,4(sp)
+        sw      a6,0(sp)
+        call    power(int, int) [clone .part.0]
+        mul     a3,a0,a0
+        lw      a5,12(sp)
+        lw      a4,8(sp)
+        lw      a2,4(sp)
+        lw      a6,0(sp)
+.L173:
+        andi    a6,a6,1
+        bne     a6,zero,.L174
+        mul     a3,a3,a3
+        j       .L172
+.L174:
+        slli    a1,a3,1
+        add     a3,a1,a3
+        mul     a3,a3,a3
+        j       .L172
+.L180:
+        slli    a3,a0,1
+        add     a0,a3,a0
+        j       .L205
+.L211:
+        li      a0,3
+        sw      a5,8(sp)
+        sw      a4,4(sp)
+        sw      a3,0(sp)
+        call    power(int, int) [clone .part.0]
+        mul     a0,a0,a0
+        lw      a5,8(sp)
+        lw      a4,4(sp)
+        lw      a3,0(sp)
+        j       .L179
+.L210:
+        slli    a5,a0,1
+        add     a0,a5,a0
+        mul     a0,a4,a0
+        j       .L212
+alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int):
+        mv      a6,a0
+        li      a0,13
+        bgtu    a6,a0,.L244
+        lui     a0,%hi(.L216)
+        mv      a5,a1
+        addi    a0,a0,%lo(.L216)
+        slli    a1,a6,2
+        add     a1,a1,a0
+        lw      a1,0(a1)
+        jr      a1
+.L216:
+        .word   .L225
+        .word   .L224
+        .word   .L223
+        .word   .L245
+        .word   .L246
+        .word   .L247
+        .word   .L244
+        .word   .L244
+        .word   .L244
+        .word   .L219
+        .word   .L218
+        .word   .L244
+        .word   .L217
+        .word   .L215
+.L244:
+        li      a5,1
+        mv      a6,a5
+        li      a0,0
+.L261:
+        slli    a2,a4,1
+        add     a2,a2,a4
+        slli    a2,a2,2
+        add     a3,a3,a2
+        sw      a5,0(a3)
+        sw      a6,4(a3)
+        ret
+.L225:
+        add     a0,a5,a2
+        li      a2,193712128
+        addi    a2,a2,-1884
+        bgt     a0,a2,.L272
+        li      a5,-193712128
+        addi    a5,a5,1884
+        bge     a0,a5,.L260
+        neg     a0,a0
+        li      a1,1487945728
+        srli    a5,a0,2
+        addi    a1,a1,239
+        mulhu   a5,a5,a1
+        srli    a5,a5,24
+        mul     a5,a5,a2
+        sub     a5,a0,a5
+        neg     a0,a5
+        seqz    a5,a5
+        j       .L261
+.L224:
+        li      a1,193712128
+        addi    a1,a1,-1884
+        sub     a0,a5,a2
+        bgt     a0,a1,.L228
+        li      a6,-193712128
+        addi    a6,a6,1884
+        bge     a0,a6,.L260
+        sub     a2,a2,a5
+        li      a0,1487945728
+        addi    a0,a0,239
+        srli    a5,a2,2
+        mulhu   a5,a5,a0
+        li      a6,0
+        srli    a5,a5,24
+        mul     a5,a5,a1
+        sub     a5,a2,a5
+        neg     a0,a5
+        seqz    a5,a5
+        j       .L261
+.L223:
+        addi    sp,sp,-32
+        mv      a1,a2
+        mv      a0,a5
+        sw      a4,12(sp)
+        sw      a3,8(sp)
+        sw      ra,28(sp)
+        call    ternary_shift_18(int, int)
+        li      a2,193712128
+        addi    a2,a2,-1884
+        lw      a3,8(sp)
+        lw      a4,12(sp)
+        bgt     a0,a2,.L230
+        li      a5,-193712128
+        addi    a5,a5,1884
+        bge     a0,a5,.L241
+        neg     a0,a0
+        li      a1,1487945728
+        srli    a5,a0,2
+        addi    a1,a1,239
+        mulhu   a5,a5,a1
+        li      a6,0
+        srli    a5,a5,24
+        mul     a5,a5,a2
+        sub     a5,a0,a5
+        neg     a0,a5
+        seqz    a5,a5
+.L243:
+        slli    a2,a4,1
+        add     a2,a2,a4
+        lw      ra,28(sp)
+        slli    a2,a2,2
+        add     a3,a3,a2
+        sw      a5,0(a3)
+        sw      a6,4(a3)
+        addi    sp,sp,32
+        jr      ra
+.L219:
+        mul     a2,a5,a2
+        li      a0,-1319075840
+        addi    a0,a0,477
+        mulh    a0,a2,a0
+        srai    a5,a2,31
+        add     a0,a0,a2
+        srai    a0,a0,27
+        sub     a0,a0,a5
+        ret
+.L218:
+        mul     a0,a5,a2
+        li      a4,193712128
+        addi    a4,a4,-1884
+        bgt     a0,a4,.L268
+.L240:
+        li      a5,-193712128
+        addi    a5,a5,1884
+        bge     a0,a5,.L259
+        neg     a0,a0
+        li      a3,1487945728
+        srli    a5,a0,2
+        addi    a3,a3,239
+        mulhu   a5,a5,a3
+        srli    a5,a5,24
+        mul     a5,a5,a4
+        sub     a0,a5,a0
+        ret
+.L217:
+        div     a0,a5,a2
+        li      a4,193712128
+        addi    a4,a4,-1884
+        ble     a0,a4,.L240
+.L268:
+        li      a5,-1319075840
+        addi    a5,a5,477
+        mulh    a5,a0,a5
+        srai    a3,a0,31
+        add     a5,a5,a0
+        srai    a5,a5,27
+        sub     a5,a5,a3
+        mul     a5,a5,a4
+        sub     a0,a0,a5
+        ret
+.L215:
+        rem     a0,a5,a2
+        li      a4,193712128
+        addi    a4,a4,-1884
+        ble     a0,a4,.L240
+        j       .L268
+.L245:
+        li      t4,1431654400
+        addi    t4,t4,1366
+        li      t6,18
+        li      t5,1
+.L222:
+        mulh    t3,a5,t4
+        srai    a7,a5,31
+        srai    a6,a2,31
+        mulh    a0,a2,t4
+        sub     t3,t3,a7
+        slli    a1,t3,1
+        add     a1,a1,t3
+        sub     a1,a5,a1
+        sub     a0,a0,a6
+        slli    t3,a0,1
+        add     a0,t3,a0
+        sub     a0,a2,a0
+        ble     a1,a0,.L232
+        mv      a1,a0
+.L232:
+        mul     a1,a1,t5
+        slli    a0,t5,1
+        addi    t6,t6,-1
+        add     t5,a0,t5
+        mulh    a5,a5,t4
+        add     t1,t1,a1
+        mulh    a2,a2,t4
+        sub     a5,a5,a7
+        sub     a2,a2,a6
+        bne     t6,zero,.L222
+.L233:
+        li      a2,193712128
+        addi    a2,a2,-1884
+        ble     t1,a2,.L242
+        li      a0,-1319075840
+        addi    a0,a0,477
+        mulh    a0,t1,a0
+        srai    a5,t1,31
+        add     a0,a0,t1
+        srai    a0,a0,27
+        sub     a0,a0,a5
+        mul     a2,a0,a2
+        sub     a0,t1,a2
+.L258:
+        li      a6,2
+        beq     a0,zero,.L263
+        slli    a2,a4,1
+        add     a2,a2,a4
+        slli    a2,a2,2
+        add     a3,a3,a2
+        mv      a5,a6
+        sw      a5,0(a3)
+        sw      a6,4(a3)
+        ret
+.L246:
+        li      t4,1431654400
+        addi    t4,t4,1366
+        li      t6,18
+        li      t5,1
+.L221:
+        mulh    t3,a5,t4
+        srai    a7,a5,31
+        srai    a6,a2,31
+        mulh    a0,a2,t4
+        sub     t3,t3,a7
+        slli    a1,t3,1
+        add     a1,a1,t3
+        sub     a1,a5,a1
+        sub     a0,a0,a6
+        slli    t3,a0,1
+        add     a0,t3,a0
+        sub     a0,a2,a0
+        bge     a1,a0,.L234
+        mv      a1,a0
+.L234:
+        mul     a1,a1,t5
+        slli    a0,t5,1
+        addi    t6,t6,-1
+        add     t5,a0,t5
+        mulh    a5,a5,t4
+        add     t1,t1,a1
+        mulh    a2,a2,t4
+        sub     a5,a5,a7
+        sub     a2,a2,a6
+        bne     t6,zero,.L221
+        j       .L233
+.L247:
+        li      t4,1431654400
+        addi    t4,t4,1366
+        li      t5,18
+        li      t3,1
+        li      t0,2
+        j       .L220
+.L273:
+        mv      t6,t3
+        bne     a1,zero,.L236
+        sub     a0,t0,a0
+        mul     t6,a0,t3
+.L236:
+        slli    a1,t3,1
+        addi    t5,t5,-1
+        add     t1,t1,t6
+        add     t3,a1,t3
+        mulh    a5,a5,t4
+        mulh    a2,a2,t4
+        sub     a5,a5,a7
+        sub     a2,a2,a6
+        beq     t5,zero,.L233
+.L220:
+        mulh    a1,a5,t4
+        srai    a7,a5,31
+        srai    a6,a2,31
+        mulh    a0,a2,t4
+        sub     a1,a1,a7
+        slli    t6,a1,1
+        add     a1,t6,a1
+        sub     a1,a5,a1
+        sub     a0,a0,a6
+        slli    t6,a0,1
+        add     a0,t6,a0
+        sub     a0,a2,a0
+        bne     a1,t0,.L273
+        mul     t6,a0,t3
+        j       .L236
+.L259:
+        ret
+.L242:
+        li      a5,-193712128
+        addi    a5,a5,1884
+        bge     t1,a5,.L249
+        neg     t1,t1
+        li      a1,1487945728
+        srli    a5,t1,2
+        addi    a1,a1,239
+        mulhu   a5,a5,a1
+        li      a6,0
+        srli    a5,a5,24
+        mul     a5,a5,a2
+        slli    a2,a4,1
+        add     a2,a2,a4
+        slli    a2,a2,2
+        add     a3,a3,a2
+        sw      a6,4(a3)
+        sub     a5,t1,a5
+        neg     a0,a5
+        seqz    a5,a5
+        sw      a5,0(a3)
+        ret
+.L249:
+        mv      a0,t1
+.L260:
+        li      a6,1
+        li      a5,2
+        bgt     a0,zero,.L261
+        seqz    a5,a0
+        j       .L261
+.L230:
+        li      a5,-1319075840
+        addi    a5,a5,477
+        mulh    a5,a0,a5
+        srai    a1,a0,31
+        li      a6,2
+        add     a5,a5,a0
+        srai    a5,a5,27
+        sub     a5,a5,a1
+        mul     a5,a5,a2
+        sub     a0,a0,a5
+        beq     a0,zero,.L250
+        mv      a5,a6
+        j       .L243
+.L228:
+        li      a5,-1319075840
+        addi    a5,a5,477
+        mulh    a5,a0,a5
+        srai    a2,a0,31
+        add     a5,a5,a0
+        srai    a5,a5,27
+        sub     a5,a5,a2
+        mul     a5,a5,a1
+        sub     a0,a0,a5
+        j       .L258
+.L272:
+        li      a5,-1319075840
+        addi    a5,a5,477
+        mulh    a5,a0,a5
+        srai    a1,a0,31
+        add     a5,a5,a0
+        srai    a5,a5,27
+        sub     a5,a5,a1
+        mul     a5,a5,a2
+        sub     a0,a0,a5
+        j       .L258
+.L263:
+        li      a5,1
+        j       .L261
+.L241:
+        li      a6,1
+        li      a5,2
+        bgt     a0,zero,.L243
+        seqz    a5,a0
+        j       .L243
+.L250:
+        li      a5,1
+        j       .L243
+test_op_i18(int*, unsigned int*, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int):
+        addi    sp,sp,-64
+        sw      ra,60(sp)
+        mv      t4,a0
+        mv      t3,a1
+        li      a0,1
+        bne     a6,zero,.L322
+.L275:
+        bne     a2,zero,.L279
+        slli    a3,a3,2
+        add     a3,t4,a3
+        lw      a4,0(a3)
+        beq     a5,zero,.L323
+.L280:
+        div     a4,a4,a0
+        li      a5,1431654400
+        addi    a5,a5,1366
+        slli    a3,a7,1
+        add     a3,a3,a7
+        slli    a3,a3,2
+        add     a1,t3,a3
+        mulh    a5,a4,a5
+        srai    a3,a4,31
+        sub     a5,a5,a3
+        slli    a3,a5,1
+        add     a5,a3,a5
+        sub     a4,a4,a5
+        sw      a4,8(a1)
+.L274:
+        lw      ra,60(sp)
+        addi    sp,sp,64
+        jr      ra
+.L279:
+        li      a1,1
+        beq     a2,a1,.L324
+        li      a1,2
+        bne     a2,a1,.L274
+        slli    a3,a3,2
+        add     a3,t4,a3
+        sw      a4,16(sp)
+        sw      t4,12(sp)
+        lw      a0,0(a3)
+        bne     a5,zero,.L289
+        blt     a0,zero,.L290
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a0,a5
+        srai    a2,a0,31
+        li      a3,364
+        mv      a1,a6
+        add     a5,a5,a0
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a0,a0,a5
+        call    ternary_shift_18(int, int)
+        lw      a4,16(sp)
+        lw      t4,12(sp)
+        beq     a4,zero,.L274
+.L291:
+        blt     a0,zero,.L293
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a0,a5
+        srai    a2,a0,31
+        li      a3,364
+        add     a5,a5,a0
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a0,a0,a5
+.L293:
+        neg     a3,a0
+        li      a0,-1274331136
+        addi    a0,a0,181
+        mulh    a0,a3,a0
+        srai    a2,a3,31
+        li      a5,364
+        add     a0,a0,a3
+        srai    a0,a0,8
+        sub     a0,a0,a2
+        mul     a0,a0,a5
+        sub     a0,a0,a3
+.L292:
+        slli    a4,a4,2
+        add     a4,t4,a4
+        sw      a0,0(a4)
+        j       .L274
+.L322:
+        srli    t1,a6,31
+        add     t1,t1,a6
+        srai    t1,t1,1
+        beq     t1,zero,.L276
+        srai    a1,a6,31
+        andi    a1,a1,3
+        add     a1,a1,a6
+        srai    a1,a1,2
+        bne     a1,zero,.L325
+        andi    t1,t1,1
+        bne     t1,zero,.L278
+.L326:
+        mul     a0,a0,a0
+.L276:
+        andi    a1,a6,1
+        beq     a1,zero,.L275
+        slli    a1,a0,1
+        add     a0,a1,a0
+        j       .L275
+.L323:
+        blt     a4,zero,.L281
+        li      a3,-1274331136
+        addi    a3,a3,181
+        mulh    a3,a4,a3
+        srai    a2,a4,31
+        li      a5,364
+        add     a3,a3,a4
+        srai    a3,a3,8
+        sub     a3,a3,a2
+        mul     a3,a3,a5
+        sub     a4,a4,a3
+        j       .L280
+.L324:
+        slli    a3,a3,2
+        add     a3,t4,a3
+        mul     a7,a0,a7
+        lw      a3,0(a3)
+        beq     a5,zero,.L284
+        beq     a4,zero,.L274
+        li      a2,1431654400
+        addi    a2,a2,1366
+        div     a5,a3,a0
+        mulh    a2,a5,a2
+        srai    a1,a5,31
+        sub     a2,a2,a1
+        slli    a1,a2,1
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        sub     a3,a3,a5
+        add     a3,a3,a7
+.L285:
+        lw      ra,60(sp)
+        slli    a4,a4,2
+        add     a4,t4,a4
+        sw      a3,0(a4)
+        addi    sp,sp,64
+        jr      ra
+.L278:
+        slli    a1,a0,1
+        add     a1,a1,a0
+        mul     a0,a1,a1
+        j       .L276
+.L325:
+        li      a0,3
+        sw      a7,44(sp)
+        sw      a6,40(sp)
+        sw      a5,36(sp)
+        sw      a4,32(sp)
+        sw      a3,28(sp)
+        sw      a2,24(sp)
+        sw      t3,20(sp)
+        sw      t4,16(sp)
+        sw      t1,12(sp)
+        call    power(int, int) [clone .part.0]
+        lw      t1,12(sp)
+        mul     a0,a0,a0
+        lw      a7,44(sp)
+        andi    t1,t1,1
+        lw      a6,40(sp)
+        lw      a5,36(sp)
+        lw      a4,32(sp)
+        lw      a3,28(sp)
+        lw      a2,24(sp)
+        lw      t3,20(sp)
+        lw      t4,16(sp)
+        bne     t1,zero,.L278
+        j       .L326
+.L281:
+        neg     a4,a4
+        li      a3,1510318080
+        srli    a5,a4,2
+        addi    a3,a3,91
+        mulhu   a5,a5,a3
+        li      a3,364
+        srli    a5,a5,5
+        mul     a5,a5,a3
+        sub     a4,a5,a4
+        j       .L280
+.L284:
+        blt     a3,zero,.L286
+        beq     a4,zero,.L274
+        li      a2,-1274331136
+        addi    a2,a2,181
+        mulh    a2,a3,a2
+        srai    a6,a3,31
+        li      a5,364
+        li      a1,-1431654400
+        addi    a1,a1,-1365
+        add     a2,a2,a3
+        srai    a2,a2,8
+        sub     a2,a2,a6
+        mul     a2,a2,a5
+        sub     a2,a3,a2
+        div     a5,a2,a0
+        mulhu   a3,a5,a1
+        srli    a3,a3,1
+        slli    a1,a3,1
+        add     a3,a1,a3
+        sub     a5,a5,a3
+        sub     a2,a2,a5
+        add     a7,a2,a7
+.L287:
+        blt     a7,zero,.L288
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a7,a5
+        srai    a2,a7,31
+        li      a3,364
+        add     a5,a5,a7
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a7,a7,a5
+.L288:
+        li      a3,-1274331136
+        neg     a7,a7
+        addi    a3,a3,181
+        mulh    a3,a7,a3
+        srai    a2,a7,31
+        li      a5,364
+        add     a3,a3,a7
+        srai    a3,a3,8
+        sub     a3,a3,a2
+        mul     a3,a3,a5
+        sub     a3,a3,a7
+        j       .L285
+.L289:
+        mv      a1,a6
+        call    ternary_shift_18(int, int)
+        lw      a4,16(sp)
+        lw      t4,12(sp)
+        bne     a4,zero,.L292
+        j       .L274
+.L290:
+        neg     a0,a0
+        li      a3,1510318080
+        srli    a5,a0,2
+        addi    a3,a3,91
+        mulhu   a5,a5,a3
+        li      a3,364
+        mv      a1,a6
+        srli    a5,a5,5
+        mul     a5,a5,a3
+        sub     a0,a5,a0
+        call    ternary_shift_18(int, int)
+        lw      a4,16(sp)
+        lw      t4,12(sp)
+        bne     a4,zero,.L291
+        j       .L274
+.L286:
+        beq     a4,zero,.L274
+        neg     a3,a3
+        li      a2,1510318080
+        srli    a5,a3,2
+        addi    a2,a2,91
+        mulhu   a5,a5,a2
+        li      a1,364
+        li      a2,1431654400
+        addi    a2,a2,1366
+        srli    a5,a5,5
+        mul     a5,a5,a1
+        sub     a3,a5,a3
+        div     a5,a3,a0
+        mulh    a2,a5,a2
+        srai    a1,a5,31
+        sub     a2,a2,a1
+        slli    a1,a2,1
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        sub     a3,a3,a5
+        add     a7,a3,a7
+        j       .L287
+alu_op_f18(unsigned int, float, float, unsigned int*, unsigned int):
+        li      a5,21
+        beq     a0,a5,.L328
+        bgtu    a0,a5,.L329
+        li      a5,18
+        beq     a0,a5,.L330
+        li      a5,19
+        bne     a0,a5,.L346
+        fsub.s  fa1,fa0,fa1
+.L334:
+        lui     a5,%hi(.LC2)
+        fld     fa4,%lo(.LC2)(a5)
+        fcvt.d.s        fa5,fa1
+        fgt.d   a5,fa5,fa4
+        bne     a5,zero,.L336
+        lui     a5,%hi(.LC3)
+        fld     fa4,%lo(.LC3)(a5)
+        flt.d   a5,fa5,fa4
+        beq     a5,zero,.L342
+        lui     a5,%hi(.LC0)
+        flw     fa5,%lo(.LC0)(a5)
+        li      a4,0
+        li      a3,0
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.s.wu       fa0,a5
+        slli    a5,a2,1
+        add     a5,a5,a2
+        slli    a5,a5,2
+        add     a1,a1,a5
+        sw      a3,0(a1)
+        sw      a4,4(a1)
+        ret
+.L329:
+        li      a5,22
+        bne     a0,a5,.L346
+        fmv.s.x fa5,zero
+        feq.s   a5,fa1,fa5
+        beq     a5,zero,.L335
+        fge.s   a5,fa0,fa5
+        beq     a5,zero,.L347
+.L336:
+        lui     a5,%hi(.LC1)
+        flw     fa5,%lo(.LC1)(a5)
+        li      a4,2
+        mv      a3,a4
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.s.wu       fa0,a5
+.L337:
+        slli    a5,a2,1
+        add     a5,a5,a2
+        slli    a5,a5,2
+        add     a1,a1,a5
+        sw      a3,0(a1)
+        sw      a4,4(a1)
+        ret
+.L346:
+        fmv.s.x fa0,zero
+        li      a3,1
+        li      a4,0
+.L348:
+        slli    a5,a2,1
+        add     a5,a5,a2
+        slli    a5,a5,2
+        add     a1,a1,a5
+        sw      a3,0(a1)
+        sw      a4,4(a1)
+        ret
+.L328:
+        fmul.s  fa1,fa1,fa0
+        j       .L334
+.L330:
+        fadd.s  fa1,fa1,fa0
+        j       .L334
+.L342:
+        fcvt.wu.s a5,fa1,rtz
+        fmv.s.x fa5,zero
+        li      a3,2
+        fcvt.s.wu       fa0,a5
+        fgt.s   a5,fa1,fa5
+        bne     a5,zero,.L337
+        flt.s   a3,fa1,fa5
+        li      a4,0
+        xori    a3,a3,1
+        j       .L348
+.L335:
+        fdiv.s  fa1,fa0,fa1
+        j       .L334
+.L347:
+        lui     a5,%hi(.LC0)
+        flw     fa5,%lo(.LC0)(a5)
+        li      a3,0
+        li      a4,0
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.s.wu       fa0,a5
+        j       .L348
+move_regs(int*, float*, unsigned int, unsigned int, unsigned int, unsigned int):
+        li      a5,1
+        beq     a4,a5,.L350
+        li      a5,3
+        bne     a4,a5,.L356
+        beq     a2,zero,.L349
+        slli    a3,a3,2
+        add     a1,a1,a3
+        flw     fa5,0(a1)
+        add     a0,a0,a3
+        fcvt.w.s a5,fa5,rtz
+        sw      a5,0(a0)
+.L349:
+        ret
+.L356:
+        ret
+.L350:
+        slli    a3,a3,2
+        add     a0,a0,a3
+        lw      a5,0(a0)
+        add     a1,a1,a3
+        fcvt.s.w        fa5,a5
+        fsw     fa5,0(a1)
+        ret
+.LC4:
+        .string "Control characters are unimplemented!"
+.LC5:
+        .string "Characters > 98 are unimplemented!"
+bin_to_ternchar(int):
+        addi    sp,sp,-16
+        sw      ra,12(sp)
+        blt     a0,zero,.L368
+        beq     a0,zero,.L359
+        li      a5,26
+        ble     a0,a5,.L369
+        li      a5,27
+        beq     a0,a5,.L366
+        li      a5,53
+        ble     a0,a5,.L370
+        li      a5,63
+        ble     a0,a5,.L371
+        addi    a0,a0,-64
+        li      a5,34
+        bgtu    a0,a5,.L365
+        lui     a5,%hi(.LANCHOR0)
+        addi    a5,a5,%lo(.LANCHOR0)
+        add     a5,a5,a0
+        lb      a0,0(a5)
+        j       .L357
+.L369:
+        addi    a0,a0,64
+.L357:
+        lw      ra,12(sp)
+        addi    sp,sp,16
+        jr      ra
+.L371:
+        addi    a0,a0,-6
+        j       .L357
+.L368:
+        lui     a0,%hi(.LC4)
+        addi    a0,a0,%lo(.LC4)
+        call    puts
+.L359:
+        li      a0,0
+.L372:
+        lw      ra,12(sp)
+        addi    sp,sp,16
+        jr      ra
+.L370:
+        lw      ra,12(sp)
+        addi    a0,a0,69
+        addi    sp,sp,16
+        jr      ra
+.L365:
+        lui     a0,%hi(.LC5)
+        addi    a0,a0,%lo(.LC5)
+        call    puts
+        li      a0,0
+        j       .L372
+.L366:
+        li      a0,32
+        j       .L357
+.LC6:
+        .string "R%02d-%02d:"
+.LC7:
+        .string " %10d"
+.LC8:
+        .string "  Flag bank %d:"
+.LC9:
+        .string " %2d"
+print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*):
+        addi    sp,sp,-32
+        sw      s1,20(sp)
+        sw      s2,16(sp)
+        sw      s3,12(sp)
+        sw      s4,8(sp)
+        sw      s5,4(sp)
+        sw      s6,0(sp)
+        sw      ra,28(sp)
+        sw      s0,24(sp)
+        addi    s1,a0,36
+        mv      s6,a2
+        li      s3,0
+        lui     s5,%hi(.LC6)
+        lui     s2,%hi(.LC7)
+        li      s4,9
+.L375:
+        addi    a2,s3,9
+        mv      a1,s3
+        addi    a0,s5,%lo(.LC6)
+        call    printf
+        addi    s0,s1,-36
+.L374:
+        lw      a1,0(s0)
+        addi    a0,s2,%lo(.LC7)
+        addi    s0,s0,4
+        call    printf
+        bne     s0,s1,.L374
+        li      a0,10
+        addi    s3,s3,3
+        call    putchar
+        addi    s1,s0,36
+        bne     s3,s4,.L375
+        mv      s3,s6
+        li      s2,0
+        lui     s6,%hi(.LC8)
+        lui     s5,%hi(.LC9)
+        li      s4,3
+.L377:
+        mv      a1,s2
+        addi    a0,s6,%lo(.LC8)
+        call    printf
+        mv      s1,s3
+        li      s0,0
+.L376:
+        lw      a1,0(s1)
+        addi    a0,s5,%lo(.LC9)
+        addi    s0,s0,1
+        call    printf
+        addi    s1,s1,4
+        bne     s0,s4,.L376
+        addi    s2,s2,1
+        addi    s3,s3,12
+        bne     s2,s0,.L377
+        lw      s0,24(sp)
+        lw      ra,28(sp)
+        lw      s1,20(sp)
+        lw      s2,16(sp)
+        lw      s3,12(sp)
+        lw      s4,8(sp)
+        lw      s5,4(sp)
+        lw      s6,0(sp)
+        li      a0,10
+        addi    sp,sp,32
+        tail    putchar
+.LC13:
+        .string "exponent: %0.3f, mantissa: %0.3f, scaled_mantissa: %0.3f, max_f18: %0.20f\n"
+calc_limits():
+        lui     a5,%hi(.LC14)
+        fld     fa5,%lo(.LC14)(a5)
+        lui     a4,%hi(.LC10)
+        lui     a5,%hi(.LC11)
+        lui     a3,%hi(.LC12)
+        lw      a6,%lo(.LC10)(a4)
+        lw      a7,%lo(.LC10+4)(a4)
+        lw      a2,%lo(.LC12)(a3)
+        lw      a4,%lo(.LC11)(a5)
+        lw      a3,%lo(.LC12+4)(a3)
+        lw      a5,%lo(.LC11+4)(a5)
+        addi    sp,sp,-32
+        lui     a0,%hi(.LC13)
+        fsd     fa5,0(sp)
+        addi    a0,a0,%lo(.LC13)
+        sw      ra,28(sp)
+        call    printf
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        jr      ra
+init_cpu(int*, unsigned int*, float*, unsigned int*):
+        addi    sp,sp,-16
+        addi    a5,a0,107
+        sw      s0,8(sp)
+        sw      s1,4(sp)
+        sw      s2,0(sp)
+        sw      ra,12(sp)
+        sub     a5,a5,a2
+        li      a4,214
+        mv      s0,a2
+        mv      s2,a1
+        mv      s1,a3
+        bleu    a5,a4,.L386
+        li      a2,108
+        li      a1,0
+        call    memset
+        mv      a0,s0
+        li      a2,108
+        li      a1,0
+        call    memset
+        addi    a5,s2,35
+        sub     a5,a5,s1
+        li      a4,70
+        bleu    a5,a4,.L389
+.L392:
+        mv      a0,s2
+        li      a2,36
+        li      a1,0
+        call    memset
+        lw      s0,8(sp)
+        lw      ra,12(sp)
+        lw      s2,0(sp)
+        mv      a0,s1
+        lw      s1,4(sp)
+        li      a2,36
+        li      a1,0
+        addi    sp,sp,16
+        tail    memset
+.L386:
+        addi    a5,a0,108
+.L388:
+        sw      zero,0(a0)
+        sw      zero,0(a2)
+        addi    a0,a0,4
+        addi    a2,a2,4
+        bne     a5,a0,.L388
+        addi    a5,s2,35
+        sub     a5,a5,s1
+        li      a4,70
+        bgtu    a5,a4,.L392
+.L389:
+        sw      zero,0(s2)
+        sw      zero,0(s1)
+        sw      zero,4(s2)
+        sw      zero,4(s1)
+        sw      zero,8(s2)
+        sw      zero,8(s1)
+        sw      zero,12(s2)
+        sw      zero,12(s1)
+        sw      zero,16(s2)
+        sw      zero,16(s1)
+        sw      zero,20(s2)
+        sw      zero,20(s1)
+        sw      zero,24(s2)
+        sw      zero,24(s1)
+        sw      zero,28(s2)
+        sw      zero,28(s1)
+        lw      ra,12(sp)
+        lw      s0,8(sp)
+        sw      zero,32(s2)
+        sw      zero,32(s1)
+        lw      s2,0(sp)
+        lw      s1,4(sp)
+        addi    sp,sp,16
+        jr      ra
+.LC15:
+        .string "Called syscallr(1): HALT"
+.LC16:
+        .string "Called syscallr(2): INPUT"
+.LC17:
+        .string "Called syscallr(3): ICOUNT"
+.LC18:
+        .string "Called syscallr(4): OUTPUT"
+.LC19:
+        .string "Called syscallr(5): OCOUNT"
+.LC20:
+        .string "Called syscallr(6): DUMP"
+sim(unsigned int*, union_instruction*, int*, int*):
+        addi    sp,sp,-416
+        sw      s1,404(sp)
+        addi    s1,sp,112
+        sw      s0,408(sp)
+        sw      s3,396(sp)
+        mv      s0,a1
+        sw      s4,392(sp)
+        li      a1,0
+        mv      s4,a0
+        mv      s3,a2
+        mv      a0,s1
+        li      a2,108
+        sw      ra,412(sp)
+        sw      s5,388(sp)
+        mv      s5,a3
+        call    memset
+        li      a2,108
+        li      a1,0
+        addi    a0,sp,240
+        call    memset
+        lbu     a5,0(s0)
+        addi    t4,sp,40
+        addi    t5,sp,76
+        sw      zero,40(sp)
+        sw      zero,76(sp)
+        sw      zero,4(t4)
+        sw      zero,8(t4)
+        sw      zero,12(t4)
+        sw      zero,16(t4)
+        sw      zero,20(t4)
+        sw      zero,24(t4)
+        sw      zero,28(t4)
+        sw      zero,32(t4)
+        sw      zero,4(t5)
+        sw      zero,8(t5)
+        sw      zero,12(t5)
+        sw      zero,16(t5)
+        sw      zero,20(t5)
+        sw      zero,24(t5)
+        sw      zero,28(t5)
+        sw      zero,32(t5)
+        li      a7,25
+        lbu     a0,1(s0)
+        lbu     t6,2(s0)
+        lbu     t1,3(s0)
+        lbu     a2,4(s0)
+        lbu     a4,5(s0)
+        lbu     a3,6(s0)
+        lbu     a1,7(s0)
+        lw      a6,8(s0)
+        bgtu    a5,a7,.L693
+        lui     a7,%hi(.L396)
+        slli    a5,a5,2
+        addi    a7,a7,%lo(.L396)
+        add     a5,a5,a7
+        lw      a5,0(a5)
+        sw      s8,376(sp)
+        jr      a5
+.L396:
+        .word   .L596
+        .word   .L597
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L598
+        .word   .L598
+        .word   .L810
+        .word   .L599
+        .word   .L600
+        .word   .L810
+        .word   .L601
+        .word   .L404
+        .word   .L810
+        .word   .L403
+        .word   .L402
+        .word   .L602
+        .word   .L400
+        .word   .L603
+        .word   .L604
+        .word   .L605
+        .word   .L606
+.L810:
+        sw      s2,400(sp)
+.L394:
+        li      a0,-1
+        sw      s6,384(sp)
+        sw      s7,380(sp)
+        call    exit
+.L598:
+        mv      t3,s0
+        li      t0,0
+.L455:
+        slli    a5,t1,2
+        add     a5,s1,a5
+        lw      a1,0(a5)
+        bne     a3,zero,.L456
+        blt     a1,zero,.L457
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a1,a5
+        srai    a2,a1,31
+        li      a3,364
+        add     a5,a5,a1
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a5,a1,a5
+.L458:
+        mv      a3,t4
+        mv      a2,a6
+        mv      a1,a5
+        sw      t6,20(sp)
+        sw      t0,16(sp)
+        sw      t3,12(sp)
+        sw      a6,8(sp)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        lw      t6,20(sp)
+        lw      a6,8(sp)
+        lw      t3,12(sp)
+        lw      t0,16(sp)
+        addi    t4,sp,40
+        li      a7,25
+        addi    t5,sp,76
+        beq     t6,zero,.L592
+        blt     a0,zero,.L459
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a0,a5
+        srai    a3,a0,31
+        li      a4,364
+        add     a5,a5,a0
+        srai    a5,a5,8
+        sub     a5,a5,a3
+        mul     a5,a5,a4
+        sub     a0,a0,a5
+.L459:
+        neg     a4,a0
+        li      a0,-1274331136
+        addi    a0,a0,181
+        mulh    a0,a4,a0
+        srai    a3,a4,31
+        li      a5,364
+        add     a0,a0,a4
+        srai    a0,a0,8
+        sub     a0,a0,a3
+        mul     a0,a0,a5
+        sub     a0,a0,a4
+.L591:
+        slli    a5,t6,2
+        add     a5,s1,a5
+        sw      a0,0(a5)
+.L592:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L460)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L460)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L460:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L404:
+        mv      t3,s0
+        li      t0,0
+.L446:
+        li      a7,25
+.L522:
+        beq     t6,zero,.L523
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        sub     a3,t3,s0
+        mulhu   a3,a3,a5
+        li      a5,-1319075840
+        addi    a5,a5,469
+        li      a1,387420160
+        addi    a1,a1,329
+        slli    a2,t6,2
+        add     a2,s1,a2
+        srli    a3,a3,3
+        slli    a4,a3,1
+        add     a4,a4,a3
+        add     a4,a4,a6
+        addi    a4,a4,-3
+        mulh    a5,a4,a5
+        srai    a3,a4,31
+        add     a5,a5,a4
+        srai    a5,a5,28
+        sub     a5,a5,a3
+        mul     a5,a5,a1
+        sub     a4,a4,a5
+        sw      a4,0(a2)
+.L523:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L524)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L524)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L524:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L522
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L403:
+        sw      s2,400(sp)
+        mv      t3,s0
+        li      t0,0
+.L493:
+        li      t2,387420160
+        li      a7,1431654400
+        addi    t2,t2,329
+        addi    a7,a7,1366
+.L525:
+        li      a4,-1431654400
+        sub     a5,t3,s0
+        addi    a4,a4,-1365
+        mulhu   a5,a5,a4
+        li      a4,-1319075840
+        addi    a4,a4,469
+        li      s2,25
+        addi    t0,t0,1
+        srli    a5,a5,3
+        slli    a3,a5,1
+        add     a3,a3,a5
+        add     a5,a6,a3
+        addi    a5,a5,-3
+        mulh    a4,a5,a4
+        srai    a2,a5,31
+        sw      a3,116(sp)
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a2
+        mul     a4,a4,t2
+        sub     a5,a5,a4
+        mulh    a4,a5,a7
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,s2,.L394
+        lui     s2,%hi(.L526)
+        slli    a5,a5,2
+        addi    s2,s2,%lo(.L526)
+        add     a5,a5,s2
+        lw      a5,0(a5)
+        jr      a5
+.L526:
+        .word   .L792
+        .word   .L793
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L794
+        .word   .L794
+        .word   .L394
+        .word   .L795
+        .word   .L796
+        .word   .L394
+        .word   .L797
+        .word   .L798
+        .word   .L394
+        .word   .L525
+        .word   .L444
+        .word   .L799
+        .word   .L467
+        .word   .L399
+        .word   .L461
+        .word   .L800
+        .word   .L801
+.L604:
+        sw      s2,400(sp)
+        mv      t3,s0
+        li      t0,0
+.L461:
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        mulhu   a5,a6,a5
+        srli    s2,a5,1
+.L554:
+        slli    a5,t1,2
+        add     a5,s1,a5
+        li      a3,6
+        lw      a5,0(a5)
+        bgtu    s2,a3,.L555
+        lui     a3,%hi(.L557)
+        addi    a3,a3,%lo(.L557)
+        slli    a4,s2,2
+        add     a4,a4,a3
+        lw      a4,0(a4)
+        jr      a4
+.L557:
+        .word   .L555
+        .word   .L562
+        .word   .L561
+        .word   .L560
+        .word   .L559
+        .word   .L558
+        .word   .L556
+.L402:
+        sw      s2,400(sp)
+        mv      t3,s0
+        li      t0,0
+.L444:
+        li      t2,387420160
+        li      a7,1431654400
+        addi    t2,t2,329
+        addi    a7,a7,1366
+.L527:
+        li      a5,-1431654400
+        sub     a4,t3,s0
+        addi    a5,a5,-1365
+        mulhu   a4,a4,a5
+        li      s2,25
+        addi    t0,t0,1
+        srli    a4,a4,3
+        slli    a5,a4,1
+        add     a5,a5,a4
+        add     a5,a6,a5
+        li      a4,-1319075840
+        addi    a5,a5,-6
+        addi    a4,a4,469
+        mulh    a4,a5,a4
+        srai    a3,a5,31
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a3
+        mul     a4,a4,t2
+        sub     a5,a5,a4
+        mulh    a4,a5,a7
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,s2,.L394
+        lui     s2,%hi(.L528)
+        slli    a5,a5,2
+        addi    s2,s2,%lo(.L528)
+        add     a5,a5,s2
+        lw      a5,0(a5)
+        jr      a5
+.L528:
+        .word   .L792
+        .word   .L793
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L794
+        .word   .L794
+        .word   .L394
+        .word   .L795
+        .word   .L796
+        .word   .L394
+        .word   .L797
+        .word   .L798
+        .word   .L394
+        .word   .L493
+        .word   .L527
+        .word   .L799
+        .word   .L467
+        .word   .L399
+        .word   .L461
+        .word   .L800
+        .word   .L801
+.L603:
+        sw      s2,400(sp)
+        li      t0,0
+.L399:
+        li      t2,387420160
+        li      a7,1431654400
+        addi    t2,t2,329
+        addi    a7,a7,1366
+.L548:
+        slli    a5,t1,2
+        add     a5,s1,a5
+        lw      a5,0(a5)
+        li      a4,-1319075840
+        addi    a4,a4,469
+        add     a5,a6,a5
+        mulh    a4,a5,a4
+        srai    a3,a5,31
+        li      s2,25
+        addi    t0,t0,1
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a3
+        mul     a4,a4,t2
+        sub     a5,a5,a4
+        mulh    a4,a5,a7
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,s2,.L394
+        lui     s2,%hi(.L549)
+        slli    a5,a5,2
+        addi    s2,s2,%lo(.L549)
+        add     a5,a5,s2
+        lw      a5,0(a5)
+        jr      a5
+.L549:
+        .word   .L792
+        .word   .L793
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L794
+        .word   .L794
+        .word   .L394
+        .word   .L795
+        .word   .L796
+        .word   .L394
+        .word   .L797
+        .word   .L798
+        .word   .L394
+        .word   .L493
+        .word   .L444
+        .word   .L799
+        .word   .L467
+        .word   .L548
+        .word   .L461
+        .word   .L800
+        .word   .L801
+.L400:
+        sw      s2,400(sp)
+        mv      t3,s0
+        li      t0,0
+.L467:
+        li      t2,387420160
+        li      a7,1431654400
+        addi    t2,t2,329
+        addi    a7,a7,1366
+.L546:
+        li      a4,-1431654400
+        sub     a5,t3,s0
+        addi    a4,a4,-1365
+        mulhu   a5,a5,a4
+        slli    a4,t1,2
+        add     a4,s1,a4
+        li      s2,25
+        addi    t0,t0,1
+        srli    a5,a5,3
+        slli    a3,a5,1
+        add     a5,a3,a5
+        sw      a5,116(sp)
+        lw      a5,0(a4)
+        li      a4,-1319075840
+        addi    a4,a4,469
+        add     a5,a6,a5
+        mulh    a4,a5,a4
+        srai    a3,a5,31
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a3
+        mul     a4,a4,t2
+        sub     a5,a5,a4
+        mulh    a4,a5,a7
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,s2,.L394
+        lui     s2,%hi(.L547)
+        slli    a5,a5,2
+        addi    s2,s2,%lo(.L547)
+        add     a5,a5,s2
+        lw      a5,0(a5)
+        jr      a5
+.L547:
+        .word   .L792
+        .word   .L793
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L794
+        .word   .L794
+        .word   .L394
+        .word   .L795
+        .word   .L796
+        .word   .L394
+        .word   .L797
+        .word   .L798
+        .word   .L394
+        .word   .L493
+        .word   .L444
+        .word   .L799
+        .word   .L546
+        .word   .L399
+        .word   .L461
+        .word   .L800
+        .word   .L801
+.L596:
+        mv      t3,s0
+        li      t0,0
+.L412:
+        li      t2,17
+.L413:
+        bleu    a0,t2,.L826
+        li      a5,26
+        bleu    a0,a5,.L827
+        li      a5,27
+        beq     a0,a5,.L828
+.L417:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        li      a7,25
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        addi    t3,t3,12
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     a7,%hi(.L438)
+        slli    a5,a5,2
+        addi    a7,a7,%lo(.L438)
+        add     a5,a5,a7
+        lw      a5,0(a5)
+        jr      a5
+.L438:
+        .word   .L413
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L601:
+        mv      t3,s0
+        li      t0,0
+.L405:
+        li      t2,25
+.L515:
+        beq     t6,zero,.L516
+        slli    a5,t6,2
+        add     a5,s1,a5
+        sw      a6,0(a5)
+.L516:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,t2,.L810
+        lui     a7,%hi(.L517)
+        slli    a5,a5,2
+        addi    a7,a7,%lo(.L517)
+        add     a5,a5,a7
+        lw      a5,0(a5)
+        jr      a5
+.L517:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L515
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L600:
+        mv      t3,s0
+        li      t0,0
+.L494:
+        li      a7,25
+.L495:
+        bne     a0,zero,.L496
+        slli    t6,t1,2
+        add     t6,s1,t6
+        lw      a1,0(t6)
+        slli    a5,a2,2
+        add     a5,s1,a5
+        lw      a2,0(a5)
+        add     t2,a6,a1
+        bne     a3,zero,.L497
+        blt     a2,zero,.L498
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a2,a5
+        sw      s2,400(sp)
+        srai    s2,a2,31
+        li      a0,364
+        add     a5,a5,a2
+        srai    a5,a5,8
+        sub     a5,a5,s2
+        mul     a5,a5,a0
+        lw      s2,400(sp)
+        sub     a2,a2,a5
+.L497:
+        li      a5,1
+        beq     a4,a5,.L829
+        li      a5,532480
+        addi    a5,a5,-1039
+        bne     a4,zero,.L502
+        bgtu    t2,a5,.L505
+        mv      a1,t2
+        mv      a0,s3
+        sw      t1,28(sp)
+        sw      t6,24(sp)
+        sw      t0,20(sp)
+        sw      a6,16(sp)
+        sw      t3,12(sp)
+        sw      t2,8(sp)
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        lw      t1,28(sp)
+        lw      t6,24(sp)
+        lw      t0,20(sp)
+        lw      a6,16(sp)
+        lw      t3,12(sp)
+        lw      t2,8(sp)
+        addi    t5,sp,76
+        addi    t4,sp,40
+        li      a7,25
+.L505:
+        beq     t1,zero,.L501
+        sw      t2,0(t6)
+        j       .L501
+.L599:
+        mv      t3,s0
+        li      t0,0
+.L468:
+        li      a7,25
+.L469:
+        bne     a0,zero,.L470
+        slli    t2,t1,2
+        add     t2,s1,t2
+        lw      a1,0(t2)
+        sw      s2,400(sp)
+        li      a5,1
+        add     s2,a6,a1
+        beq     a4,a5,.L830
+        sw      t6,28(sp)
+        sw      t1,24(sp)
+        sw      t2,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        mv      a2,a3
+        bne     a4,zero,.L473
+        mv      a1,s2
+.L473:
+        mv      a0,s3
+        call    get_dmem_i(int*, int, unsigned int)
+        lw      t1,24(sp)
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        lw      t6,28(sp)
+        mv      a5,a0
+        li      a7,25
+        addi    t4,sp,40
+        addi    t5,sp,76
+        beq     t1,zero,.L472
+        lw      t2,20(sp)
+        sw      s2,0(t2)
+.L472:
+        beq     t6,zero,.L716
+        slli    a4,t6,2
+        lw      s2,400(sp)
+        add     a4,s1,a4
+        sw      a5,0(a4)
+.L478:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L488)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L488)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L488:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L469
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L597:
+        mv      t3,s0
+        li      t0,0
+.L448:
+        mv      a5,a3
+        mv      a2,a0
+        mv      a3,t1
+        mv      a7,a4
+        mv      a1,t4
+        mv      a4,t6
+        mv      a0,s1
+        sw      t0,16(sp)
+        sw      t3,12(sp)
+        sw      a6,8(sp)
+        call    test_op_i18(int*, unsigned int*, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int)
+        lw      t3,12(sp)
+        lw      t0,16(sp)
+        li      t2,25
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,t2,.L810
+        lui     a7,%hi(.L449)
+        slli    a5,a5,2
+        addi    a7,a7,%lo(.L449)
+        add     a5,a5,a7
+        lw      a5,0(a5)
+        lw      a6,8(sp)
+        addi    t4,sp,40
+        addi    t5,sp,76
+        jr      a5
+.L449:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L602:
+        mv      t3,s0
+        li      t0,0
+.L463:
+        li      a7,-1431654400
+        addi    a7,a7,-1365
+        mulhu   a7,a6,a7
+        srli    a7,a7,1
+.L529:
+        sw      a1,8(sp)
+        li      a5,4
+        beq     a7,a5,.L530
+        li      a4,6
+        beq     a7,a4,.L531
+        li      a4,1
+        beq     a7,a4,.L831
+.L532:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        li      t2,25
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        addi    t3,t3,12
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,t2,.L810
+        lui     t2,%hi(.L541)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L541)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L541:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L529
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L605:
+        mv      t3,s0
+        li      t0,0
+.L397:
+        li      a7,25
+.L576:
+        slli    a5,a4,1
+        add     a5,a5,a4
+        add     a5,a5,a1
+        slli    a5,a5,2
+        add     a5,t4,a5
+        lw      a5,0(a5)
+        beq     a3,a5,.L832
+        addi    t3,t3,12
+.L578:
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        addi    t0,t0,1
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L579)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L579)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L579:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L576
+        .word   .L395
+.L606:
+        mv      t3,s0
+        li      t0,0
+.L395:
+        li      a7,25
+.L411:
+        slli    a5,a4,1
+        add     a5,a5,a4
+        add     a5,a5,a1
+        slli    a5,a5,2
+        add     a5,t5,a5
+        lw      a5,0(a5)
+        beq     a3,a5,.L833
+        addi    t3,t3,12
+.L585:
+        lw      t1,0(t3)
+        lw      a1,4(t3)
+        addi    t0,t0,1
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L586)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L586)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L586:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L494
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L411
+.L693:
+        sw      s2,400(sp)
+        sw      s8,376(sp)
+        j       .L394
+.L456:
+        mv      a3,t4
+        mv      a2,a6
+        sw      t6,20(sp)
+        sw      t0,16(sp)
+        sw      t3,12(sp)
+        sw      a6,8(sp)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        lw      t6,20(sp)
+        lw      a6,8(sp)
+        lw      t3,12(sp)
+        lw      t0,16(sp)
+        addi    t4,sp,40
+        li      a7,25
+        addi    t5,sp,76
+        bne     t6,zero,.L591
+        j       .L592
+.L558:
+        lui     a0,%hi(.LC19)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        addi    a0,a0,%lo(.LC19)
+.L821:
+        call    puts
+.L822:
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        addi    t4,sp,40
+        addi    t5,sp,76
+.L555:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        li      a7,25
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        addi    t3,t3,12
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L394
+        lui     a7,%hi(.L571)
+        slli    a5,a5,2
+        addi    a7,a7,%lo(.L571)
+        add     a5,a5,a7
+        lw      a5,0(a5)
+        jr      a5
+.L571:
+        .word   .L792
+        .word   .L793
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L794
+        .word   .L794
+        .word   .L394
+        .word   .L795
+        .word   .L796
+        .word   .L394
+        .word   .L797
+        .word   .L798
+        .word   .L394
+        .word   .L493
+        .word   .L444
+        .word   .L799
+        .word   .L467
+        .word   .L399
+        .word   .L554
+        .word   .L800
+        .word   .L801
+.L496:
+        li      a5,1
+        beq     a0,a5,.L834
+.L501:
+        lw      t1,12(t3)
+        lw      a1,16(t3)
+        addi    t3,t3,12
+        srli    a0,t1,8
+        srli    t6,t1,16
+        srli    a4,a1,8
+        srli    a3,a1,16
+        andi    a5,t1,0xff
+        andi    a2,a1,0xff
+        addi    t0,t0,1
+        andi    a0,a0,0xff
+        andi    t6,t6,0xff
+        andi    a4,a4,0xff
+        andi    a3,a3,0xff
+        srli    t1,t1,24
+        srli    a1,a1,24
+        bgtu    a5,a7,.L810
+        lui     t2,%hi(.L510)
+        slli    a5,a5,2
+        addi    t2,t2,%lo(.L510)
+        add     a5,a5,t2
+        lw      a5,0(a5)
+        jr      a5
+.L510:
+        .word   .L412
+        .word   .L448
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L455
+        .word   .L455
+        .word   .L810
+        .word   .L468
+        .word   .L495
+        .word   .L810
+        .word   .L405
+        .word   .L446
+        .word   .L810
+        .word   .L811
+        .word   .L812
+        .word   .L463
+        .word   .L813
+        .word   .L814
+        .word   .L815
+        .word   .L397
+        .word   .L395
+.L470:
+        li      a5,1
+        bne     a0,a5,.L478
+        slli    a2,t1,2
+        add     a2,s1,a2
+        lw      a1,0(a2)
+        li      a5,1431654400
+        addi    a5,a5,1366
+        add     a3,a6,a1
+        beq     a4,a0,.L835
+        bne     a4,zero,.L482
+        mulh    a5,a3,a5
+        srai    a4,a3,31
+        fmv.s.x fa5,zero
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a3,a4,.L485
+.L824:
+        li      a4,532480
+        addi    a4,a4,-1039
+        bgtu    a5,a4,.L485
+        slli    a5,a5,2
+        add     a5,s3,a5
+        flw     fa5,0(a5)
+.L485:
+        beq     t1,zero,.L481
+        sw      a3,0(a2)
+.L481:
+        slli    a5,t6,2
+        add     a5,sp,a5
+        fsw     fa5,240(a5)
+        j       .L478
+.L457:
+        neg     a1,a1
+        li      a3,1510318080
+        addi    a3,a3,91
+        srli    a5,a1,2
+        mulhu   a5,a5,a3
+        li      a3,364
+        srli    a5,a5,5
+        mul     a5,a5,a3
+        sub     a5,a5,a1
+        j       .L458
+.L826:
+        slli    a5,a2,2
+        slli    t1,t1,2
+        add     a2,s1,t1
+        add     a5,s1,a5
+        lw      a1,0(a2)
+        lw      a2,0(a5)
+        beq     a3,zero,.L415
+        mv      a3,t4
+        sw      t6,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        lw      t6,20(sp)
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        mv      a5,a0
+        addi    t4,sp,40
+        li      t2,17
+        addi    t5,sp,76
+        beq     t6,zero,.L417
+.L416:
+        slli    a4,t6,2
+        add     a4,s1,a4
+        sw      a5,0(a4)
+        j       .L417
+.L831:
+        lui     a0,%hi(.LC15)
+        addi    a0,a0,%lo(.LC15)
+        sw      t0,12(sp)
+        call    puts
+        lw      t0,12(sp)
+        lw      a5,8(sp)
+.L533:
+        lw      ra,412(sp)
+        lw      s0,408(sp)
+        sw      a5,0(s5)
+        lw      s8,376(sp)
+        lw      s1,404(sp)
+        lw      s3,396(sp)
+        lw      s4,392(sp)
+        lw      s5,388(sp)
+        mv      a0,t0
+        addi    sp,sp,416
+        jr      ra
+.L502:
+        bgtu    a1,a5,.L505
+        mv      a0,s3
+        sw      t1,28(sp)
+        sw      t6,24(sp)
+        sw      t2,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        lw      t1,28(sp)
+        lw      t6,24(sp)
+        lw      t2,20(sp)
+        lw      t0,16(sp)
+        lw      a6,12(sp)
+        lw      t3,8(sp)
+        addi    t5,sp,76
+        addi    t4,sp,40
+        li      a7,25
+        j       .L505
+.L830:
+        mv      a2,a3
+        mv      a1,s2
+        mv      a0,s3
+        sw      t6,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    get_dmem_i(int*, int, unsigned int)
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        lw      t6,20(sp)
+        mv      a5,a0
+        li      a7,25
+        addi    t4,sp,40
+        addi    t5,sp,76
+        j       .L472
+.L559:
+        lui     a0,%hi(.LC18)
+        addi    a0,a0,%lo(.LC18)
+        sw      a5,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    puts
+        lw      a5,20(sp)
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        blt     a5,zero,.L836
+        beq     a5,zero,.L564
+        li      a4,26
+        ble     a5,a4,.L837
+        li      a4,27
+        beq     a5,a4,.L638
+        li      a4,53
+        ble     a5,a4,.L838
+        li      a4,63
+        ble     a5,a4,.L839
+        addi    a4,a5,-64
+        li      a5,34
+        bgtu    a4,a5,.L570
+        lui     a5,%hi(.LANCHOR0)
+        addi    a5,a5,%lo(.LANCHOR0)
+        add     a5,a5,a4
+        lb      a5,0(a5)
+.L566:
+        lui     a4,%hi(stdout)
+        lw      a1,%lo(stdout)(a4)
+        mv      a0,a5
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    putc
+        j       .L822
+.L560:
+        lui     a0,%hi(.LC17)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        addi    a0,a0,%lo(.LC17)
+        j       .L821
+.L562:
+        lui     a0,%hi(.LC15)
+        addi    a0,a0,%lo(.LC15)
+        sw      a5,12(sp)
+        sw      t0,8(sp)
+        call    puts
+        lw      t0,8(sp)
+        lw      a5,12(sp)
+        lw      s2,400(sp)
+        j       .L533
+.L556:
+        lui     a0,%hi(.LC20)
+        addi    a0,a0,%lo(.LC20)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    puts
+        mv      a5,s3
+        mv      a4,s4
+        addi    a3,sp,76
+        addi    a2,sp,40
+        addi    a1,sp,240
+        mv      a0,s1
+        call    print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*)
+        lw      t0,16(sp)
+        lw      a6,12(sp)
+        lw      t3,8(sp)
+        addi    t5,sp,76
+        addi    t4,sp,40
+        j       .L555
+.L561:
+        lui     a0,%hi(.LC16)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        addi    a0,a0,%lo(.LC16)
+        j       .L821
+.L794:
+        lw      s2,400(sp)
+        j       .L455
+.L811:
+        sw      s2,400(sp)
+        j       .L493
+.L815:
+        sw      s2,400(sp)
+        j       .L461
+.L814:
+        sw      s2,400(sp)
+        j       .L399
+.L813:
+        sw      s2,400(sp)
+        j       .L467
+.L812:
+        sw      s2,400(sp)
+        j       .L444
+.L792:
+        lw      s2,400(sp)
+        li      t2,17
+        j       .L413
+.L793:
+        lw      s2,400(sp)
+        j       .L448
+.L798:
+        lw      s2,400(sp)
+        li      a7,25
+        j       .L522
+.L797:
+        lw      s2,400(sp)
+        li      t2,25
+        j       .L515
+.L796:
+        lw      s2,400(sp)
+        li      a7,25
+        j       .L495
+.L795:
+        lw      s2,400(sp)
+        li      a7,25
+        j       .L469
+.L801:
+        lw      s2,400(sp)
+        j       .L395
+.L800:
+        lw      s2,400(sp)
+        j       .L397
+.L799:
+        lw      s2,400(sp)
+        j       .L463
+.L834:
+        slli    a3,t1,2
+        add     a3,s1,a3
+        slli    a5,a2,2
+        lw      a1,0(a3)
+        add     a5,sp,a5
+        flw     fa5,240(a5)
+        li      a5,532480
+        add     a2,a6,a1
+        addi    a5,a5,-1039
+        beq     a4,a0,.L840
+        bne     a4,zero,.L507
+        bgtu    a2,a5,.L509
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a2,a5
+        srai    a4,a2,31
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a2,a4,.L509
+.L825:
+        slli    a5,a5,2
+        add     a5,s3,a5
+        fsw     fa5,0(a5)
+.L509:
+        beq     t1,zero,.L501
+        sw      a2,0(a3)
+        j       .L501
+.L833:
+        li      a5,-1431654400
+        sub     a2,t3,s0
+        addi    a5,a5,-1365
+        mulhu   a2,a2,a5
+        li      a4,-1319075840
+        addi    a4,a4,469
+        li      a1,387420160
+        addi    a1,a1,329
+        li      a3,1431654400
+        addi    a3,a3,1366
+        srli    a2,a2,3
+        slli    a5,a2,1
+        add     a5,a5,a2
+        add     a5,a5,a6
+        addi    a5,a5,-3
+        mulh    a4,a5,a4
+        srai    a2,a5,31
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a2
+        mul     a4,a4,a1
+        sub     a5,a5,a4
+        mulh    a4,a5,a3
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        j       .L585
+.L531:
+        mv      a3,t5
+        mv      a2,t4
+        mv      a5,s3
+        mv      a4,s4
+        addi    a1,sp,240
+        mv      a0,s1
+        sw      t0,20(sp)
+        sw      a6,16(sp)
+        sw      a7,12(sp)
+        sw      t3,8(sp)
+        call    print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*)
+        lw      t0,20(sp)
+        lw      a6,16(sp)
+        lw      a7,12(sp)
+        lw      t3,8(sp)
+        addi    t5,sp,76
+        addi    t4,sp,40
+        j       .L532
+.L530:
+        beq     a1,zero,.L540
+        li      a5,26
+        addi    a0,a1,64
+        ble     a1,a5,.L535
+        li      a5,27
+        beq     a1,a5,.L630
+        li      a5,53
+        addi    a0,a1,69
+        ble     a1,a5,.L535
+        li      a5,63
+        addi    a0,a1,-6
+        ble     a1,a5,.L535
+        addi    a1,a1,-64
+        li      a5,34
+        bgtu    a1,a5,.L539
+        lui     a5,%hi(.LANCHOR0)
+        addi    a5,a5,%lo(.LANCHOR0)
+        add     a5,a5,a1
+        lb      a0,0(a5)
+.L535:
+        lui     a5,%hi(stdout)
+        lw      a1,%lo(stdout)(a5)
+        sw      t0,20(sp)
+        sw      a6,16(sp)
+        sw      a7,12(sp)
+        sw      t3,8(sp)
+        call    putc
+        lw      t3,8(sp)
+        lw      a7,12(sp)
+        lw      a6,16(sp)
+        lw      t0,20(sp)
+        addi    t4,sp,40
+        addi    t5,sp,76
+        j       .L532
+.L832:
+        li      a5,-1431654400
+        sub     a2,t3,s0
+        addi    a5,a5,-1365
+        mulhu   a2,a2,a5
+        li      a4,-1319075840
+        addi    a4,a4,469
+        li      a1,387420160
+        addi    a1,a1,329
+        li      a3,1431654400
+        addi    a3,a3,1366
+        srli    a2,a2,3
+        slli    a5,a2,1
+        add     a5,a5,a2
+        add     a5,a5,a6
+        mulh    a4,a5,a4
+        srai    a2,a5,31
+        add     a4,a4,a5
+        srai    a4,a4,28
+        sub     a4,a4,a2
+        mul     a4,a4,a1
+        sub     a5,a5,a4
+        mulh    a4,a5,a3
+        srai    a5,a5,31
+        sub     a5,a4,a5
+        slli    t3,a5,1
+        add     t3,t3,a5
+        slli    t3,t3,2
+        add     t3,s0,t3
+        j       .L578
+.L829:
+        li      a5,532480
+        addi    a5,a5,-1039
+        bgtu    t2,a5,.L501
+        mv      a1,t2
+        mv      a0,s3
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        li      a7,25
+        addi    t4,sp,40
+        addi    t5,sp,76
+        j       .L501
+.L716:
+        lw      s2,400(sp)
+        j       .L478
+.L498:
+        neg     a2,a2
+        li      a0,1510318080
+        srli    a5,a2,2
+        addi    a0,a0,91
+        mulhu   a5,a5,a0
+        li      a0,364
+        srli    a5,a5,5
+        mul     a5,a5,a0
+        sub     a2,a5,a2
+        j       .L497
+.L415:
+        blt     a1,zero,.L418
+        li      a3,-1274331136
+        addi    a3,a3,181
+        mulh    a3,a1,a3
+        srai    t1,a1,31
+        li      a5,364
+        add     a3,a3,a1
+        srai    a3,a3,8
+        sub     a3,a3,t1
+        mul     a5,a3,a5
+        sub     a3,a1,a5
+.L419:
+        blt     a2,zero,.L420
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a2,a5
+        srai    t1,a2,31
+        li      a1,364
+        add     a5,a5,a2
+        srai    a5,a5,8
+        sub     a5,a5,t1
+        mul     a5,a5,a1
+        sub     a5,a2,a5
+.L421:
+        mv      a1,a3
+        mv      a2,a5
+        mv      a3,t4
+        sw      t6,20(sp)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        lw      t6,20(sp)
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        mv      a4,a0
+        addi    t4,sp,40
+        li      t2,17
+        addi    t5,sp,76
+        beq     t6,zero,.L417
+        blt     a4,zero,.L422
+        li      a5,-1274331136
+        addi    a5,a5,181
+        mulh    a5,a4,a5
+        srai    a2,a4,31
+        li      a3,364
+        add     a5,a5,a4
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a4,a4,a5
+.L422:
+        li      a5,-1274331136
+        neg     a4,a4
+        addi    a5,a5,181
+        mulh    a5,a4,a5
+        srai    a2,a4,31
+        li      a3,364
+        add     a5,a5,a4
+        srai    a5,a5,8
+        sub     a5,a5,a2
+        mul     a5,a5,a3
+        sub     a5,a5,a4
+        j       .L416
+.L827:
+        li      a5,21
+        fcvt.s.wu       fa5,t1
+        fcvt.s.wu       fa4,a2
+        beq     a0,a5,.L424
+        bgtu    a0,a5,.L425
+        li      a5,18
+        beq     a0,a5,.L426
+        li      a5,19
+        bne     a0,a5,.L816
+        fsub.s  fa5,fa5,fa4
+.L430:
+        lui     a5,%hi(.LC2)
+        fld     fa3,%lo(.LC2)(a5)
+        fcvt.d.s        fa4,fa5
+        fgt.d   a5,fa4,fa3
+        bne     a5,zero,.L432
+        lui     a5,%hi(.LC3)
+        fld     fa3,%lo(.LC3)(a5)
+        flt.d   a5,fa4,fa3
+        beq     a5,zero,.L686
+        lui     a5,%hi(.LC0)
+        flw     fa5,%lo(.LC0)(a5)
+        li      s8,0
+        li      a3,0
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.s.wu       fa4,a5
+.L428:
+        slli    a5,a4,1
+        add     a5,a5,a4
+        slli    a5,a5,2
+        slli    a4,t6,2
+        add     a5,a5,sp
+        add     a4,sp,a4
+        fsw     fa4,240(a4)
+        sw      a3,76(a5)
+        sw      s8,80(a5)
+        j       .L417
+.L420:
+        neg     a2,a2
+        li      a1,1510318080
+        addi    a1,a1,91
+        srli    a5,a2,2
+        mulhu   a5,a5,a1
+        li      a1,364
+        srli    a5,a5,5
+        mul     a5,a5,a1
+        sub     a5,a5,a2
+        j       .L421
+.L418:
+        neg     a5,a1
+        li      a1,1510318080
+        addi    a1,a1,91
+        srli    a3,a5,2
+        mulhu   a3,a3,a1
+        li      a1,364
+        srli    a3,a3,5
+        mul     a3,a3,a1
+        sub     a3,a3,a5
+        j       .L419
+.L507:
+        bgtu    a1,a5,.L509
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a1,a5
+        srai    a4,a1,31
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        beq     a1,a4,.L825
+        j       .L509
+.L840:
+        bgtu    a2,a5,.L501
+        li      a5,1431654400
+        addi    a5,a5,1366
+        mulh    a5,a2,a5
+        srai    a4,a2,31
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a2,a4,.L501
+        slli    a5,a5,2
+        add     a5,s3,a5
+        fsw     fa5,0(a5)
+        j       .L501
+.L482:
+        mulh    a5,a1,a5
+        srai    a4,a1,31
+        fmv.s.x fa5,zero
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        beq     a1,a4,.L824
+        j       .L485
+.L835:
+        mulh    a5,a3,a5
+        srai    a4,a3,31
+        fmv.s.x fa5,zero
+        sub     a5,a5,a4
+        slli    a4,a5,1
+        add     a4,a4,a5
+        bne     a3,a4,.L481
+        li      a4,532480
+        addi    a4,a4,-1039
+        bgtu    a5,a4,.L481
+        slli    a5,a5,2
+        add     a5,s3,a5
+        flw     fa5,0(a5)
+        j       .L481
+.L828:
+        li      a5,1
+        beq     a2,a5,.L436
+        li      a5,3
+        bne     a2,a5,.L417
+        beq     t6,zero,.L417
+        slli    a5,t1,2
+        addi    a4,sp,32
+        addi    a5,a5,336
+        add     a5,a5,a4
+        flw     fa5,-128(a5)
+        fcvt.w.s a4,fa5,rtz
+        sw      a4,-256(a5)
+        j       .L417
+.L432:
+        lui     a5,%hi(.LC1)
+        flw     fa5,%lo(.LC1)(a5)
+        li      s8,2
+        li      a3,2
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.s.wu       fa4,a5
+        j       .L428
+.L837:
+        addi    a5,a5,64
+        j       .L566
+.L836:
+        lui     a0,%hi(.LC4)
+        addi    a0,a0,%lo(.LC4)
+        call    puts
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+.L564:
+        li      a5,0
+        j       .L566
+.L539:
+        lui     a0,%hi(.LC5)
+        addi    a0,a0,%lo(.LC5)
+        sw      t0,20(sp)
+        sw      a6,16(sp)
+        sw      a7,12(sp)
+        sw      t3,8(sp)
+        call    puts
+        lw      t3,8(sp)
+        lw      a7,12(sp)
+        lw      a6,16(sp)
+        lw      t0,20(sp)
+.L540:
+        li      a0,0
+        j       .L535
+.L838:
+        addi    a5,a5,69
+        j       .L566
+.L816:
+        fmv.s.x fa4,zero
+        li      s8,0
+        li      a3,1
+        j       .L428
+.L426:
+        fadd.s  fa5,fa5,fa4
+        j       .L430
+.L425:
+        li      a5,22
+        bne     a0,a5,.L816
+        beq     a2,zero,.L432
+        fdiv.s  fa5,fa5,fa4
+        j       .L430
+.L424:
+        fmul.s  fa5,fa5,fa4
+        j       .L430
+.L630:
+        li      a0,32
+        j       .L535
+.L686:
+        fcvt.wu.s a5,fa5,rtz
+        fmv.s.x fa3,zero
+        li      a3,2
+        fcvt.s.wu       fa4,a5
+        fgt.s   a5,fa5,fa3
+        bne     a5,zero,.L428
+        flt.s   a3,fa5,fa3
+        li      s8,0
+        xori    a3,a3,1
+        j       .L428
+.L436:
+        slli    a5,t1,2
+        addi    a4,sp,32
+        addi    a5,a5,336
+        add     a5,a5,a4
+        lw      a4,-256(a5)
+        fcvt.s.w        fa5,a4
+        fsw     fa5,-128(a5)
+        j       .L417
+.L839:
+        addi    a5,a5,-6
+        j       .L566
+.L638:
+        li      a5,32
+        j       .L566
+.L570:
+        lui     a0,%hi(.LC5)
+        addi    a0,a0,%lo(.LC5)
+        sw      t0,16(sp)
+        sw      a6,12(sp)
+        sw      t3,8(sp)
+        call    puts
+        lw      t3,8(sp)
+        lw      a6,12(sp)
+        lw      t0,16(sp)
+        li      a5,0
+        j       .L566
+parse_ternary_string(char*):
+        addi    a5,a0,1
+        addi    a2,a0,19
+        li      a1,49
+        li      a0,0
+        li      a6,50
+        j       .L844
+.L842:
+        bne     a4,a6,.L843
+        addi    a0,a0,2
+.L843:
+        addi    a5,a5,1
+        beq     a2,a5,.L846
+.L844:
+        lbu     a4,0(a5)
+        slli    a3,a0,1
+        add     a0,a3,a0
+        bne     a4,a1,.L842
+        addi    a5,a5,1
+        addi    a0,a0,1
+        bne     a2,a5,.L844
+.L846:
+        ret
+parse_ternary_instruction(unsigned int):
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a3,25
+        sub     a4,a1,a5
+        srli    a4,a4,1
+        add     a5,a5,a4
+        srli    a5,a5,4
+        slli    a4,a5,3
+        sub     a4,a4,a5
+        slli    a4,a4,2
+        sub     a5,a4,a5
+        sub     a5,a1,a5
+        sb      a5,0(a0)
+        bgtu    a5,a3,.L861
+        lui     a4,%hi(.L850)
+        slli    a5,a5,2
+        addi    a4,a4,%lo(.L850)
+        add     a5,a5,a4
+        lw      a5,0(a5)
+        jr      a5
+.L850:
+        .word   .L859
+        .word   .L858
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L857
+        .word   .L857
+        .word   .L857
+        .word   .L856
+        .word   .L855
+        .word   .L861
+        .word   .L854
+        .word   .L854
+        .word   .L861
+        .word   .L853
+        .word   .L853
+        .word   .L852
+        .word   .L851
+        .word   .L851
+        .word   .L851
+        .word   .L849
+        .word   .L849
+.L861:
+        ret
+.L851:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a4,-1117097984
+        addi    a4,a4,-347
+        li      a7,-2032599040
+        addi    a7,a7,1349
+        li      a3,-1613639680
+        addi    a3,a3,-677
+        li      a2,502747136
+        addi    a2,a2,1665
+        li      t5,243
+        sub     a6,a1,a5
+        mulhu   a4,a1,a4
+        srli    a6,a6,1
+        add     a5,a5,a6
+        srli    a5,a5,4
+        li      a6,1272582144
+        addi    a6,a6,759
+        li      t4,4096
+        addi    t4,t4,-1909
+        li      t3,8192
+        addi    t3,t3,-1631
+        mulhu   a7,a5,a7
+        srli    a4,a4,17
+        li      t1,-798720
+        addi    t1,t1,1560
+        mulhu   a3,a1,a3
+        srli    a7,a7,7
+        mulhu   a2,a4,a2
+        srli    a3,a3,12
+        mul     a7,a7,t5
+        srli    a2,a2,8
+        mulh    a1,a3,a6
+        sub     a5,a5,a7
+        mul     a2,a2,t4
+        srli    a1,a1,3
+        slli    a6,a1,3
+        sub     a6,a6,a1
+        slli    a6,a6,2
+        sub     a1,a6,a1
+        sub     a3,a3,a1
+        sb      a3,3(a0)
+        mul     a5,a5,t3
+        sub     a3,a4,a2
+        slli    a4,a3,1
+        add     a4,a4,a3
+        add     a5,a4,a5
+        add     a5,a5,t1
+        sw      a5,8(a0)
+        ret
+.L857:
+        li      a2,795365376
+        addi    a2,a2,-1061
+        mulhu   a2,a1,a2
+        li      a3,-1894178816
+        li      a7,-1613639680
+        addi    a3,a3,1055
+        addi    a7,a7,-677
+        li      a4,1272582144
+        addi    a4,a4,759
+        li      t6,1508245504
+        addi    t6,t6,899
+        li      a6,502747136
+        sub     t5,a1,a2
+        srli    t5,t5,1
+        add     a2,a2,t5
+        mulhu   a3,a1,a3
+        srli    a2,a2,4
+        addi    a6,a6,1665
+        li      t1,-1117097984
+        li      a5,-1431654400
+        addi    a5,a5,-1365
+        addi    t1,t1,-347
+        li      t4,-2032599040
+        addi    t4,t4,1349
+        li      t5,243
+        mulhu   a7,a1,a7
+        li      t3,168869888
+        addi    t3,t3,703
+        mulh    t0,a2,a4
+        srli    t2,a7,12
+        sub     a7,a1,a3
+        srli    a7,a7,1
+        add     a3,a3,a7
+        srli    a3,a3,25
+        mulhu   t6,a1,t6
+        srli    t0,t0,3
+        slli    a7,t0,3
+        sub     a7,a7,t0
+        slli    a7,a7,2
+        sub     a7,a7,t0
+        sub     a2,a2,a7
+        sb      a2,2(a0)
+        mulh    a4,t2,a4
+        srli    t6,t6,8
+        mulhu   a6,a1,a6
+        srli    a4,a4,3
+        slli    a2,a4,3
+        sub     a2,a2,a4
+        slli    a2,a2,2
+        sub     a4,a2,a4
+        sub     t2,t2,a4
+        sb      t2,3(a0)
+        mulhu   a7,t6,a5
+        srli    a6,a6,8
+        mulhu   t1,a1,t1
+        srli    a4,a7,1
+        slli    a2,a4,1
+        add     a4,a2,a4
+        sub     a2,t6,a4
+        slli    a4,a2,1
+        add     a4,a4,a2
+        mulhu   t0,a6,a5
+        srli    t1,t1,17
+        mulhu   a7,a1,a5
+        srli    a2,t0,1
+        slli    t6,a2,1
+        add     a2,t6,a2
+        sub     a6,a6,a2
+        addi    a6,a6,-364
+        mulhu   t4,t1,t4
+        srli    a7,a7,1
+        slli    a2,a7,1
+        add     a2,a2,a7
+        sub     a2,a1,a2
+        add     a4,a4,a2
+        sb      a4,1(a0)
+        mulhu   a5,a3,a5
+        srli    t4,t4,7
+        mul     t4,t4,t5
+        srli    a5,a5,1
+        slli    a4,a5,1
+        add     a5,a4,a5
+        sub     a3,a3,a5
+        sb      a3,5(a0)
+        mulhu   a5,a1,t3
+        sub     t1,t1,t4
+        slli    a4,t1,1
+        add     a4,a4,t1
+        add     a4,a4,a6
+        sw      a4,8(a0)
+.L863:
+        sub     a1,a1,a5
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,26
+        sb      a5,6(a0)
+        ret
+.L849:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a6,-1431654400
+        addi    a6,a6,-1365
+        li      a2,-901414912
+        addi    a2,a2,2023
+        li      a3,-2032599040
+        li      a4,1508245504
+        li      t4,502747136
+        addi    t4,t4,1665
+        addi    a3,a3,1349
+        sub     a7,a1,a5
+        srli    a7,a7,1
+        add     a5,a5,a7
+        srli    a5,a5,4
+        mulhu   a7,a5,a6
+        addi    a4,a4,899
+        li      t3,532480
+        addi    t3,t3,-1039
+        li      t1,-798720
+        addi    t1,t1,1557
+        mulhu   a2,a1,a2
+        srli    a7,a7,1
+        slli    t5,a7,1
+        add     a7,t5,a7
+        sub     a5,a5,a7
+        mulhu   a3,a1,a3
+        srli    a2,a2,6
+        mulhu   a4,a1,a4
+        srli    a3,a3,7
+        mulhu   a1,a1,t4
+        srli    a4,a4,8
+        mulhu   a7,a2,a6
+        srli    a1,a1,8
+        slli    t4,a1,1
+        add     t4,t4,a1
+        srli    a7,a7,1
+        mulhu   a1,a3,a6
+        slli    t5,a7,1
+        add     a7,t5,a7
+        sub     a2,a2,a7
+        sb      a2,7(a0)
+        mulhu   a2,a4,a6
+        srli    a1,a1,1
+        slli    a6,a1,1
+        add     a1,a6,a1
+        sub     a3,a3,a1
+        sb      a3,5(a0)
+        mul     a5,a5,t3
+        srli    a3,a2,1
+        slli    a2,a3,1
+        add     a3,a2,a3
+        sub     a4,a4,a3
+        sb      a4,6(a0)
+        add     a5,a5,t4
+        add     a5,a5,t1
+        sw      a5,8(a0)
+        ret
+.L854:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a4,1508245504
+        addi    a4,a4,899
+        li      a3,1272582144
+        addi    a3,a3,759
+        li      a2,729
+        li      a6,-193708032
+        addi    a6,a6,-1848
+        mulhu   a4,a1,a4
+        sub     a1,a1,a5
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,4
+        mulh    a3,a5,a3
+        srli    a4,a4,8
+        mul     a4,a4,a2
+        srli    a3,a3,3
+        slli    a2,a3,3
+        sub     a2,a2,a3
+        slli    a2,a2,2
+        sub     a3,a2,a3
+        sub     a5,a5,a3
+        sb      a5,2(a0)
+        add     a4,a4,a6
+        sw      a4,8(a0)
+        ret
+.L853:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a4,502747136
+        addi    a4,a4,1665
+        li      a2,-901414912
+        addi    a2,a2,2023
+        li      a3,-1117097984
+        addi    a3,a3,-347
+        li      a6,176128
+        addi    a6,a6,1019
+        li      a7,-21524480
+        mulhu   a4,a1,a4
+        sub     a1,a1,a5
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,4
+        addi    a7,a7,1120
+        mulhu   a2,a5,a2
+        srli    a4,a4,8
+        mulhu   a3,a4,a3
+        srli    a2,a2,6
+        slli    a1,a2,2
+        add     a1,a1,a2
+        slli    a1,a1,4
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        srli    a3,a3,17
+        mul     a3,a3,a6
+        mul     a5,a5,a6
+        sub     a4,a4,a3
+        add     a5,a5,a4
+        slli    a4,a5,1
+        add     a5,a4,a5
+        add     a5,a5,a7
+        sw      a5,8(a0)
+        ret
+.L856:
+        li      a2,795365376
+        addi    a2,a2,-1061
+        mulhu   a2,a1,a2
+        li      t1,-1117097984
+        addi    t1,t1,-347
+        li      a3,-1894178816
+        addi    a3,a3,1055
+        li      t2,1272582144
+        addi    t2,t2,759
+        li      a6,502747136
+        addi    a6,a6,1665
+        li      t5,-1613639680
+        sub     a7,a1,a2
+        srli    a7,a7,1
+        mulhu   t1,a1,t1
+        add     a2,a2,a7
+        srli    a2,a2,4
+        addi    t5,t5,-677
+        li      a5,-2032599040
+        li      t4,1508245504
+        addi    a5,a5,1349
+        addi    t4,t4,899
+        li      a4,-1431654400
+        addi    a4,a4,-1365
+        mulhu   a3,a1,a3
+        srli    t1,t1,17
+        li      t0,243
+        li      t3,168869888
+        addi    t3,t3,703
+        mulh    t6,a2,t2
+        sub     a7,a1,a3
+        srli    a7,a7,1
+        add     a3,a3,a7
+        srli    a3,a3,25
+        mulhu   a6,a1,a6
+        srli    t6,t6,3
+        slli    a7,t6,3
+        sub     a7,a7,t6
+        slli    a7,a7,2
+        sub     a7,a7,t6
+        sub     a2,a2,a7
+        sb      a2,2(a0)
+        mulhu   t5,a1,t5
+        srli    a6,a6,8
+        mulhu   a5,t1,a5
+        srli    t5,t5,12
+        mulhu   t4,a1,t4
+        srli    a5,a5,7
+        mulhu   a7,a3,a4
+        srli    t4,t4,8
+        mulhu   a2,a6,a4
+        srli    a7,a7,1
+        slli    t6,a7,1
+        add     a7,t6,a7
+        sub     a3,a3,a7
+        sb      a3,5(a0)
+        mulh    t2,t5,t2
+        srli    a2,a2,1
+        slli    t6,a2,1
+        add     t6,t6,a2
+        sub     a6,a6,t6
+        addi    a6,a6,-364
+        mul     a5,a5,t0
+        srli    t2,t2,3
+        slli    a2,t2,3
+        sub     a2,a2,t2
+        slli    a2,a2,2
+        sub     a2,a2,t2
+        sub     t5,t5,a2
+        sb      t5,3(a0)
+        mulhu   a4,t4,a4
+        sub     t1,t1,a5
+        slli    a5,t1,1
+        add     a5,a5,t1
+        add     a6,a5,a6
+        sw      a6,8(a0)
+        srli    a4,a4,1
+        slli    a3,a4,1
+        add     a4,a3,a4
+        sub     t4,t4,a4
+        mulhu   a5,a1,t3
+        sb      t4,1(a0)
+        j       .L863
+.L855:
+        li      t5,-528605184
+        li      a2,795365376
+        addi    t5,t5,1105
+        addi    a2,a2,-1061
+        mulhu   a2,a1,a2
+        li      a3,-1894178816
+        addi    a3,a3,1055
+        li      a4,954437632
+        addi    a4,a4,-455
+        li      t6,1272582144
+        addi    t6,t6,759
+        li      t4,502747136
+        li      t1,-1613639680
+        addi    t4,t4,1665
+        mulhu   t5,a1,t5
+        sub     a6,a1,a2
+        srli    a6,a6,1
+        add     a2,a2,a6
+        srli    a2,a2,4
+        addi    t1,t1,-677
+        li      a7,-1117097984
+        addi    a7,a7,-347
+        li      a5,-1431654400
+        addi    sp,sp,-16
+        mulhu   a3,a1,a3
+        srli    t5,t5,22
+        addi    a5,a5,-1365
+        li      t3,1508245504
+        sw      s0,12(sp)
+        sw      s1,8(sp)
+        addi    t3,t3,899
+        li      t0,168869888
+        addi    t0,t0,703
+        mulhu   a4,t5,a4
+        sub     t2,a1,a3
+        srli    t2,t2,1
+        add     a3,a3,t2
+        srli    a3,a3,25
+        mulh    a6,a2,t6
+        srli    a4,a4,1
+        slli    t2,a4,3
+        add     a4,t2,a4
+        sub     a4,t5,a4
+        mulhu   t4,a1,t4
+        srli    t5,a6,3
+        slli    a6,t5,3
+        sub     a6,a6,t5
+        slli    a6,a6,2
+        sub     a6,a6,t5
+        sub     a2,a2,a6
+        slli    t2,a2,1
+        add     s1,t2,a2
+        mulhu   t1,a1,t1
+        srli    t4,t4,8
+        mulhu   a7,a1,a7
+        srli    t1,t1,12
+        mulhu   s0,t4,a5
+        srli    a7,a7,17
+        mulh    a2,t1,t6
+        srli    t5,s0,1
+        lw      s0,12(sp)
+        mulhu   t3,a1,t3
+        srli    t2,a2,3
+        li      a2,243
+        mulh    a6,a7,t6
+        srli    t3,t3,8
+        mul     a4,a4,a2
+        slli    a2,t5,1
+        add     a2,a2,t5
+        srli    t6,a6,3
+        slli    a6,t2,3
+        sub     t4,t4,a2
+        sub     a6,a6,t2
+        addi    t4,t4,-364
+        slli    a6,a6,2
+        sub     a6,a6,t2
+        mulhu   t5,a3,a5
+        add     a4,a4,t4
+        slli    a2,t6,3
+        add     a4,a4,s1
+        sub     t1,t1,a6
+        sub     a2,a2,t6
+        sw      a4,8(a0)
+        slli    a2,a2,2
+        sub     a2,a2,t6
+        sub     a7,a7,a2
+        mulhu   t0,a1,t0
+        srli    a6,t5,1
+        slli    t4,a6,1
+        add     a6,t4,a6
+        sub     a3,a3,a6
+        sb      a3,5(a0)
+        sb      t1,3(a0)
+        sb      a7,4(a0)
+        lw      s1,8(sp)
+        mulhu   a5,t3,a5
+        sub     a1,a1,t0
+        srli    a1,a1,1
+        add     a1,t0,a1
+        srli    a2,a1,26
+        sb      a2,6(a0)
+        srli    a5,a5,1
+        slli    a4,a5,1
+        add     a5,a4,a5
+        sub     t3,t3,a5
+        sb      t3,1(a0)
+        addi    sp,sp,16
+        jr      ra
+.L858:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      t0,-1613639680
+        li      a3,-1894178816
+        addi    t0,t0,-677
+        addi    a3,a3,1055
+        li      a4,1272582144
+        addi    a4,a4,759
+        li      a2,-1117097984
+        addi    a2,a2,-347
+        li      a7,-1431654400
+        mulhu   t0,a1,t0
+        sub     a6,a1,a5
+        srli    a6,a6,1
+        add     a5,a5,a6
+        srli    a5,a5,4
+        addi    a7,a7,-1365
+        li      t3,1508245504
+        addi    t3,t3,899
+        li      t5,-2032599040
+        addi    t5,t5,1349
+        mulhu   a3,a1,a3
+        srli    t0,t0,12
+        li      t6,954437632
+        li      t1,168869888
+        addi    t6,t6,-455
+        addi    t1,t1,703
+        li      t4,243
+        mulh    t2,a5,a4
+        sub     a6,a1,a3
+        srli    a6,a6,1
+        add     a3,a3,a6
+        srli    a3,a3,25
+        mulhu   a2,a1,a2
+        srli    t2,t2,3
+        slli    a6,t2,3
+        sub     a6,a6,t2
+        slli    a6,a6,2
+        sub     a6,a6,t2
+        sub     a5,a5,a6
+        sb      a5,2(a0)
+        mulh    a4,t0,a4
+        srli    a2,a2,17
+        mulhu   a7,a3,a7
+        srli    a4,a4,3
+        slli    a6,a4,3
+        sub     a6,a6,a4
+        slli    a6,a6,2
+        sub     a4,a6,a4
+        sub     t0,t0,a4
+        sb      t0,3(a0)
+        mulhu   t3,a1,t3
+        srli    a6,a7,1
+        slli    a5,a6,1
+        add     a5,a5,a6
+        sub     a3,a3,a5
+        sb      a3,5(a0)
+        sb      a3,7(a0)
+        mulhu   t5,a2,t5
+        srli    t3,t3,8
+        mulhu   a4,t3,t6
+        srli    t5,t5,7
+        mulhu   a5,a1,t1
+        srli    a4,a4,1
+        slli    a3,a4,3
+        add     a4,a3,a4
+        sub     t3,t3,a4
+        sb      t3,1(a0)
+        mul     t5,t5,t4
+        sub     a1,a1,a5
+        srli    a1,a1,1
+        add     a5,a5,a1
+        srli    a5,a5,26
+        sb      a5,6(a0)
+        sub     a2,a2,t5
+        addi    a2,a2,-121
+        sw      a2,8(a0)
+        ret
+.L852:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      a7,502747136
+        addi    a7,a7,1665
+        li      a4,-1894178816
+        addi    a4,a4,1055
+        li      a3,-719863808
+        li      a2,-901414912
+        addi    a3,a3,-903
+        addi    a2,a2,2023
+        li      a6,954437632
+        mulhu   a7,a1,a7
+        sub     t3,a1,a5
+        srli    t3,t3,1
+        add     a5,a5,t3
+        srli    a5,a5,4
+        addi    a6,a6,-455
+        li      t1,20480
+        addi    t1,t1,-797
+        mulhu   a4,a1,a4
+        srli    a7,a7,8
+        mulhu   a3,a7,a3
+        sub     a1,a1,a4
+        srli    a1,a1,1
+        add     a4,a4,a1
+        srli    a4,a4,25
+        mulhu   a2,a5,a2
+        srli    a3,a3,14
+        mulhu   a6,a4,a6
+        srli    a2,a2,6
+        slli    a1,a2,2
+        add     a1,a1,a2
+        slli    a1,a1,4
+        add     a2,a1,a2
+        sub     a5,a5,a2
+        slli    a2,a5,3
+        add     a2,a2,a5
+        mul     a3,a3,t1
+        srli    a5,a6,1
+        slli    a1,a5,3
+        add     a5,a1,a5
+        sub     a4,a4,a5
+        add     a5,a2,a4
+        sb      a5,7(a0)
+        sub     a7,a7,a3
+        slli    a5,a7,1
+        add     a5,a5,a7
+        sw      a5,8(a0)
+        ret
+.L859:
+        li      a5,795365376
+        addi    a5,a5,-1061
+        mulhu   a5,a1,a5
+        li      t5,-528605184
+        addi    t5,t5,1105
+        li      a4,-1894178816
+        addi    a4,a4,1055
+        li      t2,1508245504
+        li      a6,1272582144
+        addi    a6,a6,759
+        addi    t2,t2,899
+        li      t0,-1613639680
+        sub     a2,a1,a5
+        srli    a2,a2,1
+        add     a5,a5,a2
+        mulhu   t5,a1,t5
+        srli    a5,a5,4
+        addi    t0,t0,-677
+        li      t1,-1117097984
+        addi    t1,t1,-347
+        li      a3,954437632
+        addi    a3,a3,-455
+        li      t6,-1431654400
+        addi    t6,t6,-1365
+        li      a7,168869888
+        mulhu   a4,a1,a4
+        srli    t5,t5,22
+        addi    a7,a7,703
+        mulh    t3,a5,a6
+        sub     a2,a1,a4
+        srli    a2,a2,1
+        add     a4,a4,a2
+        srli    a4,a4,25
+        mulhu   t2,a1,t2
+        srli    t3,t3,3
+        slli    a2,t3,3
+        sub     a2,a2,t3
+        slli    a2,a2,2
+        sub     a2,a2,t3
+        sub     a5,a5,a2
+        sb      a5,2(a0)
+        mulhu   t0,a1,t0
+        srli    t2,t2,8
+        mulhu   t1,a1,t1
+        srli    t0,t0,12
+        mulhu   t4,t5,a3
+        srli    t1,t1,17
+        mulhu   a3,t2,a3
+        srli    t4,t4,1
+        slli    a2,t4,3
+        add     a2,a2,t4
+        sub     t5,t5,a2
+        slli    t4,t5,3
+        add     t4,t4,t5
+        mulh    t3,t0,a6
+        srli    a3,a3,1
+        slli    a2,a3,3
+        add     a3,a2,a3
+        sub     a3,t2,a3
+        add     t4,t4,a3
+        sb      t4,1(a0)
+        mulh    a5,t1,a6
+        srli    a6,t3,3
+        slli    a3,a6,3
+        sub     a3,a3,a6
+        slli    a3,a3,2
+        sub     a3,a3,a6
+        sub     t0,t0,a3
+        sb      t0,3(a0)
+        mulhu   a2,a4,t6
+        srli    a5,a5,3
+        slli    a3,a5,3
+        sub     a3,a3,a5
+        slli    a3,a3,2
+        sub     a3,a3,a5
+        sub     t1,t1,a3
+        sb      t1,4(a0)
+        srli    a3,a2,1
+        slli    a2,a3,1
+        add     a3,a2,a3
+        sub     a4,a4,a3
+        mulhu   a5,a1,a7
+        sb      a4,5(a0)
+        j       .L863
+.LC21:
+        .string "r"
+.LC22:
+        .string "Error opening imem file %s\n"
+.LC23:
+        .string "%d <- %s"
+load_mem_file(char*, unsigned int*, union_instruction*):
+        addi    sp,sp,-80
+        lui     a5,%hi(.LC21)
+        sw      s6,48(sp)
+        mv      s6,a1
+        addi    a1,a5,%lo(.LC21)
+        sw      s0,72(sp)
+        sw      s7,44(sp)
+        sw      ra,76(sp)
+        sw      s1,68(sp)
+        sw      s2,64(sp)
+        sw      s3,60(sp)
+        sw      s4,56(sp)
+        sw      s5,52(sp)
+        sw      s8,40(sp)
+        sw      s9,36(sp)
+        mv      s7,a2
+        mv      s0,a0
+        call    fopen
+        beq     a0,zero,.L874
+        mv      s3,a0
+        li      a0,128
+        sw      a0,12(sp)
+        call    malloc
+        sw      a0,16(sp)
+        li      s2,0
+        li      s4,-1
+        li      s5,46
+        li      s1,49
+        li      s8,50
+.L866:
+        mv      a3,s3
+        li      a2,10
+        addi    a1,sp,12
+        addi    a0,sp,16
+        call    __getdelim
+        lw      s9,16(sp)
+        beq     a0,s4,.L875
+.L871:
+        lbu     a5,0(s9)
+        beq     a5,s5,.L866
+        addi    a5,s9,1
+        addi    a1,s9,19
+        li      s0,0
+        j       .L870
+.L868:
+        bne     a4,s8,.L869
+        addi    s0,s0,2
+.L869:
+        addi    a5,a5,1
+        beq     a5,a1,.L876
+.L870:
+        lbu     a4,0(a5)
+        slli    a3,s0,1
+        add     s0,a3,s0
+        bne     a4,s1,.L868
+        addi    a5,a5,1
+        addi    s0,s0,1
+        bne     a5,a1,.L870
+.L876:
+        mv      a1,s0
+        addi    a0,sp,20
+        call    parse_ternary_instruction(unsigned int)
+        slli    a5,s2,1
+        lw      a1,20(sp)
+        lw      a2,24(sp)
+        lw      a3,28(sp)
+        add     a5,a5,s2
+        slli    a5,a5,2
+        add     a5,s7,a5
+        slli    a4,s2,2
+        sw      a1,0(a5)
+        sw      a2,4(a5)
+        sw      a3,8(a5)
+        lui     a0,%hi(.LC23)
+        add     a5,s6,a4
+        mv      a2,s9
+        sw      s0,0(a5)
+        mv      a1,s0
+        addi    a0,a0,%lo(.LC23)
+        call    printf
+        mv      a3,s3
+        li      a2,10
+        addi    a1,sp,12
+        addi    a0,sp,16
+        call    __getdelim
+        addi    s2,s2,1
+        lw      s9,16(sp)
+        bne     a0,s4,.L871
+.L875:
+        mv      a0,s9
+        call    free
+        mv      a0,s3
+        call    fclose
+        lw      ra,76(sp)
+        lw      s0,72(sp)
+        lw      s1,68(sp)
+        lw      s3,60(sp)
+        lw      s4,56(sp)
+        lw      s5,52(sp)
+        lw      s6,48(sp)
+        lw      s7,44(sp)
+        lw      s8,40(sp)
+        lw      s9,36(sp)
+        mv      a0,s2
+        lw      s2,64(sp)
+        addi    sp,sp,80
+        jr      ra
+.L874:
+        lui     a0,%hi(.LC22)
+        mv      a1,s0
+        addi    a0,a0,%lo(.LC22)
+        call    printf
+        li      a0,-1
+        call    exit
+.LC24:
+        .string "opcode: %d, func: %d, rd: %d, rs1: %d, rs2: %d, flagbank: %d, size: %d, val: %d, imm: %d\n"
+print_union_instruction(union_instruction):
+        lw      t3,8(a0)
+        lbu     t1,7(a0)
+        lbu     a7,6(a0)
+        lbu     a6,5(a0)
+        lbu     a5,4(a0)
+        lbu     a4,3(a0)
+        lbu     a3,2(a0)
+        lbu     a2,1(a0)
+        lbu     a1,0(a0)
+        addi    sp,sp,-32
+        lui     a0,%hi(.LC24)
+        sw      t3,4(sp)
+        sw      t1,0(sp)
+        addi    a0,a0,%lo(.LC24)
+        sw      ra,28(sp)
+        call    printf
+        lw      ra,28(sp)
+        addi    sp,sp,32
+        jr      ra
+.LC25:
+        .string "Usage: ternary_risc_sim <input_filename>"
+.LC26:
+        .string "%d instruction words loaded from file %s\n"
+.LC27:
+        .string "CPU returned value: %d\n"
+.LC31:
+        .string "%ld instructions executed in: %0.3f msec, %0.3f ns / instruction, simulation rate: %0.3f MHz\n"
+main:
+        addi    sp,sp,-64
+        sw      ra,60(sp)
+        sw      s0,56(sp)
+        sw      s1,52(sp)
+        sw      s2,48(sp)
+        sw      s3,44(sp)
+        sw      s4,40(sp)
+        li      a5,1
+        ble     a0,a5,.L882
+        lw      s1,4(a1)
+        call    clock
+        mv      s3,a0
+        li      a0,532480
+        li      a1,4
+        addi    a0,a0,-1039
+        call    calloc
+        mv      s0,a0
+        li      a0,532480
+        li      a1,4
+        addi    a0,a0,-1039
+        call    calloc
+        mv      s4,a0
+        li      a0,532480
+        li      a1,12
+        addi    a0,a0,-1039
+        call    calloc
+        mv      s2,a0
+        mv      a2,a0
+        mv      a1,s0
+        mv      a0,s1
+        call    load_mem_file(char*, unsigned int*, union_instruction*)
+        mv      a1,a0
+        lui     a0,%hi(.LC26)
+        mv      a2,s1
+        addi    a0,a0,%lo(.LC26)
+        call    printf
+        mv      a2,s4
+        addi    a3,sp,28
+        mv      a1,s2
+        mv      a0,s0
+        call    sim(unsigned int*, union_instruction*, int*, int*)
+        lw      a1,28(sp)
+        mv      s0,a0
+        lui     a0,%hi(.LC27)
+        addi    a0,a0,%lo(.LC27)
+        call    printf
+        call    clock
+        fcvt.d.w        fa4,s3
+        fcvt.d.w        fa5,a0
+        lui     a5,%hi(.LC28)
+        fld     fa2,%lo(.LC28)(a5)
+        fsub.d  fa5,fa5,fa4
+        fcvt.d.wu       fa3,s0
+        lui     a5,%hi(.LC29)
+        fld     fa4,%lo(.LC29)(a5)
+        lui     a5,%hi(.LC30)
+        fld     fa0,%lo(.LC30)(a5)
+        lui     a0,%hi(.LC31)
+        fdiv.d  fa5,fa5,fa2
+        mv      a1,s0
+        addi    a0,a0,%lo(.LC31)
+        fdiv.d  fa1,fa3,fa5
+        fmul.d  fa4,fa5,fa4
+        fmul.d  fa5,fa5,fa0
+        fsd     fa5,8(sp)
+        lw      a2,8(sp)
+        lw      a3,12(sp)
+        fdiv.d  fa5,fa1,fa2
+        fsd     fa5,8(sp)
+        fdiv.d  fa5,fa4,fa3
+        lw      a6,8(sp)
+        lw      a7,12(sp)
+        fsd     fa5,8(sp)
+        lw      a4,8(sp)
+        lw      a5,12(sp)
+        call    printf
+        lw      ra,60(sp)
+        lw      s0,56(sp)
+        lw      s1,52(sp)
+        lw      s2,48(sp)
+        lw      s3,44(sp)
+        lw      s4,40(sp)
+        li      a0,0
+        addi    sp,sp,64
+        jr      ra
+.L882:
+        lui     a0,%hi(.LC25)
+        addi    a0,a0,%lo(.LC25)
+        call    puts
+        li      a0,-1
+        call    exit
+.LC0:
+        .word   -545450769
+.LC1:
+        .word   1602032879
+.LC2:
+        .word   -390880828
+        .word   1139778205
+.LC3:
+        .word   -390880828
+        .word   -1007705443
+.LC10:
+        .word   57808677
+        .word   1073217535
+.LC11:
+        .word   0
+        .word   1091581920
+.LC12:
+        .word   0
+        .word   1078198272
+.LC14:
+        .word   -2105473900
+        .word   1139778208
+.LC28:
+        .word   0
+        .word   1093567616
+.LC29:
+        .word   -402653184
+        .word   1110919286
+.LC30:
+        .word   0
+        .word   1083129856

@@ -1,0 +1,5491 @@
+        .string "  Flag bank %d:"
+        .string " %10d"
+        .string " %2d"
+        .string "%d <- %s"
+        .string "%d instruction words loaded from file %s\n"
+        .string "%ld instructions executed in: %0.3f msec, %0.3f ns / instruction, simulation rate: %0.3f MHz\n"
+        .string "CPU returned value: %d\n"
+        .string "Called syscallr(1): HALT"
+        .string "Called syscallr(2): INPUT"
+        .string "Called syscallr(3): ICOUNT"
+        .string "Called syscallr(4): OUTPUT"
+        .string "Called syscallr(5): OCOUNT"
+        .string "Called syscallr(6): DUMP"
+        .string "Characters > 98 are unimplemented!"
+        .string "Control characters are unimplemented!"
+        .string "Error opening imem file %s\n"
+        .string "R%02d-%02d:"
+        .string "Usage: ternary_risc_sim <input_filename>"
+        .string "exponent: %0.3f, mantissa: %0.3f, scaled_mantissa: %0.3f, max_f18: %0.20f\n"
+        .string "opcode: %d, func: %d, rd: %d, rs1: %d, rs2: %d, flagbank: %d, size: %d, val: %d, imm: %d\n"
+        .string "r"
+        .word   -1007705443
+        .word   -2105473900
+        .word   -390880828
+        .word   -390880828
+        .word   -402653184
+        .word   -545450769
+        .word   .L215
+        .word   .L217
+        .word   .L218
+        .word   .L219
+        .word   .L223
+        .word   .L224
+        .word   .L225
+        .word   .L244
+        .word   .L244
+        .word   .L244
+        .word   .L244
+        .word   .L245
+        .word   .L246
+        .word   .L247
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L394
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L395
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L397
+        .word   .L399
+        .word   .L399
+        .word   .L399
+        .word   .L399
+        .word   .L400
+        .word   .L402
+        .word   .L403
+        .word   .L404
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L405
+        .word   .L411
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L412
+        .word   .L413
+        .word   .L444
+        .word   .L444
+        .word   .L444
+        .word   .L444
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L446
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L448
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L455
+        .word   .L461
+        .word   .L461
+        .word   .L461
+        .word   .L461
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L463
+        .word   .L467
+        .word   .L467
+        .word   .L467
+        .word   .L467
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L468
+        .word   .L469
+        .word   .L493
+        .word   .L493
+        .word   .L493
+        .word   .L493
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L494
+        .word   .L495
+        .word   .L515
+        .word   .L522
+        .word   .L525
+        .word   .L527
+        .word   .L529
+        .word   .L546
+        .word   .L548
+        .word   .L554
+        .word   .L555
+        .word   .L556
+        .word   .L558
+        .word   .L559
+        .word   .L560
+        .word   .L561
+        .word   .L562
+        .word   .L576
+        .word   .L596
+        .word   .L597
+        .word   .L598
+        .word   .L598
+        .word   .L599
+        .word   .L600
+        .word   .L601
+        .word   .L602
+        .word   .L603
+        .word   .L604
+        .word   .L605
+        .word   .L606
+        .word   .L792
+        .word   .L792
+        .word   .L792
+        .word   .L792
+        .word   .L792
+        .word   .L793
+        .word   .L793
+        .word   .L793
+        .word   .L793
+        .word   .L793
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L794
+        .word   .L795
+        .word   .L795
+        .word   .L795
+        .word   .L795
+        .word   .L795
+        .word   .L796
+        .word   .L796
+        .word   .L796
+        .word   .L796
+        .word   .L796
+        .word   .L797
+        .word   .L797
+        .word   .L797
+        .word   .L797
+        .word   .L797
+        .word   .L798
+        .word   .L798
+        .word   .L798
+        .word   .L798
+        .word   .L798
+        .word   .L799
+        .word   .L799
+        .word   .L799
+        .word   .L799
+        .word   .L799
+        .word   .L800
+        .word   .L800
+        .word   .L800
+        .word   .L800
+        .word   .L800
+        .word   .L801
+        .word   .L801
+        .word   .L801
+        .word   .L801
+        .word   .L801
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L810
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L811
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L812
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L813
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L814
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L815
+        .word   .L849
+        .word   .L849
+        .word   .L851
+        .word   .L851
+        .word   .L851
+        .word   .L852
+        .word   .L853
+        .word   .L853
+        .word   .L854
+        .word   .L854
+        .word   .L855
+        .word   .L856
+        .word   .L857
+        .word   .L857
+        .word   .L857
+        .word   .L858
+        .word   .L859
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   .L861
+        .word   0
+        .word   0
+        .word   0
+        .word   0
+        .word   1073217535
+        .word   1078198272
+        .word   1083129856        .word   1091581920
+        .word   1093567616
+        .word   1110919286
+        .word   1139778205
+        .word   1139778208
+        .word   1602032879
+        .word   57808677
+        add     a0,a0,a1
+        add     a0,a0,a1
+        add     a0,a0,a1
+        add     a0,a0,a1
+        add     a0,a0,a2
+        add     a0,a0,a3
+        add     a0,a0,a3
+        add     a0,a0,a3
+        add     a0,a0,a3
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a4
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a5
+        add     a0,a0,a7
+        add     a0,a0,t1
+        add     a0,a1,a0
+        add     a0,a1,a5
+        add     a0,a1,a5
+        add     a0,a3,a0
+        add     a0,a3,a0
+        add     a0,a3,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a0
+        add     a0,a5,a2
+        add     a0,a5,a2
+        add     a0,a6,a0
+        add     a0,t3,a0
+        add     a0,t3,a0
+        add     a0,t6,a0
+        add     a1,a0,a5
+        add     a1,a1,a0
+        add     a1,a1,a0
+        add     a1,a1,a2
+        add     a1,a1,a2
+        add     a1,a1,a2
+        add     a1,a1,a3
+        add     a1,a1,a3
+        add     a1,a1,a3
+        add     a1,a1,a3
+        add     a1,a1,a5
+        add     a1,a1,a5
+        add     a1,a1,a5
+        add     a1,a1,a5
+        add     a1,a1,a5
+        add     a1,a1,a6
+        add     a1,a1,t1
+        add     a1,a1,t3
+        add     a1,a1,t3
+        add     a1,a6,a1
+        add     a1,t0,a1
+        add     a1,t3,a3
+        add     a1,t6,a1
+        add     a2,a1,a2
+        add     a2,a1,a2
+        add     a2,a1,a2
+        add     a2,a1,a2
+        add     a2,a1,a2
+        add     a2,a1,a2
+        add     a2,a2,a1
+        add     a2,a2,a3
+        add     a2,a2,a4
+        add     a2,a2,a4
+        add     a2,a2,a4
+        add     a2,a2,a4
+        add     a2,a2,a5
+        add     a2,a2,a5
+        add     a2,a2,a5
+        add     a2,a2,a6
+        add     a2,a2,a7
+        add     a2,a2,a7
+        add     a2,a2,a7
+        add     a2,a2,a7
+        add     a2,a2,t4
+        add     a2,a2,t5
+        add     a2,a2,t5
+        add     a2,a6,a1
+        add     a2,s1,a2
+        add     a2,s1,a2
+        add     a2,s1,t1
+        add     a2,t6,a2
+        add     a3,a0,a3
+        add     a3,a1,a3
+        add     a3,a1,a3
+        add     a3,a1,a3
+        add     a3,a2,a3
+        add     a3,a2,a3
+        add     a3,a2,a3
+        add     a3,a2,a3
+        add     a3,a2,a3
+        add     a3,a2,a3
+        add     a3,a3,a1
+        add     a3,a3,a1
+        add     a3,a3,a1
+        add     a3,a3,a2
+        add     a3,a3,a2
+        add     a3,a3,a2
+        add     a3,a3,a2
+        add     a3,a3,a4
+        add     a3,a3,a5
+        add     a3,a3,a5
+        add     a3,a3,a5
+        add     a3,a3,a6
+        add     a3,a3,a6
+        add     a3,a3,a7
+        add     a3,a3,a7
+        add     a3,a3,a7
+        add     a3,a3,a7
+        add     a3,a3,a7
+        add     a3,a3,t2
+        add     a3,a5,a3
+        add     a3,a6,a1
+        add     a3,a7,a3
+        add     a3,s1,a3
+        add     a3,t4,a3
+        add     a3,t4,a3
+        add     a3,t4,a3
+        add     a4,a2,a4
+        add     a4,a2,a4
+        add     a4,a3,a4
+        add     a4,a3,a4
+        add     a4,a3,a4
+        add     a4,a3,a4
+        add     a4,a3,a4
+        add     a4,a3,a4
+        add     a4,a4,a0
+        add     a4,a4,a0
+        add     a4,a4,a1
+        add     a4,a4,a2
+        add     a4,a4,a2
+        add     a4,a4,a2
+        add     a4,a4,a3
+        add     a4,a4,a3
+        add     a4,a4,a3
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a5
+        add     a4,a4,a6
+        add     a4,a4,a6
+        add     a4,a4,a6
+        add     a4,a4,s1
+        add     a4,a4,t1
+        add     a4,a4,t4
+        add     a4,a6,a4
+        add     a4,s1,a4
+        add     a4,s1,a4
+        add     a4,s1,a4
+        add     a4,sp,a4
+        add     a4,t2,a4
+        add     a4,t4,a4
+        add     a4,t4,a4
+        add     a4,t5,a4
+        add     a5,a1,a5
+        add     a5,a2,a4
+        add     a5,a3,a5
+        add     a5,a3,a5
+        add     a5,a3,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a4,a5
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a0
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a1
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a2
+        add     a5,a5,a3
+        add     a5,a5,a3
+        add     a5,a5,a3
+        add     a5,a5,a3
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a4
+        add     a5,a5,a6
+        add     a5,a5,a6
+        add     a5,a5,a6
+        add     a5,a5,a6
+        add     a5,a5,a6
+        add     a5,a5,a6
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,a7
+        add     a5,a5,s2
+        add     a5,a5,s2
+        add     a5,a5,s2
+        add     a5,a5,s2
+        add     a5,a5,s2
+        add     a5,a5,sp
+        add     a5,a5,t1
+        add     a5,a5,t1
+        add     a5,a5,t1
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t2
+        add     a5,a5,t3
+        add     a5,a5,t4
+        add     a5,a6,a3
+        add     a5,a6,a5
+        add     a5,a6,a5
+        add     a5,a6,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s1,a5
+        add     a5,s3,a5
+        add     a5,s3,a5
+        add     a5,s3,a5
+        add     a5,s3,a5
+        add     a5,s6,a4
+        add     a5,s7,a5
+        add     a5,sp,a5
+        add     a5,sp,a5
+        add     a5,t4,a5
+        add     a5,t5,a5
+        add     a5,t5,a5
+        add     a6,a0,a4
+        add     a6,a0,a5
+        add     a6,a0,a5
+        add     a6,a0,a5
+        add     a6,a0,a5
+        add     a6,a5,a6
+        add     a6,a6,a5
+        add     a6,a6,a5
+        add     a6,a6,a5
+        add     a6,t4,a6
+        add     a6,t5,a6
+        add     a6,t5,a6
+        add     a7,a2,a7
+        add     a7,a3,a7
+        add     a7,t5,a7
+        add     a7,t5,a7
+        add     a7,t6,a7
+        add     s0,a3,s0
+        add     s1,t2,a2
+        add     s2,a6,a1
+        add     t1,t1,a1
+        add     t1,t1,a1
+        add     t1,t1,a3
+        add     t1,t1,a6
+        add     t1,t1,t6
+        add     t2,a6,a1
+        add     t2,s1,t2
+        add     t3,a1,t3
+        add     t3,s0,t3
+        add     t3,s0,t3
+        add     t3,s0,t3
+        add     t3,s0,t3
+        add     t3,s0,t3
+        add     t3,s0,t3
+        add     t3,t3,a5
+        add     t3,t3,a5
+        add     t3,t3,a5
+        add     t3,t3,a5
+        add     t3,t3,a5
+        add     t3,t3,a5
+        add     t4,t4,a1
+        add     t4,t4,a3
+        add     t4,t4,a5
+        add     t4,t4,a5
+        add     t4,t4,t3
+        add     t4,t4,t5
+        add     t5,a0,t5
+        add     t5,a0,t5
+        add     t6,s1,t6
+        add     t6,t6,a2
+        addi    a0,a0,%lo(.L216)
+        addi    a0,a0,%lo(.LC13)
+        addi    a0,a0,%lo(.LC15)
+        addi    a0,a0,%lo(.LC15)
+        addi    a0,a0,%lo(.LC16)
+        addi    a0,a0,%lo(.LC17)
+        addi    a0,a0,%lo(.LC18)
+        addi    a0,a0,%lo(.LC19)
+        addi    a0,a0,%lo(.LC20)
+        addi    a0,a0,%lo(.LC22)
+        addi    a0,a0,%lo(.LC23)
+        addi    a0,a0,%lo(.LC24)
+        addi    a0,a0,%lo(.LC25)
+        addi    a0,a0,%lo(.LC26)
+        addi    a0,a0,%lo(.LC27)
+        addi    a0,a0,%lo(.LC31)
+        addi    a0,a0,%lo(.LC4)
+        addi    a0,a0,%lo(.LC4)
+        addi    a0,a0,%lo(.LC5)
+        addi    a0,a0,%lo(.LC5)
+        addi    a0,a0,%lo(.LC5)
+        addi    a0,a0,-1039
+        addi    a0,a0,-1039
+        addi    a0,a0,-1039
+        addi    a0,a0,-121
+        addi    a0,a0,-1481
+        addi    a0,a0,-364
+        addi    a0,a0,-6
+        addi    a0,a0,-64
+        addi    a0,a0,1
+        addi    a0,a0,1560
+        addi    a0,a0,181
+        addi    a0,a0,181
+        addi    a0,a0,2
+        addi    a0,a0,239
+        addi    a0,a0,4
+        addi    a0,a0,477
+        addi    a0,a0,477
+        addi    a0,a0,64
+        addi    a0,a0,69
+        addi    a0,a0,899
+        addi    a0,a0,91
+        addi    a0,a1,-6
+        addi    a0,a1,64
+        addi    a0,a1,69
+        addi    a0,s2,%lo(.LC7)
+        addi    a0,s5,%lo(.LC6)
+        addi    a0,s5,%lo(.LC9)
+        addi    a0,s6,%lo(.LC8)
+        addi    a0,sp,16
+        addi    a0,sp,16
+        addi    a0,sp,20
+        addi    a0,sp,240
+        addi    a1,a1,-1039
+        addi    a1,a1,-1365
+        addi    a1,a1,-1365
+        addi    a1,a1,-1481
+        addi    a1,a1,-1631
+        addi    a1,a1,-1884
+        addi    a1,a1,-64
+        addi    a1,a1,239
+        addi    a1,a1,239
+        addi    a1,a1,239
+        addi    a1,a1,329
+        addi    a1,a1,329
+        addi    a1,a1,329
+        addi    a1,a1,899
+        addi    a1,a1,91
+        addi    a1,a1,91
+        addi    a1,a5,%lo(.LC21)
+        addi    a1,s9,19
+        addi    a1,sp,12
+        addi    a1,sp,12
+        addi    a1,sp,240
+        addi    a1,sp,240
+        addi    a2,a0,19
+        addi    a2,a2,-1061
+        addi    a2,a2,-1061
+        addi    a2,a2,-1061
+        addi    a2,a2,-121
+        addi    a2,a2,-1884
+        addi    a2,a2,-1884
+        addi    a2,a2,-1884
+        addi    a2,a2,-347
+        addi    a2,a2,-455
+        addi    a2,a2,1349
+        addi    a2,a2,1366
+        addi    a2,a2,1366
+        addi    a2,a2,1366
+        addi    a2,a2,1366
+        addi    a2,a2,1366
+        addi    a2,a2,1557
+        addi    a2,a2,1665
+        addi    a2,a2,1665
+        addi    a2,a2,181
+        addi    a2,a2,2023
+        addi    a2,a2,2023
+        addi    a2,a2,2023
+        addi    a2,a2,2023
+        addi    a2,a2,4
+        addi    a2,a2,759
+        addi    a2,a2,91
+        addi    a2,s3,9
+        addi    a2,sp,40
+        addi    a3,a3,%lo(.L557)
+        addi    a3,a3,-1365
+        addi    a3,a3,-1365
+        addi    a3,a3,-1481
+        addi    a3,a3,-347
+        addi    a3,a3,-347
+        addi    a3,a3,-364
+        addi    a3,a3,-455
+        addi    a3,a3,-455
+        addi    a3,a3,-677
+        addi    a3,a3,-903
+        addi    a3,a3,1055
+        addi    a3,a3,1055
+        addi    a3,a3,1055
+        addi    a3,a3,1055
+        addi    a3,a3,1349
+        addi    a3,a3,1366
+        addi    a3,a3,1366
+        addi    a3,a3,1665
+        addi    a3,a3,1665
+        addi    a3,a3,181
+        addi    a3,a3,181
+        addi    a3,a3,181
+        addi    a3,a3,2023
+        addi    a3,a3,239
+        addi    a3,a3,759
+        addi    a3,a3,899
+        addi    a3,a3,91
+        addi    a3,a3,91
+        addi    a3,a3,91
+        addi    a3,sp,28
+        addi    a3,sp,76
+        addi    a4,a4,%lo(.L850)
+        addi    a4,a4,-1039
+        addi    a4,a4,-1039
+        addi    a4,a4,-1039
+        addi    a4,a4,-1039
+        addi    a4,a4,-1061
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1365
+        addi    a4,a4,-1481
+        addi    a4,a4,-1481
+        addi    a4,a4,-1884
+        addi    a4,a4,-1884
+        addi    a4,a4,-1884
+        addi    a4,a4,-3
+        addi    a4,a4,-347
+        addi    a4,a4,-347
+        addi    a4,a4,-455
+        addi    a4,a4,-797
+        addi    a4,a4,1055
+        addi    a4,a4,1055
+        addi    a4,a4,1055
+        addi    a4,a4,1349
+        addi    a4,a4,1366
+        addi    a4,a4,1665
+        addi    a4,a4,1665
+        addi    a4,a4,1665
+        addi    a4,a4,4
+        addi    a4,a4,469
+        addi    a4,a4,469
+        addi    a4,a4,469
+        addi    a4,a4,469
+        addi    a4,a4,469
+        addi    a4,a4,469
+        addi    a4,a4,759
+        addi    a4,a4,759
+        addi    a4,a4,759
+        addi    a4,a4,899
+        addi    a4,a4,899
+        addi    a4,a4,899
+        addi    a4,a4,899
+        addi    a4,a4,899
+        addi    a4,a4,91
+        addi    a4,a5,-64
+        addi    a4,sp,32
+        addi    a4,sp,32
+        addi    a5,a0,1
+        addi    a5,a0,107
+        addi    a5,a0,108
+        addi    a5,a5,%lo(.LANCHOR0)
+        addi    a5,a5,%lo(.LANCHOR0)
+        addi    a5,a5,%lo(.LANCHOR0)
+        addi    a5,a5,-1039
+        addi    a5,a5,-1039
+        addi    a5,a5,-1039
+        addi    a5,a5,-1039
+        addi    a5,a5,-1039
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1061
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1365
+        addi    a5,a5,-1481
+        addi    a5,a5,-1481
+        addi    a5,a5,-1848
+        addi    a5,a5,-3
+        addi    a5,a5,-3
+        addi    a5,a5,-347
+        addi    a5,a5,-347
+        addi    a5,a5,-347
+        addi    a5,a5,-347
+        addi    a5,a5,-455
+        addi    a5,a5,-6
+        addi    a5,a5,-6
+        addi    a5,a5,-677
+        addi    a5,a5,-903
+        addi    a5,a5,1
+        addi    a5,a5,1
+        addi    a5,a5,1
+        addi    a5,a5,1
+        addi    a5,a5,1055
+        addi    a5,a5,1055
+        addi    a5,a5,1055
+        addi    a5,a5,1105
+        addi    a5,a5,1105
+        addi    a5,a5,1349
+        addi    a5,a5,1349
+        addi    a5,a5,1349
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1366
+        addi    a5,a5,1665
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,181
+        addi    a5,a5,1884
+        addi    a5,a5,1884
+        addi    a5,a5,1884
+        addi    a5,a5,1884
+        addi    a5,a5,2023
+        addi    a5,a5,336
+        addi    a5,a5,336
+        addi    a5,a5,4
+        addi    a5,a5,469
+        addi    a5,a5,477
+        addi    a5,a5,477
+        addi    a5,a5,477
+        addi    a5,a5,477
+        addi    a5,a5,64
+        addi    a5,a5,69
+        addi    a5,a5,703
+        addi    a5,a5,759
+        addi    a5,a5,759
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,a5,899
+        addi    a5,s2,35
+        addi    a5,s2,35
+        addi    a5,s9,1
+        addi    a6,a6,-1
+        addi    a6,a6,-1039
+        addi    a6,a6,-1365
+        addi    a6,a6,-1848
+        addi    a6,a6,-1909
+        addi    a6,a6,-364
+        addi    a6,a6,-364
+        addi    a6,a6,-455
+        addi    a6,a6,-455
+        addi    a6,a6,1019
+        addi    a6,a6,1019
+        addi    a6,a6,1665
+        addi    a6,a6,1665
+        addi    a6,a6,1884
+        addi    a6,a6,759
+        addi    a6,a6,759
+        addi    a7,a7,%lo(.L396)
+        addi    a7,a7,%lo(.L438)
+        addi    a7,a7,%lo(.L449)
+        addi    a7,a7,%lo(.L517)
+        addi    a7,a7,%lo(.L571)
+        addi    a7,a7,-1
+        addi    a7,a7,-1
+        addi    a7,a7,-1365
+        addi    a7,a7,-1365
+        addi    a7,a7,-347
+        addi    a7,a7,-677
+        addi    a7,a7,1120
+        addi    a7,a7,1120
+        addi    a7,a7,1349
+        addi    a7,a7,1366
+        addi    a7,a7,1366
+        addi    a7,a7,1366
+        addi    a7,a7,1366
+        addi    a7,a7,1665
+        addi    a7,a7,703
+        addi    s0,s0,1
+        addi    s0,s0,1
+        addi    s0,s0,2
+        addi    s0,s0,4
+        addi    s0,s1,-36
+        addi    s1,a0,36
+        addi    s1,s0,36
+        addi    s1,s1,4
+        addi    s1,sp,112
+        addi    s2,s2,%lo(.L526)
+        addi    s2,s2,%lo(.L528)
+        addi    s2,s2,%lo(.L547)
+        addi    s2,s2,%lo(.L549)
+        addi    s2,s2,1
+        addi    s2,s2,1
+        addi    s3,s3,12
+        addi    s3,s3,3
+        addi    sp,sp,-16
+        addi    sp,sp,-16
+        addi    sp,sp,-16
+        addi    sp,sp,-32
+        addi    sp,sp,-32
+        addi    sp,sp,-32
+        addi    sp,sp,-32
+        addi    sp,sp,-32
+        addi    sp,sp,-32
+        addi    sp,sp,-416
+        addi    sp,sp,-48
+        addi    sp,sp,-64
+        addi    sp,sp,-64
+        addi    sp,sp,-80
+        addi    sp,sp,16
+        addi    sp,sp,16
+        addi    sp,sp,16
+        addi    sp,sp,16
+        addi    sp,sp,16
+        addi    sp,sp,16
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,32
+        addi    sp,sp,416
+        addi    sp,sp,48
+        addi    sp,sp,48
+        addi    sp,sp,64
+        addi    sp,sp,64
+        addi    sp,sp,64
+        addi    sp,sp,80
+        addi    t0,t0,-677
+        addi    t0,t0,-677
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,1
+        addi    t0,t0,703
+        addi    t1,t1,-1039
+        addi    t1,t1,-347
+        addi    t1,t1,-347
+        addi    t1,t1,-347
+        addi    t1,t1,-677
+        addi    t1,t1,-797
+        addi    t1,t1,1557
+        addi    t1,t1,1560
+        addi    t1,t1,703
+        addi    t2,t2,%lo(.L460)
+        addi    t2,t2,%lo(.L488)
+        addi    t2,t2,%lo(.L510)
+        addi    t2,t2,%lo(.L524)
+        addi    t2,t2,%lo(.L541)
+        addi    t2,t2,%lo(.L579)
+        addi    t2,t2,%lo(.L586)
+        addi    t2,t2,329
+        addi    t2,t2,329
+        addi    t2,t2,329
+        addi    t2,t2,329
+        addi    t2,t2,759
+        addi    t2,t2,899
+        addi    t3,t3,-1039
+        addi    t3,t3,-1631
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,12
+        addi    t3,t3,703
+        addi    t3,t3,703
+        addi    t3,t3,899
+        addi    t3,t3,899
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,sp,40
+        addi    t4,t4,-1909
+        addi    t4,t4,-364
+        addi    t4,t4,1349
+        addi    t4,t4,1366
+        addi    t4,t4,1366
+        addi    t4,t4,1366
+        addi    t4,t4,1665
+        addi    t4,t4,1665
+        addi    t4,t4,899
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,sp,76
+        addi    t5,t5,-1
+        addi    t5,t5,-677
+        addi    t5,t5,1105
+        addi    t5,t5,1105
+        addi    t5,t5,1349
+        addi    t6,t6,-1
+        addi    t6,t6,-1
+        addi    t6,t6,-1365
+        addi    t6,t6,-455
+        addi    t6,t6,759
+        addi    t6,t6,899
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a0,a0,0xff
+        andi    a1,a1,3
+        andi    a1,a1,3
+        andi    a1,a1,7
+        andi    a1,a6,1
+        andi    a1,a7,15
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a1,0xff
+        andi    a2,a2,1
+        andi    a2,a2,1
+        andi    a2,a2,1
+        andi    a2,a7,3
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,0xff
+        andi    a3,a3,1
+        andi    a3,a3,1
+        andi    a3,a3,1
+        andi    a3,a3,1
+        andi    a3,a3,1
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a4,a4,0xff
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,a5,1
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a5,t1,0xff
+        andi    a6,a1,3
+        andi    a6,a6,1
+        andi    a6,a6,1
+        andi    a6,a6,1
+        andi    t1,a7,7
+        andi    t1,t1,1
+        andi    t1,t1,1
+        andi    t1,t1,1
+        andi    t1,t1,1
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        andi    t6,t6,0xff
+        beq     a0,a5,.L328
+        beq     a0,a5,.L330
+        beq     a0,a5,.L366
+        beq     a0,a5,.L424
+        beq     a0,a5,.L426
+        beq     a0,a5,.L828
+        beq     a0,a5,.L834
+        beq     a0,s4,.L875
+        beq     a0,zero,.L250
+        beq     a0,zero,.L263
+        beq     a0,zero,.L359
+        beq     a0,zero,.L874
+        beq     a1,a3,.L121
+        beq     a1,a4,.L118
+        beq     a1,a4,.L119
+        beq     a1,a4,.L824
+        beq     a1,a4,.L825
+        beq     a1,a5,.L630
+        beq     a1,zero,.L117
+        beq     a1,zero,.L120
+        beq     a1,zero,.L143
+        beq     a1,zero,.L173
+        beq     a1,zero,.L275
+        beq     a1,zero,.L33
+        beq     a1,zero,.L540
+        beq     a1,zero,.L66
+        beq     a2,a1,.L324
+        beq     a2,a5,.L436
+        beq     a2,a5,.L846
+        beq     a2,zero,.L176
+        beq     a2,zero,.L31
+        beq     a2,zero,.L349
+        beq     a2,zero,.L432
+        beq     a3,a5,.L832
+        beq     a3,a5,.L833
+        beq     a3,zero,.L1
+        beq     a3,zero,.L126
+        beq     a3,zero,.L133
+        beq     a3,zero,.L178
+        beq     a3,zero,.L415
+        beq     a3,zero,.L64
+        beq     a4,a0,.L835
+        beq     a4,a0,.L840
+        beq     a4,a5,.L350
+        beq     a4,a5,.L829
+        beq     a4,a5,.L830
+        beq     a4,t6,.L164
+        beq     a4,zero,.L274
+        beq     a4,zero,.L274
+        beq     a4,zero,.L274
+        beq     a4,zero,.L274
+        beq     a4,zero,.L9
+        beq     a5,a1,.L876
+        beq     a5,a4,.L638
+        beq     a5,s5,.L866
+        beq     a5,zero,.L176
+        beq     a5,zero,.L181
+        beq     a5,zero,.L284
+        beq     a5,zero,.L323
+        beq     a5,zero,.L335
+        beq     a5,zero,.L342
+        beq     a5,zero,.L347
+        beq     a5,zero,.L564
+        beq     a5,zero,.L686
+        beq     a6,zero,.L78
+        beq     a7,a4,.L531
+        beq     a7,a4,.L831
+        beq     a7,a5,.L530
+        beq     t1,zero,.L276
+        beq     t1,zero,.L47
+        beq     t1,zero,.L472
+        beq     t1,zero,.L481
+        beq     t1,zero,.L501
+        beq     t1,zero,.L501
+        beq     t5,zero,.L233
+        beq     t6,zero,.L417
+        beq     t6,zero,.L417
+        beq     t6,zero,.L417
+        beq     t6,zero,.L516
+        beq     t6,zero,.L523
+        beq     t6,zero,.L592
+        beq     t6,zero,.L716
+        bge     a0,a5,.L241
+        bge     a0,a5,.L259
+        bge     a0,a5,.L260
+        bge     a0,a6,.L260
+        bge     a1,a0,.L234
+        bge     a5,a4,.L160
+        bge     t1,a5,.L249
+        bgt     a0,a1,.L228
+        bgt     a0,a2,.L230
+        bgt     a0,a2,.L272
+        bgt     a0,a4,.L268
+        bgt     a0,zero,.L243
+        bgt     a0,zero,.L261
+        bgt     a1,zero,.L206
+        bgtu    a0,a5,.L329
+        bgtu    a0,a5,.L365
+        bgtu    a0,a5,.L425
+        bgtu    a1,a5,.L126
+        bgtu    a1,a5,.L135
+        bgtu    a1,a5,.L505
+        bgtu    a1,a5,.L509
+        bgtu    a1,a5,.L539
+        bgtu    a2,a5,.L501
+        bgtu    a2,a5,.L509
+        bgtu    a4,a5,.L570
+        bgtu    a5,a3,.L861
+        bgtu    a5,a4,.L114
+        bgtu    a5,a4,.L122
+        bgtu    a5,a4,.L392
+        bgtu    a5,a4,.L481
+        bgtu    a5,a4,.L485
+        bgtu    a5,a7,.L394
+        bgtu    a5,a7,.L693
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,a7,.L810
+        bgtu    a5,s2,.L394
+        bgtu    a5,s2,.L394
+        bgtu    a5,s2,.L394
+        bgtu    a5,s2,.L394
+        bgtu    a5,t2,.L810
+        bgtu    a5,t2,.L810
+        bgtu    a5,t2,.L810
+        bgtu    a6,a0,.L244
+        bgtu    s2,a3,.L555
+        bgtu    t2,a5,.L501
+        bgtu    t2,a5,.L505
+        ble     a0,a4,.L240
+        ble     a0,a4,.L240
+        ble     a0,a5,.L369
+        ble     a0,a5,.L370
+        ble     a0,a5,.L371
+        ble     a0,a5,.L882
+        ble     a1,a0,.L232
+        ble     a1,a5,.L535
+        ble     a1,a5,.L535
+        ble     a1,a5,.L535
+        ble     a5,a4,.L156
+        ble     a5,a4,.L837
+        ble     a5,a4,.L838
+        ble     a5,a4,.L839
+        ble     t1,a2,.L242
+        bleu    a0,a5,.L827
+        bleu    a0,t2,.L826
+        bleu    a5,a4,.L386
+        bleu    a5,a4,.L389
+        blt     a0,zero,.L152
+        blt     a0,zero,.L290
+        blt     a0,zero,.L293
+        blt     a0,zero,.L368
+        blt     a0,zero,.L459
+        blt     a1,zero,.L418
+        blt     a1,zero,.L457
+        blt     a2,zero,.L146
+        blt     a2,zero,.L420
+        blt     a2,zero,.L498
+        blt     a3,zero,.L286
+        blt     a4,zero,.L281
+        blt     a4,zero,.L422
+        blt     a5,zero,.L836
+        blt     a7,zero,.L288
+        bne     a0,a5,.L346
+        bne     a0,a5,.L346
+        bne     a0,a5,.L478
+        bne     a0,a5,.L816
+        bne     a0,a5,.L816
+        bne     a0,s4,.L871
+        bne     a0,zero,.L470
+        bne     a0,zero,.L496
+        bne     a1,a3,.L107
+        bne     a1,a4,.L122
+        bne     a1,a4,.L135
+        bne     a1,t0,.L273
+        bne     a1,zero,.L207
+        bne     a1,zero,.L211
+        bne     a1,zero,.L236
+        bne     a1,zero,.L325
+        bne     a1,zero,.L76
+        bne     a2,a1,.L274
+        bne     a2,a4,.L501
+        bne     a2,a4,.L509
+        bne     a2,a5,.L417
+        bne     a2,a5,.L844
+        bne     a2,zero,.L109
+        bne     a2,zero,.L150
+        bne     a2,zero,.L17
+        bne     a2,zero,.L209
+        bne     a2,zero,.L279
+        bne     a2,zero,.L37
+        bne     a3,a1,.L134
+        bne     a3,a4,.L481
+        bne     a3,a4,.L485
+        bne     a3,zero,.L145
+        bne     a3,zero,.L180
+        bne     a3,zero,.L19
+        bne     a3,zero,.L41
+        bne     a3,zero,.L456
+        bne     a3,zero,.L497
+        bne     a3,zero,.L54
+        bne     a3,zero,.L70
+        bne     a4,a1,.L842
+        bne     a4,a3,.L10
+        bne     a4,a5,.L356
+        bne     a4,a6,.L843
+        bne     a4,s1,.L868
+        bne     a4,s8,.L869
+        bne     a4,zero,.L165
+        bne     a4,zero,.L291
+        bne     a4,zero,.L292
+        bne     a4,zero,.L473
+        bne     a4,zero,.L482
+        bne     a4,zero,.L502
+        bne     a4,zero,.L507
+        bne     a5,a0,.L388
+        bne     a5,a1,.L870
+        bne     a5,zero,.L18
+        bne     a5,zero,.L210
+        bne     a5,zero,.L289
+        bne     a5,zero,.L336
+        bne     a5,zero,.L337
+        bne     a5,zero,.L39
+        bne     a5,zero,.L428
+        bne     a5,zero,.L432
+        bne     a5,zero,.L45
+        bne     a5,zero,.L55
+        bne     a5,zero,.L72
+        bne     a6,zero,.L166
+        bne     a6,zero,.L174
+        bne     a6,zero,.L208
+        bne     a6,zero,.L322
+        bne     a6,zero,.L68
+        bne     a6,zero,.L77
+        bne     a7,zero,.L157
+        bne     a7,zero,.L161
+        bne     s0,s1,.L374
+        bne     s0,s4,.L376
+        bne     s2,s0,.L377
+        bne     s3,s4,.L375
+        bne     t1,zero,.L278
+        bne     t1,zero,.L278
+        bne     t1,zero,.L35
+        bne     t1,zero,.L46
+        bne     t6,zero,.L221
+        bne     t6,zero,.L222
+        bne     t6,zero,.L591
+        call    __getdelim
+        call    __getdelim
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        call    alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int)
+        call    calloc
+        call    calloc
+        call    calloc
+        call    clock
+        call    clock
+        call    exit
+        call    exit
+        call    exit
+        call    fclose
+        call    fopen
+        call    free
+        call    get_dmem_i(int*, int, unsigned int)
+        call    get_dmem_i(int*, int, unsigned int)
+        call    load_mem_file(char*, unsigned int*, union_instruction*)
+        call    malloc
+        call    memset
+        call    memset
+        call    memset
+        call    memset
+        call    memset
+        call    parse_ternary_instruction(unsigned int)
+        call    power(int, int) [clone .part.0]
+        call    power(int, int) [clone .part.0]
+        call    power(int, int) [clone .part.0]
+        call    power(int, int) [clone .part.0]
+        call    power(int, int) [clone .part.0]
+        call    print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*)
+        call    print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*)
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    printf
+        call    putc
+        call    putc
+        call    putchar
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    puts
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        call    set_dmem_i(int*, int, int, unsigned int) [clone .part.0]
+        call    sim(unsigned int*, union_instruction*, int*, int*)
+        call    ternary_shift_18(int, int)
+        call    ternary_shift_18(int, int)
+        call    ternary_shift_18(int, int)
+        call    ternary_shift_18(int, int)
+        call    test_op_i18(int*, unsigned int*, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int)
+        div     a0,a4,a0
+        div     a0,a5,a2
+        div     a4,a4,a0
+        div     a5,a2,a0
+        div     a5,a3,a0
+        div     a5,a3,a0
+        fadd.s  fa1,fa1,fa0
+        fadd.s  fa5,fa5,fa4
+        fcvt.d.s        fa4,fa5
+        fcvt.d.s        fa5,fa1
+        fcvt.d.w        fa4,s3
+        fcvt.d.w        fa5,a0
+        fcvt.d.wu       fa3,s0
+        fcvt.s.w        fa5,a4
+        fcvt.s.w        fa5,a5
+        fcvt.s.wu       fa0,a5
+        fcvt.s.wu       fa0,a5
+        fcvt.s.wu       fa0,a5
+        fcvt.s.wu       fa0,a5
+        fcvt.s.wu       fa4,a2
+        fcvt.s.wu       fa4,a5
+        fcvt.s.wu       fa4,a5
+        fcvt.s.wu       fa4,a5
+        fcvt.s.wu       fa5,t1
+        fcvt.w.s a4,fa5,rtz
+        fcvt.w.s a5,fa5,rtz
+        fcvt.wu.s a5,fa1,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fcvt.wu.s a5,fa5,rtz
+        fdiv.d  fa1,fa3,fa5
+        fdiv.d  fa5,fa1,fa2
+        fdiv.d  fa5,fa4,fa3
+        fdiv.d  fa5,fa5,fa2
+        fdiv.s  fa1,fa0,fa1
+        fdiv.s  fa5,fa5,fa4
+        feq.s   a5,fa1,fa5
+        fge.s   a5,fa0,fa5
+        fgt.d   a5,fa4,fa3
+        fgt.d   a5,fa5,fa4
+        fgt.s   a5,fa1,fa5
+        fgt.s   a5,fa5,fa3
+        fld     fa0,%lo(.LC30)(a5)
+        fld     fa2,%lo(.LC28)(a5)
+        fld     fa3,%lo(.LC2)(a5)
+        fld     fa3,%lo(.LC3)(a5)
+        fld     fa4,%lo(.LC2)(a5)
+        fld     fa4,%lo(.LC29)(a5)
+        fld     fa4,%lo(.LC3)(a5)
+        fld     fa5,%lo(.LC14)(a5)
+        flt.d   a5,fa4,fa3
+        flt.d   a5,fa5,fa4
+        flt.s   a3,fa1,fa5
+        flt.s   a3,fa5,fa3
+        flw     fa0,0(a0)
+        flw     fa0,0(a0)
+        flw     fa5,%lo(.LC0)(a5)
+        flw     fa5,%lo(.LC0)(a5)
+        flw     fa5,%lo(.LC0)(a5)
+        flw     fa5,%lo(.LC1)(a5)
+        flw     fa5,%lo(.LC1)(a5)
+        flw     fa5,-128(a5)
+        flw     fa5,0(a1)
+        flw     fa5,0(a5)
+        flw     fa5,0(a5)
+        flw     fa5,240(a5)
+        fmul.d  fa4,fa5,fa4
+        fmul.d  fa5,fa5,fa0
+        fmul.s  fa1,fa1,fa0
+        fmul.s  fa5,fa5,fa4
+        fmv.s.x fa0,zero
+        fmv.s.x fa0,zero
+        fmv.s.x fa3,zero
+        fmv.s.x fa4,zero
+        fmv.s.x fa5,zero
+        fmv.s.x fa5,zero
+        fmv.s.x fa5,zero
+        fmv.s.x fa5,zero
+        fmv.s.x fa5,zero
+        fsd     fa5,0(sp)
+        fsd     fa5,8(sp)
+        fsd     fa5,8(sp)
+        fsd     fa5,8(sp)
+        fsub.d  fa5,fa5,fa4
+        fsub.s  fa1,fa0,fa1
+        fsub.s  fa5,fa5,fa4
+        fsw     fa0,0(a0)
+        fsw     fa0,0(a0)
+        fsw     fa4,240(a4)
+        fsw     fa5,-128(a5)
+        fsw     fa5,0(a1)
+        fsw     fa5,0(a5)
+        fsw     fa5,0(a5)
+        fsw     fa5,240(a5)
+        j       .L12
+        j       .L13
+        j       .L14
+        j       .L172
+        j       .L172
+        j       .L179
+        j       .L205
+        j       .L210
+        j       .L212
+        j       .L220
+        j       .L233
+        j       .L236
+        j       .L243
+        j       .L243
+        j       .L243
+        j       .L258
+        j       .L258
+        j       .L261
+        j       .L261
+        j       .L261
+        j       .L261
+        j       .L268
+        j       .L274
+        j       .L274
+        j       .L274
+        j       .L275
+        j       .L276
+        j       .L280
+        j       .L280
+        j       .L285
+        j       .L287
+        j       .L30
+        j       .L30
+        j       .L31
+        j       .L32
+        j       .L32
+        j       .L326
+        j       .L334
+        j       .L334
+        j       .L334
+        j       .L348
+        j       .L348
+        j       .L357
+        j       .L357
+        j       .L357
+        j       .L372
+        j       .L394
+        j       .L395
+        j       .L397
+        j       .L399
+        j       .L413
+        j       .L416
+        j       .L417
+        j       .L417
+        j       .L417
+        j       .L417
+        j       .L419
+        j       .L421
+        j       .L428
+        j       .L428
+        j       .L428
+        j       .L430
+        j       .L430
+        j       .L430
+        j       .L444
+        j       .L448
+        j       .L455
+        j       .L458
+        j       .L461
+        j       .L463
+        j       .L467
+        j       .L469
+        j       .L472
+        j       .L478
+        j       .L478
+        j       .L481
+        j       .L485
+        j       .L493
+        j       .L495
+        j       .L497
+        j       .L50
+        j       .L501
+        j       .L501
+        j       .L501
+        j       .L501
+        j       .L505
+        j       .L509
+        j       .L51
+        j       .L515
+        j       .L522
+        j       .L532
+        j       .L532
+        j       .L533
+        j       .L535
+        j       .L535
+        j       .L555
+        j       .L566
+        j       .L566
+        j       .L566
+        j       .L566
+        j       .L566
+        j       .L566
+        j       .L578
+        j       .L585
+        j       .L592
+        j       .L64
+        j       .L65
+        j       .L65
+        j       .L821
+        j       .L821
+        j       .L822
+        j       .L844
+        j       .L863
+        j       .L863
+        j       .L870
+        jr      a1
+        jr      a4
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      a5
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        jr      ra
+        lb      a0,0(a5)
+        lb      a0,0(a5)
+        lb      a5,0(a5)
+        lbu     a0,1(s0)
+        lbu     a1,0(a0)
+        lbu     a1,7(s0)
+        lbu     a2,1(a0)
+        lbu     a2,4(s0)
+        lbu     a3,2(a0)
+        lbu     a3,6(s0)
+        lbu     a4,0(a5)
+        lbu     a4,0(a5)
+        lbu     a4,3(a0)
+        lbu     a4,5(s0)
+        lbu     a5,0(s0)
+        lbu     a5,0(s9)
+        lbu     a5,4(a0)
+        lbu     a6,5(a0)
+        lbu     a7,6(a0)
+        lbu     t1,3(s0)
+        lbu     t1,7(a0)
+        lbu     t6,2(s0)
+        li      a0,-1
+        li      a0,-1
+        li      a0,-1
+        li      a0,-1274331136
+        li      a0,-1274331136
+        li      a0,-1319075840
+        li      a0,-1319075840
+        li      a0,-798720
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,0
+        li      a0,1
+        li      a0,1
+        li      a0,1
+        li      a0,10
+        li      a0,10
+        li      a0,1059291136
+        li      a0,128
+        li      a0,13
+        li      a0,1487945728
+        li      a0,1508245504
+        li      a0,1510318080
+        li      a0,3
+        li      a0,3
+        li      a0,3
+        li      a0,32
+        li      a0,32
+        li      a0,364
+        li      a0,364
+        li      a0,532480
+        li      a0,532480
+        li      a0,532480
+        li      a0,729
+        li      a1,-1431654400
+        li      a1,-1431654400
+        li      a1,0
+        li      a1,0
+        li      a1,0
+        li      a1,0
+        li      a1,0
+        li      a1,0
+        li      a1,1
+        li      a1,1
+        li      a1,1059291136
+        li      a1,12
+        li      a1,1487945728
+        li      a1,1487945728
+        li      a1,1487945728
+        li      a1,1508245504
+        li      a1,1510318080
+        li      a1,1510318080
+        li      a1,193712128
+        li      a1,2
+        li      a1,243
+        li      a1,364
+        li      a1,364
+        li      a1,364
+        li      a1,364
+        li      a1,387420160
+        li      a1,387420160
+        li      a1,387420160
+        li      a1,4
+        li      a1,4
+        li      a1,49
+        li      a1,532480
+        li      a1,729
+        li      a1,8192
+        li      a2,-1117097984
+        li      a2,-1274331136
+        li      a2,-2032599040
+        li      a2,-798720
+        li      a2,-901414912
+        li      a2,-901414912
+        li      a2,-901414912
+        li      a2,-901414912
+        li      a2,10
+        li      a2,10
+        li      a2,108
+        li      a2,108
+        li      a2,108
+        li      a2,108
+        li      a2,1272582144
+        li      a2,1431654400
+        li      a2,1431654400
+        li      a2,1431654400
+        li      a2,1431654400
+        li      a2,1431654400
+        li      a2,1510318080
+        li      a2,193712128
+        li      a2,193712128
+        li      a2,193712128
+        li      a2,243
+        li      a2,36
+        li      a2,36
+        li      a2,502747136
+        li      a2,502747136
+        li      a2,729
+        li      a2,729
+        li      a2,795365376
+        li      a2,795365376
+        li      a2,795365376
+        li      a2,954437632
+        li      a3,-1117097984
+        li      a3,-1117097984
+        li      a3,-1274331136
+        li      a3,-1274331136
+        li      a3,-1274331136
+        li      a3,-1431654400
+        li      a3,-1431654400
+        li      a3,-1613639680
+        li      a3,-1894178816
+        li      a3,-1894178816
+        li      a3,-1894178816
+        li      a3,-1894178816
+        li      a3,-2032599040
+        li      a3,-719863808
+        li      a3,-901414912
+        li      a3,0
+        li      a3,0
+        li      a3,0
+        li      a3,1
+        li      a3,1
+        li      a3,1
+        li      a3,1
+        li      a3,1
+        li      a3,1
+        li      a3,1059291136
+        li      a3,1272582144
+        li      a3,1431654400
+        li      a3,1431654400
+        li      a3,1487945728
+        li      a3,1508245504
+        li      a3,1510318080
+        li      a3,1510318080
+        li      a3,1510318080
+        li      a3,2
+        li      a3,2
+        li      a3,2
+        li      a3,2
+        li      a3,25
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,364
+        li      a3,502747136
+        li      a3,502747136
+        li      a3,6
+        li      a3,729
+        li      a3,954437632
+        li      a3,954437632
+        li      a4,-1117097984
+        li      a4,-1117097984
+        li      a4,-1319075840
+        li      a4,-1319075840
+        li      a4,-1319075840
+        li      a4,-1319075840
+        li      a4,-1319075840
+        li      a4,-1319075840
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1431654400
+        li      a4,-1894178816
+        li      a4,-1894178816
+        li      a4,-1894178816
+        li      a4,-2032599040
+        li      a4,0
+        li      a4,0
+        li      a4,0
+        li      a4,0
+        li      a4,1
+        li      a4,1
+        li      a4,1
+        li      a4,1
+        li      a4,1059291136
+        li      a4,1059291136
+        li      a4,1272582144
+        li      a4,1272582144
+        li      a4,1272582144
+        li      a4,1431654400
+        li      a4,1508245504
+        li      a4,1508245504
+        li      a4,1508245504
+        li      a4,1508245504
+        li      a4,1508245504
+        li      a4,1510318080
+        li      a4,193712128
+        li      a4,193712128
+        li      a4,193712128
+        li      a4,2
+        li      a4,2
+        li      a4,20480
+        li      a4,214
+        li      a4,243
+        li      a4,26
+        li      a4,27
+        li      a4,364
+        li      a4,364
+        li      a4,364
+        li      a4,364
+        li      a4,364
+        li      a4,502747136
+        li      a4,502747136
+        li      a4,502747136
+        li      a4,53
+        li      a4,532480
+        li      a4,532480
+        li      a4,532480
+        li      a4,532480
+        li      a4,6
+        li      a4,63
+        li      a4,70
+        li      a4,70
+        li      a4,729
+        li      a4,729
+        li      a4,795365376
+        li      a4,954437632
+        li      a5,-1117097984
+        li      a5,-1117097984
+        li      a5,-1117097984
+        li      a5,-1117097984
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1274331136
+        li      a5,-1319075840
+        li      a5,-1319075840
+        li      a5,-1319075840
+        li      a5,-1319075840
+        li      a5,-1319075840
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1431654400
+        li      a5,-1613639680
+        li      a5,-1894178816
+        li      a5,-1894178816
+        li      a5,-1894178816
+        li      a5,-193708032
+        li      a5,-193712128
+        li      a5,-193712128
+        li      a5,-193712128
+        li      a5,-193712128
+        li      a5,-2032599040
+        li      a5,-2032599040
+        li      a5,-2032599040
+        li      a5,-528605184
+        li      a5,-528605184
+        li      a5,-719863808
+        li      a5,-901414912
+        li      a5,0
+        li      a5,0
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1
+        li      a5,1059291136
+        li      a5,1059291136
+        li      a5,1272582144
+        li      a5,1272582144
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1431654400
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,1508245504
+        li      a5,168869888
+        li      a5,18
+        li      a5,18
+        li      a5,19
+        li      a5,19
+        li      a5,2
+        li      a5,2
+        li      a5,21
+        li      a5,21
+        li      a5,22
+        li      a5,22
+        li      a5,26
+        li      a5,26
+        li      a5,26
+        li      a5,27
+        li      a5,27
+        li      a5,27
+        li      a5,3
+        li      a5,3
+        li      a5,32
+        li      a5,34
+        li      a5,34
+        li      a5,34
+        li      a5,364
+        li      a5,364
+        li      a5,364
+        li      a5,364
+        li      a5,364
+        li      a5,364
+        li      a5,4
+        li      a5,502747136
+        li      a5,53
+        li      a5,53
+        li      a5,532480
+        li      a5,532480
+        li      a5,532480
+        li      a5,532480
+        li      a5,532480
+        li      a5,63
+        li      a5,63
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,795365376
+        li      a5,954437632
+        li      a6,-1431654400
+        li      a6,-193708032
+        li      a6,-193712128
+        li      a6,0
+        li      a6,0
+        li      a6,0
+        li      a6,1
+        li      a6,1
+        li      a6,1
+        li      a6,1
+        li      a6,1272582144
+        li      a6,1272582144
+        li      a6,176128
+        li      a6,176128
+        li      a6,18
+        li      a6,2
+        li      a6,2
+        li      a6,4096
+        li      a6,50
+        li      a6,502747136
+        li      a6,502747136
+        li      a6,532480
+        li      a6,954437632
+        li      a6,954437632
+        li      a7,-1117097984
+        li      a7,-1431654400
+        li      a7,-1431654400
+        li      a7,-1613639680
+        li      a7,-2032599040
+        li      a7,-21524480
+        li      a7,-21524480
+        li      a7,1431654400
+        li      a7,1431654400
+        li      a7,1431654400
+        li      a7,1431654400
+        li      a7,168869888
+        li      a7,18
+        li      a7,18
+        li      a7,243
+        li      a7,243
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,25
+        li      a7,502747136
+        li      a7,729
+        li      s0,0
+        li      s0,0
+        li      s1,49
+        li      s2,0
+        li      s2,0
+        li      s2,25
+        li      s2,25
+        li      s2,25
+        li      s2,25
+        li      s3,0
+        li      s4,-1
+        li      s4,3
+        li      s4,9
+        li      s5,46
+        li      s8,0
+        li      s8,0
+        li      s8,0
+        li      s8,2
+        li      s8,50
+        li      t0,-1613639680
+        li      t0,-1613639680
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,0
+        li      t0,168869888
+        li      t0,2
+        li      t0,243
+        li      t1,-1117097984
+        li      t1,-1117097984
+        li      t1,-1117097984
+        li      t1,-1613639680
+        li      t1,-798720
+        li      t1,-798720
+        li      t1,168869888
+        li      t1,20480
+        li      t1,532480
+        li      t1,729
+        li      t1,729
+        li      t2,1272582144
+        li      t2,1508245504
+        li      t2,17
+        li      t2,17
+        li      t2,17
+        li      t2,17
+        li      t2,25
+        li      t2,25
+        li      t2,25
+        li      t2,25
+        li      t2,387420160
+        li      t2,387420160
+        li      t2,387420160
+        li      t2,387420160
+        li      t3,1
+        li      t3,1508245504
+        li      t3,1508245504
+        li      t3,168869888
+        li      t3,168869888
+        li      t3,532480
+        li      t3,8192
+        li      t4,-2032599040
+        li      t4,1431654400
+        li      t4,1431654400
+        li      t4,1431654400
+        li      t4,1508245504
+        li      t4,243
+        li      t4,4096
+        li      t4,502747136
+        li      t4,502747136
+        li      t5,-1613639680
+        li      t5,-2032599040
+        li      t5,-528605184
+        li      t5,-528605184
+        li      t5,1
+        li      t5,1
+        li      t5,18
+        li      t5,243
+        li      t5,243
+        li      t6,-1431654400
+        li      t6,1272582144
+        li      t6,1508245504
+        li      t6,18
+        li      t6,18
+        li      t6,2
+        li      t6,954437632
+        lui     a0,%hi(.L216)
+        lui     a0,%hi(.LC13)
+        lui     a0,%hi(.LC15)
+        lui     a0,%hi(.LC15)
+        lui     a0,%hi(.LC16)
+        lui     a0,%hi(.LC17)
+        lui     a0,%hi(.LC18)
+        lui     a0,%hi(.LC19)
+        lui     a0,%hi(.LC20)
+        lui     a0,%hi(.LC22)
+        lui     a0,%hi(.LC23)
+        lui     a0,%hi(.LC24)
+        lui     a0,%hi(.LC25)
+        lui     a0,%hi(.LC26)
+        lui     a0,%hi(.LC27)
+        lui     a0,%hi(.LC31)
+        lui     a0,%hi(.LC4)
+        lui     a0,%hi(.LC4)
+        lui     a0,%hi(.LC5)
+        lui     a0,%hi(.LC5)
+        lui     a0,%hi(.LC5)
+        lui     a3,%hi(.L557)
+        lui     a3,%hi(.LC12)
+        lui     a4,%hi(.L850)
+        lui     a4,%hi(.LC10)
+        lui     a4,%hi(stdout)
+        lui     a5,%hi(.LANCHOR0)
+        lui     a5,%hi(.LANCHOR0)
+        lui     a5,%hi(.LANCHOR0)
+        lui     a5,%hi(.LC0)
+        lui     a5,%hi(.LC0)
+        lui     a5,%hi(.LC0)
+        lui     a5,%hi(.LC1)
+        lui     a5,%hi(.LC1)
+        lui     a5,%hi(.LC11)
+        lui     a5,%hi(.LC14)
+        lui     a5,%hi(.LC2)
+        lui     a5,%hi(.LC2)
+        lui     a5,%hi(.LC21)
+        lui     a5,%hi(.LC28)
+        lui     a5,%hi(.LC29)
+        lui     a5,%hi(.LC3)
+        lui     a5,%hi(.LC3)
+        lui     a5,%hi(.LC30)
+        lui     a5,%hi(stdout)
+        lui     a7,%hi(.L396)
+        lui     a7,%hi(.L438)
+        lui     a7,%hi(.L449)
+        lui     a7,%hi(.L517)
+        lui     a7,%hi(.L571)
+        lui     s2,%hi(.L526)
+        lui     s2,%hi(.L528)
+        lui     s2,%hi(.L547)
+        lui     s2,%hi(.L549)
+        lui     s2,%hi(.LC7)
+        lui     s5,%hi(.LC6)
+        lui     s5,%hi(.LC9)
+        lui     s6,%hi(.LC8)
+        lui     t2,%hi(.L460)
+        lui     t2,%hi(.L488)
+        lui     t2,%hi(.L510)
+        lui     t2,%hi(.L524)
+        lui     t2,%hi(.L541)
+        lui     t2,%hi(.L579)
+        lui     t2,%hi(.L586)
+        lw      a0,0(a0)
+        lw      a0,0(a2)
+        lw      a0,0(a3)
+        lw      a0,0(a6)
+        lw      a1,%lo(stdout)(a4)
+        lw      a1,%lo(stdout)(a5)
+        lw      a1,0(a1)
+        lw      a1,0(a2)
+        lw      a1,0(a2)
+        lw      a1,0(a3)
+        lw      a1,0(a5)
+        lw      a1,0(s0)
+        lw      a1,0(s1)
+        lw      a1,0(t2)
+        lw      a1,0(t6)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,16(t3)
+        lw      a1,20(sp)
+        lw      a1,28(sp)
+        lw      a1,4(t3)
+        lw      a1,4(t3)
+        lw      a1,4(t3)
+        lw      a1,4(t3)
+        lw      a1,4(t3)
+        lw      a1,4(t3)
+        lw      a2,%lo(.LC12)(a3)
+        lw      a2,0(a0)
+        lw      a2,0(a0)
+        lw      a2,0(a5)
+        lw      a2,0(a5)
+        lw      a2,12(sp)
+        lw      a2,16(sp)
+        lw      a2,24(sp)
+        lw      a2,24(sp)
+        lw      a2,4(sp)
+        lw      a2,8(sp)
+        lw      a3,%lo(.LC12+4)(a3)
+        lw      a3,0(a0)
+        lw      a3,0(a0)
+        lw      a3,0(a3)
+        lw      a3,0(a6)
+        lw      a3,0(a6)
+        lw      a3,0(a6)
+        lw      a3,0(sp)
+        lw      a3,0(sp)
+        lw      a3,12(sp)
+        lw      a3,28(sp)
+        lw      a3,28(sp)
+        lw      a3,28(sp)
+        lw      a3,8(sp)
+        lw      a4,%lo(.LC11)(a5)
+        lw      a4,-256(a5)
+        lw      a4,0(a3)
+        lw      a4,0(a4)
+        lw      a4,12(sp)
+        lw      a4,16(sp)
+        lw      a4,16(sp)
+        lw      a4,16(sp)
+        lw      a4,32(sp)
+        lw      a4,4(sp)
+        lw      a4,8(sp)
+        lw      a4,8(sp)
+        lw      a5,%lo(.LC11+4)(a5)
+        lw      a5,0(a0)
+        lw      a5,0(a4)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a5)
+        lw      a5,0(a6)
+        lw      a5,0(a6)
+        lw      a5,12(sp)
+        lw      a5,12(sp)
+        lw      a5,12(sp)
+        lw      a5,12(sp)
+        lw      a5,20(sp)
+        lw      a5,36(sp)
+        lw      a5,4(a6)
+        lw      a5,4(a6)
+        lw      a5,8(sp)
+        lw      a5,8(sp)
+        lw      a5,8(sp)
+        lw      a6,%lo(.LC10)(a4)
+        lw      a6,0(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,12(sp)
+        lw      a6,16(sp)
+        lw      a6,16(sp)
+        lw      a6,16(sp)
+        lw      a6,16(sp)
+        lw      a6,24(sp)
+        lw      a6,4(sp)
+        lw      a6,40(sp)
+        lw      a6,8(s0)
+        lw      a6,8(sp)
+        lw      a6,8(sp)
+        lw      a6,8(sp)
+        lw      a6,8(sp)
+        lw      a7,%lo(.LC10+4)(a4)
+        lw      a7,0(a1)
+        lw      a7,0(a6)
+        lw      a7,12(sp)
+        lw      a7,12(sp)
+        lw      a7,12(sp)
+        lw      a7,12(sp)
+        lw      a7,44(sp)
+        lw      ra,12(sp)
+        lw      ra,12(sp)
+        lw      ra,12(sp)
+        lw      ra,12(sp)
+        lw      ra,12(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,28(sp)
+        lw      ra,412(sp)
+        lw      ra,44(sp)
+        lw      ra,44(sp)
+        lw      ra,60(sp)
+        lw      ra,60(sp)
+        lw      ra,60(sp)
+        lw      ra,76(sp)
+        lw      s0,12(sp)
+        lw      s0,24(sp)
+        lw      s0,408(sp)
+        lw      s0,56(sp)
+        lw      s0,72(sp)
+        lw      s0,8(sp)
+        lw      s0,8(sp)
+        lw      s1,20(sp)
+        lw      s1,4(a1)
+        lw      s1,4(sp)
+        lw      s1,4(sp)
+        lw      s1,404(sp)
+        lw      s1,52(sp)
+        lw      s1,68(sp)
+        lw      s1,8(sp)
+        lw      s2,0(sp)
+        lw      s2,0(sp)
+        lw      s2,16(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,400(sp)
+        lw      s2,48(sp)
+        lw      s2,64(sp)
+        lw      s3,12(sp)
+        lw      s3,396(sp)
+        lw      s3,44(sp)
+        lw      s3,60(sp)
+        lw      s4,392(sp)
+        lw      s4,40(sp)
+        lw      s4,56(sp)
+        lw      s4,8(sp)
+        lw      s5,388(sp)
+        lw      s5,4(sp)
+        lw      s5,52(sp)
+        lw      s6,0(sp)
+        lw      s6,48(sp)
+        lw      s7,44(sp)
+        lw      s8,376(sp)
+        lw      s8,40(sp)
+        lw      s9,16(sp)
+        lw      s9,16(sp)
+        lw      s9,36(sp)
+        lw      t0,12(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,16(sp)
+        lw      t0,20(sp)
+        lw      t0,20(sp)
+        lw      t0,20(sp)
+        lw      t0,20(sp)
+        lw      t0,8(sp)
+        lw      t1,0(t3)
+        lw      t1,0(t3)
+        lw      t1,0(t3)
+        lw      t1,0(t3)
+        lw      t1,0(t3)
+        lw      t1,0(t3)
+        lw      t1,12(sp)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,12(t3)
+        lw      t1,20(sp)
+        lw      t1,24(sp)
+        lw      t1,28(sp)
+        lw      t1,28(sp)
+        lw      t2,20(sp)
+        lw      t2,20(sp)
+        lw      t2,8(sp)
+        lw      t3,12(sp)
+        lw      t3,12(sp)
+        lw      t3,12(sp)
+        lw      t3,12(sp)
+        lw      t3,20(sp)
+        lw      t3,8(a0)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t3,8(sp)
+        lw      t4,12(sp)
+        lw      t4,12(sp)
+        lw      t4,12(sp)
+        lw      t4,16(sp)
+        lw      t6,20(sp)
+        lw      t6,20(sp)
+        lw      t6,20(sp)
+        lw      t6,20(sp)
+        lw      t6,20(sp)
+        lw      t6,24(sp)
+        lw      t6,24(sp)
+        lw      t6,28(sp)
+        mul     a0,a0,a0
+        mul     a0,a0,a0
+        mul     a0,a0,a0
+        mul     a0,a0,a0
+        mul     a0,a0,a2
+        mul     a0,a0,a4
+        mul     a0,a0,a4
+        mul     a0,a0,a4
+        mul     a0,a0,a5
+        mul     a0,a0,a5
+        mul     a0,a0,a7
+        mul     a0,a1,a1
+        mul     a0,a3,a3
+        mul     a0,a3,a3
+        mul     a0,a4,a0
+        mul     a0,a4,a0
+        mul     a0,a4,a4
+        mul     a0,a4,a4
+        mul     a0,a4,a4
+        mul     a0,a4,a4
+        mul     a0,a5,a2
+        mul     a0,a5,a4
+        mul     a0,a5,a4
+        mul     a0,a6,a4
+        mul     a0,a6,a4
+        mul     a1,a0,a0
+        mul     a1,a0,a4
+        mul     a1,a1,a0
+        mul     a1,a1,a1
+        mul     a1,a1,a1
+        mul     a1,a1,a4
+        mul     a1,a1,a5
+        mul     a1,a1,t1
+        mul     a1,a1,t5
+        mul     a1,a1,t5
+        mul     a1,a4,a1
+        mul     a1,a4,a1
+        mul     a1,a4,a1
+        mul     a1,a4,a4
+        mul     a1,a6,a0
+        mul     a2,a0,a2
+        mul     a2,a2,a0
+        mul     a2,a2,a5
+        mul     a2,a2,a7
+        mul     a2,a2,t1
+        mul     a2,a2,t1
+        mul     a2,a2,t4
+        mul     a2,a5,a2
+        mul     a3,a0,a0
+        mul     a3,a3,a1
+        mul     a3,a3,a3
+        mul     a3,a3,a3
+        mul     a3,a3,a5
+        mul     a3,a3,a5
+        mul     a3,a3,a6
+        mul     a3,a3,a6
+        mul     a3,a3,a6
+        mul     a3,a3,t1
+        mul     a3,a3,t1
+        mul     a3,a3,t1
+        mul     a3,a5,a3
+        mul     a4,a1,a1
+        mul     a4,a1,a1
+        mul     a4,a2,a4
+        mul     a4,a2,a7
+        mul     a4,a2,a7
+        mul     a4,a4,a1
+        mul     a4,a4,a1
+        mul     a4,a4,a1
+        mul     a4,a4,a1
+        mul     a4,a4,a1
+        mul     a4,a4,a2
+        mul     a4,a4,a2
+        mul     a4,a4,a7
+        mul     a4,a4,a7
+        mul     a4,a4,t1
+        mul     a4,a4,t1
+        mul     a4,a4,t2
+        mul     a4,a4,t2
+        mul     a4,a4,t2
+        mul     a4,a4,t2
+        mul     a4,a6,a1
+        mul     a4,a6,a1
+        mul     a4,a6,a1
+        mul     a4,a6,a1
+        mul     a4,a7,a7
+        mul     a4,a7,a7
+        mul     a5,a2,a4
+        mul     a5,a2,a4
+        mul     a5,a3,a5
+        mul     a5,a3,a5
+        mul     a5,a4,a5
+        mul     a5,a5,a0
+        mul     a5,a5,a0
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a1
+        mul     a5,a5,a2
+        mul     a5,a5,a2
+        mul     a5,a5,a2
+        mul     a5,a5,a2
+        mul     a5,a5,a2
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a3
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a4
+        mul     a5,a5,a6
+        mul     a5,a5,a6
+        mul     a5,a5,a6
+        mul     a5,a5,a6
+        mul     a5,a5,a7
+        mul     a5,a5,t0
+        mul     a5,a5,t1
+        mul     a5,a5,t3
+        mul     a5,a5,t3
+        mul     a6,a5,a6
+        mul     a6,a6,a4
+        mul     a6,a6,a4
+        mul     a6,a6,t1
+        mul     a7,a0,a0
+        mul     a7,a0,a4
+        mul     a7,a0,a7
+        mul     a7,a2,a0
+        mul     a7,a4,a4
+        mul     a7,a7,a0
+        mul     a7,a7,a4
+        mul     a7,a7,t5
+        mul     t1,t1,a5
+        mul     t3,a3,a5
+        mul     t4,t4,t5
+        mul     t5,t5,t4
+        mul     t6,a0,t3
+        mul     t6,a0,t3
+        mulh    a0,a0,a2
+        mulh    a0,a0,a2
+        mulh    a0,a0,a2
+        mulh    a0,a2,a0
+        mulh    a0,a2,t4
+        mulh    a0,a2,t4
+        mulh    a0,a2,t4
+        mulh    a0,a3,a0
+        mulh    a0,a4,a0
+        mulh    a0,a4,a5
+        mulh    a0,a5,a0
+        mulh    a0,a5,a0
+        mulh    a0,t1,a0
+        mulh    a1,a1,a2
+        mulh    a1,a1,a2
+        mulh    a1,a1,a2
+        mulh    a1,a3,a6
+        mulh    a1,a5,t4
+        mulh    a1,a7,a3
+        mulh    a2,a2,t4
+        mulh    a2,a2,t4
+        mulh    a2,a2,t4
+        mulh    a2,a3,a2
+        mulh    a2,a4,a2
+        mulh    a2,a5,a1
+        mulh    a2,a5,a1
+        mulh    a2,a5,a2
+        mulh    a2,a5,a2
+        mulh    a2,t1,t6
+        mulh    a3,a0,a2
+        mulh    a3,a0,a2
+        mulh    a3,a1,a3
+        mulh    a3,a2,a3
+        mulh    a3,a3,a1
+        mulh    a3,a3,a1
+        mulh    a3,a4,a3
+        mulh    a3,a5,a3
+        mulh    a3,a7,a3
+        mulh    a3,a7,a4
+        mulh    a4,a0,a2
+        mulh    a4,a1,a2
+        mulh    a4,a1,a2
+        mulh    a4,a1,a4
+        mulh    a4,a2,a4
+        mulh    a4,a2,a4
+        mulh    a4,a3,a4
+        mulh    a4,a3,a4
+        mulh    a4,a3,a5
+        mulh    a4,a5,a3
+        mulh    a4,a5,a3
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a4
+        mulh    a4,a5,a7
+        mulh    a4,a5,a7
+        mulh    a4,a5,a7
+        mulh    a4,a5,a7
+        mulh    a4,t0,a4
+        mulh    a4,t2,a4
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a0,a5
+        mulh    a5,a1,a2
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a1,a5
+        mulh    a5,a2,a3
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a2,a5
+        mulh    a5,a3,a5
+        mulh    a5,a3,a5
+        mulh    a5,a4,a5
+        mulh    a5,a4,a5
+        mulh    a5,a4,a5
+        mulh    a5,a4,a5
+        mulh    a5,a5,t4
+        mulh    a5,a5,t4
+        mulh    a5,a5,t4
+        mulh    a5,a7,a5
+        mulh    a5,t1,a6
+        mulh    a6,a2,t6
+        mulh    a6,a7,a4
+        mulh    a6,a7,t6
+        mulh    t0,a2,a4
+        mulh    t1,a7,a3
+        mulh    t2,a5,a4
+        mulh    t2,t5,t2
+        mulh    t3,a5,a6
+        mulh    t3,a5,t4
+        mulh    t3,a5,t4
+        mulh    t3,t0,a6
+        mulh    t6,a2,t2
+        mulhu   a0,a0,a2
+        mulhu   a0,a0,a4
+        mulhu   a0,a0,a5
+        mulhu   a0,a0,a5
+        mulhu   a0,a0,a5
+        mulhu   a0,a0,a5
+        mulhu   a0,a0,a5
+        mulhu   a0,a0,a5
+        mulhu   a0,a5,a6
+        mulhu   a1,a1,t4
+        mulhu   a1,a3,a1
+        mulhu   a1,a3,a6
+        mulhu   a2,a1,a2
+        mulhu   a2,a1,a2
+        mulhu   a2,a1,a2
+        mulhu   a2,a1,a2
+        mulhu   a2,a1,a2
+        mulhu   a2,a2,a5
+        mulhu   a2,a2,a5
+        mulhu   a2,a4,a2
+        mulhu   a2,a4,a2
+        mulhu   a2,a4,a6
+        mulhu   a2,a4,t6
+        mulhu   a2,a5,a2
+        mulhu   a2,a5,a2
+        mulhu   a2,a5,a2
+        mulhu   a2,a5,a2
+        mulhu   a2,a5,a3
+        mulhu   a2,a6,a4
+        mulhu   a3,a0,a3
+        mulhu   a3,a0,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a1,a3
+        mulhu   a3,a3,a1
+        mulhu   a3,a3,a5
+        mulhu   a3,a4,a3
+        mulhu   a3,a4,a3
+        mulhu   a3,a4,a3
+        mulhu   a3,a4,a3
+        mulhu   a3,a5,a1
+        mulhu   a3,a5,a3
+        mulhu   a3,a5,a3
+        mulhu   a3,a5,a4
+        mulhu   a3,a7,a3
+        mulhu   a3,t2,a3
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a4
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a0,a5
+        mulhu   a4,a1,a4
+        mulhu   a4,a1,a4
+        mulhu   a4,a1,a4
+        mulhu   a4,a1,a4
+        mulhu   a4,a1,a4
+        mulhu   a4,a1,a4
+        mulhu   a4,a4,a5
+        mulhu   a4,a5,a4
+        mulhu   a4,a5,a4
+        mulhu   a4,a5,a4
+        mulhu   a4,a5,a4
+        mulhu   a4,t3,t6
+        mulhu   a4,t4,a4
+        mulhu   a4,t5,a4
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a0,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a5
+        mulhu   a5,a1,a7
+        mulhu   a5,a1,t1
+        mulhu   a5,a1,t3
+        mulhu   a5,a1,t3
+        mulhu   a5,a3,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a4,a5
+        mulhu   a5,a5,a0
+        mulhu   a5,a5,a0
+        mulhu   a5,a5,a1
+        mulhu   a5,a5,a1
+        mulhu   a5,a5,a1
+        mulhu   a5,a5,a1
+        mulhu   a5,a5,a2
+        mulhu   a5,a5,a3
+        mulhu   a5,a5,a3
+        mulhu   a5,a5,a3
+        mulhu   a5,a5,a3
+        mulhu   a5,a5,a4
+        mulhu   a5,a5,a4
+        mulhu   a5,a5,a4
+        mulhu   a5,a6,a5
+        mulhu   a5,t1,a5
+        mulhu   a5,t3,a5
+        mulhu   a6,a1,a6
+        mulhu   a6,a1,a6
+        mulhu   a6,a4,a6
+        mulhu   a7,a1,a5
+        mulhu   a7,a1,a7
+        mulhu   a7,a1,a7
+        mulhu   a7,a1,a7
+        mulhu   a7,a2,a6
+        mulhu   a7,a3,a4
+        mulhu   a7,a3,a7
+        mulhu   a7,a5,a6
+        mulhu   a7,a5,a7
+        mulhu   a7,a6,a7
+        mulhu   a7,t6,a5
+        mulhu   s0,t4,a5
+        mulhu   t0,a1,t0
+        mulhu   t0,a1,t0
+        mulhu   t0,a1,t0
+        mulhu   t0,a6,a5
+        mulhu   t1,a1,t1
+        mulhu   t1,a1,t1
+        mulhu   t1,a1,t1
+        mulhu   t1,a1,t1
+        mulhu   t2,a1,t2
+        mulhu   t3,a1,t3
+        mulhu   t3,a1,t3
+        mulhu   t4,a1,t4
+        mulhu   t4,a1,t4
+        mulhu   t4,t1,t4
+        mulhu   t4,t5,a3
+        mulhu   t5,a1,t5
+        mulhu   t5,a1,t5
+        mulhu   t5,a1,t5
+        mulhu   t5,a2,t5
+        mulhu   t5,a3,a5
+        mulhu   t6,a1,t6
+        mv      a0,a5
+        mv      a0,a5
+        mv      a0,s0
+        mv      a0,s0
+        mv      a0,s1
+        mv      a0,s1
+        mv      a0,s1
+        mv      a0,s1
+        mv      a0,s1
+        mv      a0,s1
+        mv      a0,s2
+        mv      a0,s2
+        mv      a0,s3
+        mv      a0,s3
+        mv      a0,s3
+        mv      a0,s3
+        mv      a0,s3
+        mv      a0,s3
+        mv      a0,s9
+        mv      a0,t0
+        mv      a0,t1
+        mv      a0,t4
+        mv      a0,t4
+        mv      a0,t4
+        mv      a1,a0
+        mv      a1,a0
+        mv      a1,a0
+        mv      a1,a2
+        mv      a1,a3
+        mv      a1,a4
+        mv      a1,a5
+        mv      a1,a6
+        mv      a1,a6
+        mv      a1,a6
+        mv      a1,s0
+        mv      a1,s0
+        mv      a1,s0
+        mv      a1,s0
+        mv      a1,s0
+        mv      a1,s2
+        mv      a1,s2
+        mv      a1,s2
+        mv      a1,s2
+        mv      a1,s3
+        mv      a1,t2
+        mv      a1,t2
+        mv      a1,t4
+        mv      a2,a0
+        mv      a2,a0
+        mv      a2,a0
+        mv      a2,a3
+        mv      a2,a3
+        mv      a2,a5
+        mv      a2,a6
+        mv      a2,a6
+        mv      a2,s1
+        mv      a2,s4
+        mv      a2,s9
+        mv      a2,t4
+        mv      a3,a1
+        mv      a3,a4
+        mv      a3,s3
+        mv      a3,s3
+        mv      a3,t1
+        mv      a3,t4
+        mv      a3,t4
+        mv      a3,t4
+        mv      a3,t4
+        mv      a3,t5
+        mv      a4,a0
+        mv      a4,a0
+        mv      a4,s4
+        mv      a4,s4
+        mv      a4,t6
+        mv      a5,a0
+        mv      a5,a0
+        mv      a5,a0
+        mv      a5,a1
+        mv      a5,a1
+        mv      a5,a1
+        mv      a5,a3
+        mv      a5,a4
+        mv      a5,a4
+        mv      a5,a6
+        mv      a5,a6
+        mv      a5,s3
+        mv      a5,s3
+        mv      a6,a0
+        mv      a6,a0
+        mv      a6,a0
+        mv      a6,a5
+        mv      a7,a4
+        mv      a7,a4
+        mv      s0,a0
+        mv      s0,a0
+        mv      s0,a0
+        mv      s0,a1
+        mv      s0,a2
+        mv      s1,a3
+        mv      s1,s3
+        mv      s2,a0
+        mv      s2,a1
+        mv      s3,a0
+        mv      s3,a0
+        mv      s3,a2
+        mv      s3,s6
+        mv      s4,a0
+        mv      s4,a0
+        mv      s5,a3
+        mv      s6,a1
+        mv      s6,a2
+        mv      s7,a2
+        mv      t3,a1
+        mv      t3,a3
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t3,s0
+        mv      t4,a0
+        mv      t6,t3
+        neg     a0,a0
+        neg     a0,a0
+        neg     a0,a0
+        neg     a0,a0
+        neg     a0,a0
+        neg     a0,a5
+        neg     a0,a5
+        neg     a0,a5
+        neg     a0,a5
+        neg     a1,a1
+        neg     a2,a2
+        neg     a2,a2
+        neg     a2,a2
+        neg     a3,a0
+        neg     a3,a3
+        neg     a4,a0
+        neg     a4,a4
+        neg     a4,a4
+        neg     a5,a1
+        neg     a7,a7
+        neg     t1,t1
+        rem     a0,a5,a2
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        ret
+        sb      a2,2(a0)
+        sb      a2,2(a0)
+        sb      a2,6(a0)
+        sb      a2,7(a0)
+        sb      a3,3(a0)
+        sb      a3,5(a0)
+        sb      a3,5(a0)
+        sb      a3,5(a0)
+        sb      a3,5(a0)
+        sb      a3,5(a0)
+        sb      a3,7(a0)
+        sb      a4,1(a0)
+        sb      a4,5(a0)
+        sb      a4,6(a0)
+        sb      a5,0(a0)
+        sb      a5,2(a0)
+        sb      a5,2(a0)
+        sb      a5,2(a0)
+        sb      a5,6(a0)
+        sb      a5,6(a0)
+        sb      a5,7(a0)
+        sb      a7,4(a0)
+        sb      t0,3(a0)
+        sb      t0,3(a0)
+        sb      t1,3(a0)
+        sb      t1,4(a0)
+        sb      t2,3(a0)
+        sb      t3,1(a0)
+        sb      t3,1(a0)
+        sb      t4,1(a0)
+        sb      t4,1(a0)
+        sb      t5,3(a0)
+        seqz    a5,a0
+        seqz    a5,a0
+        seqz    a5,a5
+        seqz    a5,a5
+        seqz    a5,a5
+        seqz    a5,a5
+        slli    a0,a0,2
+        slli    a0,a0,2
+        slli    a0,a2,3
+        slli    a0,a3,1
+        slli    a0,a4,1
+        slli    a0,a4,1
+        slli    a0,a4,1
+        slli    a0,a4,1
+        slli    a0,a4,3
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,1
+        slli    a0,a5,3
+        slli    a0,a5,3
+        slli    a0,a5,3
+        slli    a0,t5,1
+        slli    a0,t5,1
+        slli    a1,a0,1
+        slli    a1,a0,1
+        slli    a1,a1,2
+        slli    a1,a1,2
+        slli    a1,a1,2
+        slli    a1,a1,2
+        slli    a1,a1,4
+        slli    a1,a1,4
+        slli    a1,a1,4
+        slli    a1,a1,4
+        slli    a1,a2,1
+        slli    a1,a2,1
+        slli    a1,a2,2
+        slli    a1,a2,2
+        slli    a1,a2,2
+        slli    a1,a2,3
+        slli    a1,a3,1
+        slli    a1,a3,1
+        slli    a1,a3,2
+        slli    a1,a5,3
+        slli    a1,a6,2
+        slli    a1,t3,1
+        slli    a1,t3,1
+        slli    a1,t3,1
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a2,2
+        slli    a2,a3,1
+        slli    a2,a3,1
+        slli    a2,a3,1
+        slli    a2,a3,1
+        slli    a2,a3,1
+        slli    a2,a3,3
+        slli    a2,a3,3
+        slli    a2,a4,1
+        slli    a2,a4,1
+        slli    a2,a4,1
+        slli    a2,a4,1
+        slli    a2,a4,1
+        slli    a2,a4,1
+        slli    a2,a4,3
+        slli    a2,a5,3
+        slli    a2,a7,1
+        slli    a2,t1,2
+        slli    a2,t2,3
+        slli    a2,t3,3
+        slli    a2,t4,3
+        slli    a2,t5,1
+        slli    a2,t6,2
+        slli    a2,t6,3
+        slli    a3,a0,1
+        slli    a3,a0,1
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a3,2
+        slli    a3,a4,1
+        slli    a3,a4,1
+        slli    a3,a4,1
+        slli    a3,a4,1
+        slli    a3,a4,1
+        slli    a3,a4,3
+        slli    a3,a5,1
+        slli    a3,a5,1
+        slli    a3,a5,1
+        slli    a3,a5,1
+        slli    a3,a5,1
+        slli    a3,a5,3
+        slli    a3,a5,3
+        slli    a3,a6,3
+        slli    a3,a7,1
+        slli    a3,s0,1
+        slli    a3,t1,2
+        slli    a4,a2,1
+        slli    a4,a3,1
+        slli    a4,a3,1
+        slli    a4,a3,2
+        slli    a4,a4,2
+        slli    a4,a4,2
+        slli    a4,a4,2
+        slli    a4,a4,2
+        slli    a4,a4,2
+        slli    a4,a4,2
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,1
+        slli    a4,a5,3
+        slli    a4,a5,3
+        slli    a4,a5,3
+        slli    a4,a5,3
+        slli    a4,s2,2
+        slli    a4,s2,2
+        slli    a4,t1,1
+        slli    a4,t1,2
+        slli    a4,t6,2
+        slli    a4,t6,2
+        slli    a4,t6,2
+        slli    a5,a0,1
+        slli    a5,a0,1
+        slli    a5,a0,1
+        slli    a5,a0,1
+        slli    a5,a0,1
+        slli    a5,a1,1
+        slli    a5,a1,1
+        slli    a5,a2,1
+        slli    a5,a2,1
+        slli    a5,a2,1
+        slli    a5,a2,1
+        slli    a5,a2,1
+        slli    a5,a2,2
+        slli    a5,a2,2
+        slli    a5,a2,2
+        slli    a5,a3,1
+        slli    a5,a3,1
+        slli    a5,a3,1
+        slli    a5,a3,3
+        slli    a5,a4,1
+        slli    a5,a4,1
+        slli    a5,a4,1
+        slli    a5,a4,1
+        slli    a5,a4,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a5,2
+        slli    a5,a6,1
+        slli    a5,a7,1
+        slli    a5,s2,1
+        slli    a5,t1,1
+        slli    a5,t1,2
+        slli    a5,t1,2
+        slli    a5,t1,2
+        slli    a5,t1,2
+        slli    a5,t1,2
+        slli    a5,t6,2
+        slli    a5,t6,2
+        slli    a5,t6,2
+        slli    a6,a0,3
+        slli    a6,a1,1
+        slli    a6,a1,3
+        slli    a6,a4,1
+        slli    a6,a4,3
+        slli    a6,a6,2
+        slli    a6,a6,2
+        slli    a6,a6,2
+        slli    a6,a6,2
+        slli    a6,a6,2
+        slli    a6,t2,3
+        slli    a6,t2,3
+        slli    a6,t5,3
+        slli    a7,a3,1
+        slli    a7,a7,2
+        slli    a7,a7,2
+        slli    a7,t0,3
+        slli    a7,t6,3
+        slli    t1,t1,2
+        slli    t2,a2,1
+        slli    t2,a4,3
+        slli    t2,t1,2
+        slli    t3,a0,1
+        slli    t3,a0,1
+        slli    t3,a5,1
+        slli    t3,a5,1
+        slli    t3,a5,1
+        slli    t3,a5,1
+        slli    t3,a5,1
+        slli    t3,a5,1
+        slli    t3,t3,2
+        slli    t3,t3,2
+        slli    t3,t3,2
+        slli    t3,t3,2
+        slli    t3,t3,2
+        slli    t3,t3,2
+        slli    t4,a1,1
+        slli    t4,a6,1
+        slli    t4,t5,3
+        slli    t5,a4,1
+        slli    t5,a5,1
+        slli    t5,a6,1
+        slli    t5,a6,1
+        slli    t5,a7,1
+        slli    t5,a7,1
+        slli    t6,a0,1
+        slli    t6,a1,1
+        slli    t6,a2,1
+        slli    t6,a2,1
+        slli    t6,a7,1
+        slli    t6,t1,2
+        srai    a0,a0,17
+        srai    a0,a0,27
+        srai    a0,a0,27
+        srai    a0,a0,31
+        srai    a0,a0,31
+        srai    a0,a0,8
+        srai    a0,a0,8
+        srai    a0,a0,8
+        srai    a0,a0,8
+        srai    a0,a5,31
+        srai    a1,a0,31
+        srai    a1,a0,31
+        srai    a1,a1,2
+        srai    a1,a1,2
+        srai    a1,a1,3
+        srai    a1,a1,3
+        srai    a1,a1,31
+        srai    a1,a1,31
+        srai    a1,a1,4
+        srai    a1,a1,8
+        srai    a1,a5,31
+        srai    a1,a5,31
+        srai    a1,a6,31
+        srai    a2,a0,31
+        srai    a2,a0,31
+        srai    a2,a0,31
+        srai    a2,a1,1
+        srai    a2,a1,31
+        srai    a2,a2,17
+        srai    a2,a2,2
+        srai    a2,a2,31
+        srai    a2,a2,31
+        srai    a2,a2,8
+        srai    a2,a2,8
+        srai    a2,a3,31
+        srai    a2,a4,31
+        srai    a2,a4,31
+        srai    a2,a4,31
+        srai    a2,a5,31
+        srai    a2,a5,31
+        srai    a2,a5,31
+        srai    a2,a7,31
+        srai    a2,a7,31
+        srai    a3,a0,31
+        srai    a3,a0,31
+        srai    a3,a0,31
+        srai    a3,a1,31
+        srai    a3,a1,31
+        srai    a3,a2,31
+        srai    a3,a2,31
+        srai    a3,a3,1
+        srai    a3,a3,1
+        srai    a3,a3,17
+        srai    a3,a3,31
+        srai    a3,a3,31
+        srai    a3,a3,31
+        srai    a3,a3,8
+        srai    a3,a3,8
+        srai    a3,a3,8
+        srai    a3,a3,8
+        srai    a3,a3,8
+        srai    a3,a4,31
+        srai    a3,a4,31
+        srai    a3,a4,31
+        srai    a3,a5,31
+        srai    a3,a5,31
+        srai    a3,a5,31
+        srai    a3,a5,31
+        srai    a4,a1,31
+        srai    a4,a1,31
+        srai    a4,a1,31
+        srai    a4,a1,31
+        srai    a4,a2,31
+        srai    a4,a2,31
+        srai    a4,a3,31
+        srai    a4,a3,31
+        srai    a4,a4,17
+        srai    a4,a4,17
+        srai    a4,a4,28
+        srai    a4,a4,28
+        srai    a4,a4,28
+        srai    a4,a4,28
+        srai    a4,a4,28
+        srai    a4,a4,28
+        srai    a4,a4,8
+        srai    a4,a4,8
+        srai    a4,a4,8
+        srai    a5,a2,31
+        srai    a5,a3,17
+        srai    a5,a4,31
+        srai    a5,a5,1
+        srai    a5,a5,17
+        srai    a5,a5,27
+        srai    a5,a5,27
+        srai    a5,a5,27
+        srai    a5,a5,27
+        srai    a5,a5,28
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,31
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,a5,8
+        srai    a5,t1,31
+        srai    a6,a1,2
+        srai    a6,a1,31
+        srai    a6,a2,31
+        srai    a6,a2,31
+        srai    a6,a2,31
+        srai    a6,a3,31
+        srai    a6,a3,31
+        srai    a6,a3,31
+        srai    a6,a6,17
+        srai    a6,a6,2
+        srai    a7,a1,31
+        srai    a7,a1,31
+        srai    a7,a5,31
+        srai    a7,a5,31
+        srai    a7,a5,31
+        srai    a7,a5,31
+        srai    s2,a2,31
+        srai    t1,a0,31
+        srai    t1,a1,31
+        srai    t1,a1,31
+        srai    t1,a1,31
+        srai    t1,a2,31
+        srai    t1,t1,1
+        srai    t1,t1,17
+        srai    t1,t1,3
+        srai    t3,a0,31
+        srai    t3,a0,31
+        srai    t3,a7,31
+        srai    t3,a7,31
+        srai    t3,a7,31
+        srai    t3,a7,31
+        srai    t4,a2,31
+        srai    t4,a2,31
+        srai    t4,a2,31
+        srai    t4,a2,31
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,1
+        srli    a0,a0,12
+        srli    a0,a0,17
+        srli    a0,a0,17
+        srli    a0,a0,2
+        srli    a0,a0,26
+        srli    a0,a0,3
+        srli    a0,a0,8
+        srli    a0,a0,8
+        srli    a0,a0,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a0,t1,8
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,1
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,24
+        srli    a1,a1,3
+        srli    a1,a1,8
+        srli    a2,a1,26
+        srli    a2,a2,1
+        srli    a2,a2,1
+        srli    a2,a2,1
+        srli    a2,a2,1
+        srli    a2,a2,17
+        srli    a2,a2,3
+        srli    a2,a2,3
+        srli    a2,a2,3
+        srli    a2,a2,4
+        srli    a2,a2,4
+        srli    a2,a2,4
+        srli    a2,a2,6
+        srli    a2,a2,6
+        srli    a2,a2,6
+        srli    a2,a2,6
+        srli    a2,a2,7
+        srli    a2,a2,8
+        srli    a2,t0,1
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,16
+        srli    a3,a1,31
+        srli    a3,a1,31
+        srli    a3,a2,1
+        srli    a3,a2,1
+        srli    a3,a3,1
+        srli    a3,a3,1
+        srli    a3,a3,1
+        srli    a3,a3,1
+        srli    a3,a3,1
+        srli    a3,a3,1
+        srli    a3,a3,12
+        srli    a3,a3,14
+        srli    a3,a3,17
+        srli    a3,a3,17
+        srli    a3,a3,25
+        srli    a3,a3,25
+        srli    a3,a3,25
+        srli    a3,a3,25
+        srli    a3,a3,3
+        srli    a3,a3,3
+        srli    a3,a3,5
+        srli    a3,a3,6
+        srli    a3,a3,7
+        srli    a3,a3,8
+        srli    a3,a3,8
+        srli    a3,a5,2
+        srli    a4,a0,8
+        srli    a4,a1,1
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a1,8
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,1
+        srli    a4,a4,17
+        srli    a4,a4,17
+        srli    a4,a4,17
+        srli    a4,a4,17
+        srli    a4,a4,25
+        srli    a4,a4,25
+        srli    a4,a4,25
+        srli    a4,a4,3
+        srli    a4,a4,3
+        srli    a4,a4,3
+        srli    a4,a4,3
+        srli    a4,a4,4
+        srli    a4,a4,6
+        srli    a4,a4,7
+        srli    a4,a4,7
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a4,8
+        srli    a4,a7,1
+        srli    a5,a0,2
+        srli    a5,a0,2
+        srli    a5,a0,2
+        srli    a5,a0,2
+        srli    a5,a0,2
+        srli    a5,a1,2
+        srli    a5,a1,31
+        srli    a5,a2,1
+        srli    a5,a2,2
+        srli    a5,a2,2
+        srli    a5,a2,2
+        srli    a5,a3,2
+        srli    a5,a4,1
+        srli    a5,a4,2
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,1
+        srli    a5,a5,14
+        srli    a5,a5,17
+        srli    a5,a5,22
+        srli    a5,a5,22
+        srli    a5,a5,24
+        srli    a5,a5,24
+        srli    a5,a5,24
+        srli    a5,a5,24
+        srli    a5,a5,24
+        srli    a5,a5,25
+        srli    a5,a5,25
+        srli    a5,a5,25
+        srli    a5,a5,26
+        srli    a5,a5,26
+        srli    a5,a5,3
+        srli    a5,a5,3
+        srli    a5,a5,3
+        srli    a5,a5,3
+        srli    a5,a5,3
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,4
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,5
+        srli    a5,a5,7
+        srli    a5,a5,7
+        srli    a5,a5,8
+        srli    a5,a6,1
+        srli    a5,t1,2
+        srli    a6,a6,1
+        srli    a6,a6,1
+        srli    a6,a6,1
+        srli    a6,a6,1
+        srli    a6,a6,1
+        srli    a6,a6,8
+        srli    a6,a6,8
+        srli    a6,a7,1
+        srli    a6,t3,3
+        srli    a6,t5,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,1
+        srli    a7,a7,17
+        srli    a7,a7,7
+        srli    a7,a7,8
+        srli    s2,a5,1
+        srli    t0,t0,12
+        srli    t0,t0,12
+        srli    t0,t0,3
+        srli    t1,a6,31
+        srli    t1,t1,12
+        srli    t1,t1,17
+        srli    t1,t1,17
+        srli    t1,t1,17
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t1,t1,24
+        srli    t2,a2,3
+        srli    t2,a7,12
+        srli    t2,t2,1
+        srli    t2,t2,3
+        srli    t2,t2,3
+        srli    t2,t2,8
+        srli    t3,t3,1
+        srli    t3,t3,3
+        srli    t3,t3,8
+        srli    t3,t3,8
+        srli    t4,t4,1
+        srli    t4,t4,7
+        srli    t4,t4,8
+        srli    t4,t4,8
+        srli    t5,a6,3
+        srli    t5,s0,1
+        srli    t5,t5,1
+        srli    t5,t5,12
+        srli    t5,t5,22
+        srli    t5,t5,22
+        srli    t5,t5,7
+        srli    t6,a6,3
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t1,16
+        srli    t6,t6,3
+        srli    t6,t6,8
+        sub     a0,a0,a1
+        sub     a0,a0,a1
+        sub     a0,a0,a2
+        sub     a0,a0,a2
+        sub     a0,a0,a3
+        sub     a0,a0,a3
+        sub     a0,a0,a3
+        sub     a0,a0,a3
+        sub     a0,a0,a4
+        sub     a0,a0,a4
+        sub     a0,a0,a4
+        sub     a0,a0,a4
+        sub     a0,a0,a4
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a5
+        sub     a0,a0,a6
+        sub     a0,a0,a6
+        sub     a0,a0,a6
+        sub     a0,a0,t1
+        sub     a0,a0,t3
+        sub     a0,a0,t3
+        sub     a0,a2,a0
+        sub     a0,a2,a0
+        sub     a0,a2,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a4,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a0
+        sub     a0,a5,a2
+        sub     a0,a5,a2
+        sub     a0,a5,a4
+        sub     a0,t0,a0
+        sub     a0,t1,a2
+        sub     a1,a0,a5
+        sub     a1,a0,a5
+        sub     a1,a1,a3
+        sub     a1,a1,a4
+        sub     a1,a1,a5
+        sub     a1,a1,a5
+        sub     a1,a1,a5
+        sub     a1,a1,a5
+        sub     a1,a1,a7
+        sub     a1,a1,a7
+        sub     a1,a1,t0
+        sub     a1,a1,t1
+        sub     a1,a1,t1
+        sub     a1,a1,t3
+        sub     a1,a2,a1
+        sub     a1,a5,a1
+        sub     a1,a5,a1
+        sub     a1,a5,a1
+        sub     a1,a6,a1
+        sub     a2,a0,a2
+        sub     a2,a1,a2
+        sub     a2,a1,a4
+        sub     a2,a1,a5
+        sub     a2,a2,a0
+        sub     a2,a2,a1
+        sub     a2,a2,a1
+        sub     a2,a2,a3
+        sub     a2,a2,a4
+        sub     a2,a2,a5
+        sub     a2,a2,a5
+        sub     a2,a2,a5
+        sub     a2,a2,a5
+        sub     a2,a2,a5
+        sub     a2,a2,a6
+        sub     a2,a2,a6
+        sub     a2,a2,a6
+        sub     a2,a2,a6
+        sub     a2,a2,a6
+        sub     a2,a2,a6
+        sub     a2,a2,a7
+        sub     a2,a2,a7
+        sub     a2,a2,a7
+        sub     a2,a2,a7
+        sub     a2,a2,t2
+        sub     a2,a2,t2
+        sub     a2,a2,t3
+        sub     a2,a2,t3
+        sub     a2,a2,t5
+        sub     a2,a2,t6
+        sub     a2,a2,t6
+        sub     a2,a3,a2
+        sub     a2,a5,a2
+        sub     a2,a5,a2
+        sub     a2,t3,s0
+        sub     a2,t3,s0
+        sub     a2,t6,a4
+        sub     a3,a1,a3
+        sub     a3,a1,a5
+        sub     a3,a2,a3
+        sub     a3,a2,a3
+        sub     a3,a3,a1
+        sub     a3,a3,a1
+        sub     a3,a3,a2
+        sub     a3,a3,a2
+        sub     a3,a3,a2
+        sub     a3,a3,a4
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a5
+        sub     a3,a3,a6
+        sub     a3,a3,a6
+        sub     a3,a3,a6
+        sub     a3,a3,a6
+        sub     a3,a3,a7
+        sub     a3,a3,a7
+        sub     a3,a3,t1
+        sub     a3,a3,t3
+        sub     a3,a3,t3
+        sub     a3,a3,t3
+        sub     a3,a4,a2
+        sub     a3,a4,a6
+        sub     a3,a5,a3
+        sub     a3,t2,a3
+        sub     a3,t3,s0
+        sub     a4,a0,a4
+        sub     a4,a0,a5
+        sub     a4,a1,a4
+        sub     a4,a1,a4
+        sub     a4,a1,a4
+        sub     a4,a1,a5
+        sub     a4,a2,a4
+        sub     a4,a4,a2
+        sub     a4,a4,a2
+        sub     a4,a4,a2
+        sub     a4,a4,a2
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a3
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,a5
+        sub     a4,a4,t1
+        sub     a4,a4,t1
+        sub     a4,a4,t1
+        sub     a4,a4,t4
+        sub     a4,a4,t4
+        sub     a4,a5,a3
+        sub     a4,a5,a4
+        sub     a4,a6,a4
+        sub     a4,t3,s0
+        sub     a4,t5,a4
+        sub     a5,a0,a5
+        sub     a5,a0,a5
+        sub     a5,a0,a5
+        sub     a5,a0,a5
+        sub     a5,a1,a5
+        sub     a5,a1,a5
+        sub     a5,a1,a5
+        sub     a5,a2,a5
+        sub     a5,a2,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a4,a5
+        sub     a5,a5,a0
+        sub     a5,a5,a0
+        sub     a5,a5,a0
+        sub     a5,a5,a1
+        sub     a5,a5,a1
+        sub     a5,a5,a1
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a2
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a3
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a4
+        sub     a5,a5,a6
+        sub     a5,a5,a6
+        sub     a5,a5,a7
+        sub     a5,a5,a7
+        sub     a5,a5,a7
+        sub     a5,a5,a7
+        sub     a5,a5,a7
+        sub     a5,a5,a7
+        sub     a5,a5,s1
+        sub     a5,a5,s1
+        sub     a5,a5,s2
+        sub     a5,a5,t1
+        sub     a5,a5,t4
+        sub     a5,a5,t4
+        sub     a5,t1,a5
+        sub     a5,t3,s0
+        sub     a5,t3,s0
+        sub     a5,t6,a5
+        sub     a6,a0,a5
+        sub     a6,a1,a2
+        sub     a6,a1,a3
+        sub     a6,a1,a5
+        sub     a6,a1,a5
+        sub     a6,a6,a1
+        sub     a6,a6,a2
+        sub     a6,a6,a4
+        sub     a6,a6,t2
+        sub     a6,a6,t2
+        sub     a6,a6,t2
+        sub     a6,a6,t2
+        sub     a6,a6,t3
+        sub     a6,a6,t5
+        sub     a6,a6,t5
+        sub     a6,a6,t6
+        sub     a6,a7,a6
+        sub     a7,a1,a2
+        sub     a7,a1,a3
+        sub     a7,a1,a3
+        sub     a7,a1,a5
+        sub     a7,a7,a1
+        sub     a7,a7,a2
+        sub     a7,a7,a3
+        sub     a7,a7,a3
+        sub     a7,a7,a5
+        sub     a7,a7,t0
+        sub     a7,a7,t0
+        sub     a7,a7,t6
+        sub     a7,a7,t6
+        sub     t0,t0,a3
+        sub     t0,t0,a4
+        sub     t1,a7,t1
+        sub     t1,t1,a3
+        sub     t1,t1,a5
+        sub     t1,t1,a6
+        sub     t1,t1,t3
+        sub     t1,t1,t4
+        sub     t2,a1,a3
+        sub     t2,t2,a4
+        sub     t3,a1,a5
+        sub     t3,t3,a4
+        sub     t3,t3,a5
+        sub     t3,t3,a7
+        sub     t3,t3,a7
+        sub     t4,t4,a2
+        sub     t4,t4,a4
+        sub     t5,a1,a2
+        sub     t5,t5,a2
+        sub     t5,t5,a2
+        sw      a0,0(a4)
+        sw      a0,0(a5)
+        sw      a0,12(sp)
+        sw      a0,12(sp)
+        sw      a0,16(sp)
+        sw      a0,24(sp)
+        sw      a1,0(a5)
+        sw      a1,0(a6)
+        sw      a1,8(sp)
+        sw      a2,0(a0)
+        sw      a2,0(a1)
+        sw      a2,0(a1)
+        sw      a2,0(a3)
+        sw      a2,0(a6)
+        sw      a2,0(a6)
+        sw      a2,16(sp)
+        sw      a2,24(sp)
+        sw      a2,4(a5)
+        sw      a2,4(sp)
+        sw      a2,8(a0)
+        sw      a3,0(a1)
+        sw      a3,0(a1)
+        sw      a3,0(a1)
+        sw      a3,0(a1)
+        sw      a3,0(a2)
+        sw      a3,0(a2)
+        sw      a3,0(a4)
+        sw      a3,0(sp)
+        sw      a3,0(sp)
+        sw      a3,116(sp)
+        sw      a3,28(sp)
+        sw      a3,28(sp)
+        sw      a3,76(a5)
+        sw      a3,8(a5)
+        sw      a3,8(sp)
+        sw      a4,-256(a5)
+        sw      a4,0(a0)
+        sw      a4,0(a0)
+        sw      a4,0(a2)
+        sw      a4,12(sp)
+        sw      a4,16(sp)
+        sw      a4,32(sp)
+        sw      a4,4(a1)
+        sw      a4,4(a1)
+        sw      a4,4(a1)
+        sw      a4,4(sp)
+        sw      a4,8(a0)
+        sw      a4,8(a0)
+        sw      a4,8(a0)
+        sw      a4,8(a1)
+        sw      a4,8(sp)
+        sw      a5,0(a0)
+        sw      a5,0(a0)
+        sw      a5,0(a0)
+        sw      a5,0(a3)
+        sw      a5,0(a3)
+        sw      a5,0(a3)
+        sw      a5,0(a3)
+        sw      a5,0(a4)
+        sw      a5,0(a4)
+        sw      a5,0(s5)
+        sw      a5,116(sp)
+        sw      a5,12(sp)
+        sw      a5,12(sp)
+        sw      a5,12(sp)
+        sw      a5,20(sp)
+        sw      a5,36(sp)
+        sw      a5,8(a0)
+        sw      a5,8(a0)
+        sw      a5,8(a0)
+        sw      a5,8(a0)
+        sw      a5,8(sp)
+        sw      a5,8(sp)
+        sw      a6,0(a5)
+        sw      a6,0(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,12(sp)
+        sw      a6,16(sp)
+        sw      a6,16(sp)
+        sw      a6,16(sp)
+        sw      a6,16(sp)
+        sw      a6,4(a3)
+        sw      a6,4(a3)
+        sw      a6,4(a3)
+        sw      a6,4(a3)
+        sw      a6,4(sp)
+        sw      a6,40(sp)
+        sw      a6,8(a0)
+        sw      a6,8(sp)
+        sw      a6,8(sp)
+        sw      a6,8(sp)
+        sw      a7,12(sp)
+        sw      a7,12(sp)
+        sw      a7,12(sp)
+        sw      a7,44(sp)
+        sw      ra,12(sp)
+        sw      ra,12(sp)
+        sw      ra,28(sp)
+        sw      ra,28(sp)
+        sw      ra,28(sp)
+        sw      ra,28(sp)
+        sw      ra,28(sp)
+        sw      ra,28(sp)
+        sw      ra,412(sp)
+        sw      ra,44(sp)
+        sw      ra,60(sp)
+        sw      ra,60(sp)
+        sw      ra,76(sp)
+        sw      s0,0(a5)
+        sw      s0,12(sp)
+        sw      s0,24(sp)
+        sw      s0,408(sp)
+        sw      s0,56(sp)
+        sw      s0,72(sp)
+        sw      s0,8(sp)
+        sw      s1,20(sp)
+        sw      s1,4(sp)
+        sw      s1,404(sp)
+        sw      s1,52(sp)
+        sw      s1,68(sp)
+        sw      s1,8(sp)
+        sw      s2,0(sp)
+        sw      s2,0(t2)
+        sw      s2,16(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,400(sp)
+        sw      s2,48(sp)
+        sw      s2,64(sp)
+        sw      s3,12(sp)
+        sw      s3,396(sp)
+        sw      s3,44(sp)
+        sw      s3,60(sp)
+        sw      s4,392(sp)
+        sw      s4,40(sp)
+        sw      s4,56(sp)
+        sw      s4,8(sp)
+        sw      s5,388(sp)
+        sw      s5,4(sp)
+        sw      s5,52(sp)
+        sw      s6,0(sp)
+        sw      s6,384(sp)
+        sw      s6,48(sp)
+        sw      s7,380(sp)
+        sw      s7,44(sp)
+        sw      s8,376(sp)
+        sw      s8,376(sp)
+        sw      s8,40(sp)
+        sw      s8,80(a5)
+        sw      s9,36(sp)
+        sw      t0,12(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,16(sp)
+        sw      t0,20(sp)
+        sw      t0,20(sp)
+        sw      t0,20(sp)
+        sw      t0,20(sp)
+        sw      t0,8(sp)
+        sw      t1,0(sp)
+        sw      t1,12(sp)
+        sw      t1,20(sp)
+        sw      t1,24(sp)
+        sw      t1,28(sp)
+        sw      t1,28(sp)
+        sw      t2,0(t6)
+        sw      t2,20(sp)
+        sw      t2,20(sp)
+        sw      t2,8(sp)
+        sw      t3,12(sp)
+        sw      t3,12(sp)
+        sw      t3,12(sp)
+        sw      t3,12(sp)
+        sw      t3,20(sp)
+        sw      t3,4(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t3,8(sp)
+        sw      t4,12(sp)
+        sw      t4,16(sp)
+        sw      t6,20(sp)
+        sw      t6,20(sp)
+        sw      t6,20(sp)
+        sw      t6,20(sp)
+        sw      t6,20(sp)
+        sw      t6,24(sp)
+        sw      t6,24(sp)
+        sw      t6,28(sp)
+        sw      zero,0(a0)
+        sw      zero,0(a2)
+        sw      zero,0(s1)
+        sw      zero,0(s2)
+        sw      zero,12(s1)
+        sw      zero,12(s2)
+        sw      zero,12(t4)
+        sw      zero,12(t5)
+        sw      zero,16(s1)
+        sw      zero,16(s2)
+        sw      zero,16(t4)
+        sw      zero,16(t5)
+        sw      zero,20(s1)
+        sw      zero,20(s2)
+        sw      zero,20(t4)
+        sw      zero,20(t5)
+        sw      zero,24(s1)
+        sw      zero,24(s2)
+        sw      zero,24(t4)
+        sw      zero,24(t5)
+        sw      zero,28(s1)
+        sw      zero,28(s2)
+        sw      zero,28(t4)
+        sw      zero,28(t5)
+        sw      zero,32(s1)
+        sw      zero,32(s2)
+        sw      zero,32(t4)
+        sw      zero,32(t5)
+        sw      zero,4(s1)
+        sw      zero,4(s2)
+        sw      zero,4(t4)
+        sw      zero,4(t5)
+        sw      zero,40(sp)
+        sw      zero,76(sp)
+        sw      zero,8(s1)
+        sw      zero,8(s2)
+        sw      zero,8(t4)
+        sw      zero,8(t5)
+        tail    memset
+        tail    putchar
+        xori    a3,a3,1
+        xori    a3,a3,1
+.L107:
+.L109:
+.L10:
+.L114:
+.L117:
+.L118:
+.L119:
+.L120:
+.L121:
+.L122:
+.L126:
+.L12:
+.L133:
+.L134:
+.L135:
+.L13:
+.L143:
+.L145:
+.L146:
+.L14:
+.L150:
+.L152:
+.L156:
+.L157:
+.L160:
+.L161:
+.L164:
+.L165:
+.L166:
+.L172:
+.L173:
+.L174:
+.L176:
+.L178:
+.L179:
+.L17:
+.L180:
+.L181:
+.L18:
+.L19:
+.L1:
+.L205:
+.L206:
+.L207:
+.L208:
+.L209:
+.L210:
+.L211:
+.L212:
+.L215:
+.L216:
+.L217:
+.L218:
+.L219:
+.L220:
+.L221:
+.L222:
+.L223:
+.L224:
+.L225:
+.L228:
+.L230:
+.L232:
+.L233:
+.L234:
+.L236:
+.L240:
+.L241:
+.L242:
+.L243:
+.L244:
+.L245:
+.L246:
+.L247:
+.L249:
+.L250:
+.L258:
+.L259:
+.L260:
+.L261:
+.L263:
+.L268:
+.L272:
+.L273:
+.L274:
+.L275:
+.L276:
+.L278:
+.L279:
+.L280:
+.L281:
+.L284:
+.L285:
+.L286:
+.L287:
+.L288:
+.L289:
+.L290:
+.L291:
+.L292:
+.L293:
+.L30:
+.L31:
+.L322:
+.L323:
+.L324:
+.L325:
+.L326:
+.L328:
+.L329:
+.L32:
+.L330:
+.L334:
+.L335:
+.L336:
+.L337:
+.L33:
+.L342:
+.L346:
+.L347:
+.L348:
+.L349:
+.L350:
+.L356:
+.L357:
+.L359:
+.L35:
+.L365:
+.L366:
+.L368:
+.L369:
+.L370:
+.L371:
+.L372:
+.L374:
+.L375:
+.L376:
+.L377:
+.L37:
+.L386:
+.L388:
+.L389:
+.L392:
+.L394:
+.L395:
+.L396:
+.L397:
+.L399:
+.L39:
+.L400:
+.L402:
+.L403:
+.L404:
+.L405:
+.L411:
+.L412:
+.L413:
+.L415:
+.L416:
+.L417:
+.L418:
+.L419:
+.L41:
+.L420:
+.L421:
+.L422:
+.L424:
+.L425:
+.L426:
+.L428:
+.L430:
+.L432:
+.L436:
+.L438:
+.L444:
+.L446:
+.L448:
+.L449:
+.L455:
+.L456:
+.L457:
+.L458:
+.L459:
+.L45:
+.L460:
+.L461:
+.L463:
+.L467:
+.L468:
+.L469:
+.L46:
+.L470:
+.L472:
+.L473:
+.L478:
+.L47:
+.L481:
+.L482:
+.L485:
+.L488:
+.L493:
+.L494:
+.L495:
+.L496:
+.L497:
+.L498:
+.L501:
+.L502:
+.L505:
+.L507:
+.L509:
+.L50:
+.L510:
+.L515:
+.L516:
+.L517:
+.L51:
+.L522:
+.L523:
+.L524:
+.L525:
+.L526:
+.L527:
+.L528:
+.L529:
+.L530:
+.L531:
+.L532:
+.L533:
+.L535:
+.L539:
+.L540:
+.L541:
+.L546:
+.L547:
+.L548:
+.L549:
+.L54:
+.L554:
+.L555:
+.L556:
+.L557:
+.L558:
+.L559:
+.L55:
+.L560:
+.L561:
+.L562:
+.L564:
+.L566:
+.L570:
+.L571:
+.L576:
+.L578:
+.L579:
+.L585:
+.L586:
+.L591:
+.L592:
+.L596:
+.L597:
+.L598:
+.L599:
+.L600:
+.L601:
+.L602:
+.L603:
+.L604:
+.L605:
+.L606:
+.L630:
+.L638:
+.L64:
+.L65:
+.L66:
+.L686:
+.L68:
+.L693:
+.L70:
+.L716:
+.L72:
+.L76:
+.L77:
+.L78:
+.L792:
+.L793:
+.L794:
+.L795:
+.L796:
+.L797:
+.L798:
+.L799:
+.L800:
+.L801:
+.L810:
+.L811:
+.L812:
+.L813:
+.L814:
+.L815:
+.L816:
+.L821:
+.L822:
+.L824:
+.L825:
+.L826:
+.L827:
+.L828:
+.L829:
+.L830:
+.L831:
+.L832:
+.L833:
+.L834:
+.L835:
+.L836:
+.L837:
+.L838:
+.L839:
+.L840:
+.L842:
+.L843:
+.L844:
+.L846:
+.L849:
+.L850:
+.L851:
+.L852:
+.L853:
+.L854:
+.L855:
+.L856:
+.L857:
+.L858:
+.L859:
+.L861:
+.L863:
+.L866:
+.L868:
+.L869:
+.L870:
+.L871:
+.L874:
+.L875:
+.L876:
+.L882:
+.L9:
+.LC0:
+.LC10:
+.LC11:
+.LC12:
+.LC13:
+.LC14:
+.LC15:
+.LC16:
+.LC17:
+.LC18:
+.LC19:
+.LC1:
+.LC20:
+.LC21:
+.LC22:
+.LC23:
+.LC24:
+.LC25:
+.LC26:
+.LC27:
+.LC28:
+.LC29:
+.LC2:
+.LC30:
+.LC31:
+.LC3:
+.LC4:
+.LC5:
+.LC6:
+.LC7:
+.LC8:
+.LC9:
+alu_op_f18(unsigned int, float, float, unsigned int*, unsigned int):
+alu_op_i18(unsigned int, int, int, unsigned int*, unsigned int):
+bin_to_ternchar(int):
+calc_limits():
+dip_from_pc(int, union_instruction*):
+extract_b_flag(unsigned int):
+extract_b_flagbank(unsigned int):
+extract_b_imm(unsigned int):
+extract_b_state(unsigned int):
+extract_i_func(unsigned int):
+extract_i_imm(unsigned int):
+extract_inc(unsigned int):
+extract_j_imm(unsigned int):
+extract_l_func(unsigned int):
+extract_l_imm(unsigned int):
+extract_load_func(unsigned int):
+extract_mov_dst_reg_type(unsigned int):
+extract_mov_src_reg_type(unsigned int):
+extract_opcode(unsigned int):
+extract_r_flagbank(unsigned int):
+extract_r_func(unsigned int):
+extract_rd(unsigned int):
+extract_regsize(unsigned int):
+extract_rs1(unsigned int):
+extract_rs2(unsigned int):
+extract_s_func(unsigned int):
+extract_s_imm(unsigned int):
+extract_shift_amount(unsigned int):
+extract_shift_value(unsigned int):
+extract_syscalli_imm(unsigned int):
+extract_syscalli_val(unsigned int):
+extract_t_func(unsigned int):
+extract_u_imm(unsigned int):
+get_cpu_flag(unsigned int, unsigned int, unsigned int*):
+get_dmem_f(int*, int):
+get_dmem_i(int*, int, unsigned int):
+get_reg_f18(float*, unsigned int):
+get_reg_i(int*, unsigned int, unsigned int):
+init_cpu(int*, unsigned int*, float*, unsigned int*):
+ip_from_pc(int, unsigned int*):
+load_mem_file(char*, unsigned int*, union_instruction*):
+main:
+move_regs(int*, float*, unsigned int, unsigned int, unsigned int, unsigned int):
+parse_ternary_instruction(unsigned int):
+parse_ternary_string(char*):
+pc_from_dip(union_instruction*, union_instruction*):
+pc_from_ip(unsigned int*, unsigned int*):
+power(int, int) [clone .part.0]:
+power(int, int):
+print_cpu_status(int*, float*, unsigned int*, unsigned int*, unsigned int*, int*):
+print_union_instruction(union_instruction):
+set_cpu_flag(unsigned int, unsigned int, unsigned int*, unsigned int):
+set_dmem_f(int*, int, float):
+set_dmem_i(int*, int, int, unsigned int) [clone .part.0]:
+set_dmem_i(int*, int, int, unsigned int):
+set_reg_f18(float*, unsigned int, float):
+set_reg_i(int*, unsigned int, int, unsigned int):
+sim(unsigned int*, union_instruction*, int*, int*):
+ternary_and_18(int, int):
+ternary_or_18(int, int):
+ternary_shift_18(int, int):
+ternary_xor_18(int, int):
+test_op_i18(int*, unsigned int*, unsigned int, unsigned int, unsigned int, unsigned int, int, unsigned int):
